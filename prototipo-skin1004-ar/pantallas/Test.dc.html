@@ -20,7 +20,7 @@ a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 390px; height: 1840px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+<div style="width: 390px; height: 2460px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
 
 <header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
   <div style="display: flex">
@@ -28,33 +28,46 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   </div>
   <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="justify-self: center; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
   <div style="display: flex; justify-content: flex-end">
-    <a href="Carrito.dc.html" aria-label="Carrito, 1 producto" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span></a>
+    <a href="Carrito.dc.html" aria-label="{{cartLabel}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums">{{cartCount}}</span></a>
   </div>
 </header>
 
 <sc-if value="{{intro}}" hint-placeholder-val="{{true}}">
   <section aria-labelledby="intro-t" style="background: #FFFFFF; display: flex; flex-direction: column">
-    <div role="img" aria-label="Foto de detalle: mejilla con poros visibles y textura real, luz de ventana lateral, sin rostro completo" style="width: 390px; height: 340px; background: #F2EDE4; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
+    <div role="img" aria-label="Foto de detalle: mejilla con poros visibles y textura real, luz de ventana lateral, sin rostro completo" style="width: 390px; height: 200px; background: #F2EDE4; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 1px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
-      <p style="margin: 0; max-width: 262px; font-size: 12px; line-height: 1.5; color: #6B6B66">Foto de detalle: mejilla sin maquillaje, poros y textura visibles. Luz de ventana lateral y dura, sin rostro completo. Fondo de cal color hueso, 390 × 340.</p>
+      <p style="margin: 0; max-width: 262px; font-size: 12px; line-height: 1.5; color: #6B6B66">Foto de detalle: mejilla sin maquillaje, poros y textura visibles. Luz de ventana lateral y dura, sin rostro completo. Fondo de cal color hueso, 390 × 200.</p>
     </div>
-    <div style="padding: 32px 24px 64px; display: flex; flex-direction: column">
-      <h1 id="intro-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">¿Qué línea de SKIN1004 va con tu piel?</h1>
-      <p style="margin: 16px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">Tres preguntas sobre cómo se siente tu piel. Al final te mostramos la línea que mejor la acompaña y su rutina de cuatro pasos, en el orden en que se aplica.</p>
-      <button type="button" onClick="{{start}}" style="margin-top: 28px; min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Empezar el test</button>
-      <p style="margin: 16px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">Es una orientación cosmética y no reemplaza la consulta con tu dermatóloga o dermatólogo.</p>
+    <div style="padding: 28px 24px 64px; display: flex; flex-direction: column">
+      <h1 id="intro-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">Tu rutina con precio de set, en tres preguntas</h1>
+      <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">Contanos cómo se siente tu piel y te armamos la rutina de SKIN1004 que la acompaña, lista para llevar.</p>
+      <dl aria-label="Lo que te llevás del test" style="margin: 20px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{promise}}" as="pr" hint-placeholder-count="3">
+          <div style="padding: 10px 0; border-bottom: 1px solid #E8E4DC; display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; align-items: baseline">
+            <dt style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{pr.k}}</dt>
+            <dd style="margin: 0; font-size: 14px; line-height: 1.45; color: #141414">{{pr.v}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+      <button type="button" onClick="{{start}}" style="margin-top: 24px; min-height: 52px; padding: 0 24px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Armar mi rutina</button>
+      <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46; text-align: center">Sin registrarte. Tu mail solo si querés guardar el resultado.</p>
+      <p style="margin: 28px 0 0; padding-top: 16px; border-top: 1px solid #E8E4DC; font-size: 12px; line-height: 1.5; color: #6B6B66">Es una orientación cosmética y no reemplaza la consulta con tu dermatóloga o dermatólogo.</p>
     </div>
   </section>
 </sc-if>
 
 <sc-if value="{{asking}}" hint-placeholder-val="{{false}}">
-  <section aria-labelledby="q-t" style="background: #FFFFFF; padding: 32px 24px 64px; display: flex; flex-direction: column">
-    <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">Pregunta {{stepNumber}} de 3</span>
-    <div role="progressbar" aria-label="Progreso del test" aria-valuemin="0" aria-valuemax="3" aria-valuenow="{{stepNumber}}" aria-valuetext="Pregunta {{stepNumber}} de 3" style="margin-top: 8px; height: 2px; background: #E8E4DC">
+  <section aria-labelledby="q-t" style="background: #FFFFFF; padding: 12px 24px 64px; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between">
+      <button type="button" onClick="{{back}}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer">Volver</button>
+      <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">Pregunta {{stepNumber}} de 3</span>
+    </div>
+    <div role="progressbar" aria-label="Progreso del test" aria-valuemin="0" aria-valuemax="3" aria-valuenow="{{stepNumber}}" aria-valuetext="Pregunta {{stepNumber}} de 3" style="margin-top: 4px; height: 2px; background: #E8E4DC">
       <div style="height: 2px; width: {{progress}}; background: #A8812F"></div>
     </div>
     <h1 id="q-t" style="margin: 28px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">{{question}}</h1>
-    <div role="radiogroup" aria-labelledby="q-t" style="margin-top: 24px; display: flex; flex-direction: column; border-bottom: 1px solid #E8E4DC">
+    <p id="q-help" style="margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">{{helper}}</p>
+    <div role="radiogroup" aria-labelledby="q-t" aria-describedby="q-help" style="margin-top: 20px; display: flex; flex-direction: column; border-bottom: 1px solid #E8E4DC">
       <sc-for list="{{options}}" as="o" hint-placeholder-count="4">
         <button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="min-height: 64px; display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: center; column-gap: 16px; padding: 14px 0; box-sizing: border-box; border: 0; border-top: 1px solid #E8E4DC; background: #FFFFFF; font: inherit; color: #141414; text-align: left; cursor: pointer">
           <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="display: block">
@@ -68,73 +81,90 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
         </button>
       </sc-for>
     </div>
-    <div style="margin-top: 32px; display: flex; gap: 8px">
-      <sc-if value="{{canBack}}" hint-placeholder-val="{{false}}">
-        <button type="button" onClick="{{back}}" style="min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Volver</button>
-      </sc-if>
-      <button type="button" onClick="{{next}}" aria-disabled="{{nextDisabled}}" aria-describedby="q-help" style="flex: 1 1 auto; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid {{nextRing}}; box-sizing: border-box; background: {{nextBg}}; color: {{nextInk}}; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: {{nextCursor}}">{{nextLabel}}</button>
-    </div>
-    <p id="q-help" aria-live="polite" style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">{{helper}}</p>
+    <p style="margin: 20px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">{{ahead}}</p>
   </section>
 </sc-if>
 
 <sc-if value="{{done}}" hint-placeholder-val="{{false}}">
-  <section aria-labelledby="res-t" style="background: #FFFFFF; padding: 48px 24px 0; display: flex; flex-direction: column">
-    <article style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 24px 20px; display: flex; flex-direction: column">
+  <section aria-labelledby="res-t" style="background: #FFFFFF; padding: 44px 24px 0; display: flex; flex-direction: column">
+    <article style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 22px 20px 24px; display: flex; flex-direction: column">
       <span aria-hidden="true" data-rise="true" style="position: absolute; top: -24px; left: {{result.tab}}; width: 48px; height: 24px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{result.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0; animation: tab-rise 240ms cubic-bezier(.2,.7,.2,1) both"></span>
-      <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">Tu línea, según el test</span>
-      <h1 id="res-t" style="margin: 6px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">{{result.line}}</h1>
-      <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">{{result.why}}</p>
+      <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">Tu resultado: línea {{result.line}}</span>
+      <h1 id="res-t" style="margin: 4px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">{{result.routineName}}</h1>
+      <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">{{result.why}}</p>
+
+      <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+        <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">Set de {{result.count}} productos, precio de set</span>
+        <span style="margin-top: 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 30px; line-height: 1.15">[precio del set]</span>
+        <span style="margin-top: 4px; font-size: 14px; font-weight: 500; line-height: 1.5; color: #141414">Ahorrás [ahorro del set] frente a comprar cada paso por separado</span>
+        <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: [precio]</span>
+        <span style="margin-top: 8px; font-size: 14px; line-height: 1.5; font-weight: 500; color: #2F6B45">[precio] con transferencia</span>
+        <span style="margin-top: 2px; font-size: 12px; line-height: 1.5; color: #6B6B66">6 cuotas sin interés en compras desde $ 150.000</span>
+      </div>
+      <a href="Carrito.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Llevá la rutina</a>
+      <p style="margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46; text-align: center; text-wrap: balance">Producto original importado por el representante oficial</p>
+      <p style="margin: 4px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46; text-align: center">Por hacer el test: [beneficio del test]</p>
+
+      <ul aria-label="Condiciones de compra" style="list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{terms}}" as="tm" hint-placeholder-count="4">
+          <li style="padding: 10px 0; border-bottom: 1px solid #E8E4DC; font-size: 13px; font-weight: 500; line-height: 1.45; color: #141414">{{tm.t}}</li>
+        </sc-for>
+      </ul>
+
+      <h2 style="margin: 32px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25; letter-spacing: -0.005em; text-wrap: balance">O sumá solo lo que te falta</h2>
+      <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">En el orden en que se aplica, mañana y noche.</p>
+      <ol aria-label="{{result.routineName}}, paso por paso" style="list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{result.steps}}" as="st" hint-placeholder-count="4">
+          <li style="padding: 16px 0; border-bottom: 1px solid #E8E4DC; display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 14px; align-items: start">
+            <span style="width: 64px; height: 88px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; box-sizing: border-box">
+              <sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="26" height="64" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="28" height="68" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block; margin-bottom: -4px"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="26" height="64" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="24" height="60" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            </span>
+            <span style="display: flex; flex-direction: column; min-width: 0">
+              <span style="display: flex; align-items: baseline; gap: 8px">
+                <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
+                <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; font-weight: 600; line-height: 1.3">{{st.name}}</span>
+              </span>
+              <span style="margin-top: 2px; font-size: 12px; line-height: 1.45; color: #6B6B66">{{st.meta}}</span>
+              <span style="margin-top: 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+                <span style="font-size: 16px; font-weight: 600; line-height: 1.35; font-variant-numeric: tabular-nums; white-space: nowrap">{{st.price}}</span>
+                <button type="button" onClick="{{st.add}}" aria-pressed="{{st.pressed}}" aria-label="{{st.aria}}" style="flex: 0 0 auto; min-width: 104px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: {{st.bg}}; color: {{st.ink}}; font: inherit; font-weight: 500; font-size: 14px; letter-spacing: 0.005em; cursor: pointer">{{st.label}}</button>
+              </span>
+              <span style="margin-top: 4px; font-size: 12px; line-height: 1.45; color: #6B6B66; font-variant-numeric: tabular-nums">Sin impuestos nacionales: {{st.net}}</span>
+            </span>
+          </li>
+        </sc-for>
+      </ol>
+      <p role="status" style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">{{addedNote}}</p>
 
       <dl style="margin: 20px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; border-top: 1px solid #E8E4DC">
-        <sc-for list="{{fields}}" as="f" hint-placeholder-count="4">
+        <sc-for list="{{fields}}" as="f" hint-placeholder-count="3">
           <div style="grid-column: {{f.span}}; padding: 12px 0; border-bottom: 1px solid #E8E4DC; display: flex; flex-direction: column; gap: 2px">
             <dt style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{f.k}}</dt>
             <dd style="margin: 0; font-size: 14px; line-height: 1.45; color: #141414">{{f.v}}</dd>
           </div>
         </sc-for>
       </dl>
-
-      <h2 style="margin: 24px 0 0; font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">En el orden en que se aplica</h2>
-      <ol aria-label="{{result.routineName}}, paso por paso" style="list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
-        <sc-for list="{{result.steps}}" as="st" hint-placeholder-count="4">
-          <li style="display: flex; flex-direction: column">
-            <span style="height: 124px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
-              <sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="44" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="60" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="36" height="92" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            </span>
-            <span style="margin-top: 12px; padding: 0 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
-            <span style="margin-top: 4px; padding: 0 4px; font-size: 13px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
-            <span style="margin-top: 4px; padding: 0 4px; font-size: 12px; line-height: 1.45; color: #6B6B66">{{st.when}}</span>
-          </li>
-        </sc-for>
-      </ol>
-
-      <p style="margin: 28px 0 0; padding-top: 20px; border-top: 1px solid #E8E4DC; font-size: 14px; line-height: 1.6; color: #4A4A46">{{result.routineName}}, {{result.count}} productos</p>
-      <div style="margin-top: 4px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
-        <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.15">[precio del set]</span>
-        <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: [precio]</span>
-        <span style="margin-top: 8px; font-size: 14px; line-height: 1.5; font-weight: 500; color: #2F6B45">[precio] con transferencia</span>
-        <span style="margin-top: 2px; font-size: 12px; line-height: 1.5; color: #6B6B66">6 cuotas sin interés en compras desde $ 150.000</span>
-      </div>
-      <a href="Carrito.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar la rutina al carrito</a>
-      <a href="Coleccion.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver la línea {{result.line}}</a>
-
-      <form style="margin: 20px 0 0; padding-top: 24px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
-        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Guardá tu rutina: te mandamos los cuatro pasos por mail para tenerlos a mano cuando compres.</p>
-        <label for="test-email" style="margin-top: 16px; font-size: 14px; font-weight: 500; line-height: 1.5">Tu mail</label>
-        <input id="test-email" type="email" autocomplete="email" placeholder="nombre@correo.com" style="margin-top: 8px; height: 48px; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF; box-sizing: border-box">
-        <button type="button" onClick="{{save}}" style="margin-top: 12px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">{{saveLabel}}</button>
-        <p role="status" style="margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">{{saveNote}}</p>
-      </form>
     </article>
 
-    <div style="padding: 24px 0 64px; display: flex; flex-direction: column">
+    <form style="margin: 32px 0 0; display: flex; flex-direction: column">
+      <h2 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3; text-wrap: balance">¿Lo pensás un poco más?</h2>
+      <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Te mandamos la rutina y el precio del set por mail, para comprarla cuando quieras.</p>
+      <label for="test-email" style="margin-top: 16px; font-size: 14px; font-weight: 500; line-height: 1.5">Tu mail</label>
+      <div style="margin-top: 8px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px">
+        <input id="test-email" type="email" autocomplete="email" placeholder="nombre@correo.com" style="height: 48px; min-width: 0; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF; box-sizing: border-box">
+        <button type="button" onClick="{{save}}" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">{{saveLabel}}</button>
+      </div>
+      <p role="status" style="margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">{{saveNote}}</p>
+    </form>
+
+    <div style="padding: 16px 0 64px; display: flex; flex-direction: column">
       <div style="display: flex; flex-wrap: wrap; column-gap: 24px">
         <button type="button" onClick="{{restart}}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer">Hacer el test de nuevo</button>
+        <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver la línea {{result.line}}</a>
         <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Volver al inicio</a>
       </div>
       <p style="margin: 24px 0 0; padding-top: 20px; border-top: 1px solid #E8E4DC; font-size: 12px; line-height: 1.5; color: #6B6B66">Es una orientación cosmética y no reemplaza la consulta con tu dermatóloga o dermatólogo.</p>
@@ -145,11 +175,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1840}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2460}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { step: -1, answers: [null, null, null], saved: false };
+    this.state = { step: -1, answers: [null, null, null], saved: false, added: [] };
   }
   renderVals() {
     const s = this.state;
@@ -188,28 +218,30 @@ class Component extends DCLogic {
 
     // Rutinas: mismos pasos y nombres que el estante de Main. Orden de aplicación:
     // limpieza, máscara semanal, tónico, ampolla, crema y protector solo de día.
-    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', c: H, k: 'tube' };
+    // Único precio real: Centella Ampoule 55 ml. El resto va como [precio].
+    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', ml: '50 ml', c: H, k: 'tube' };
+    const AMP = { name: 'Centella Ampoule', when: 'Mañana y noche', ml: '55 ml', c: C, k: 'ampoule', price: '$\u00a042.999', net: '$\u00a035.536' };
     const R = {
       rojeces: { l: 'centella', routineName: 'Rutina calmante', why: 'La línea dorada, con centella asiática de Madagascar, calma la piel sensible o con rojeces.', steps: [
-        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
-        { name: 'Centella Ampoule', when: 'Mañana y noche', c: C, k: 'ampoule' },
+        { name: 'Toning Toner', when: 'Mañana y noche', ml: '[ml]', c: C, k: 'bottle' },
+        AMP,
         { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
       poros: { l: 'pore', routineName: 'Rutina poros y brillo', why: 'La línea rosa, con sal rosa del Himalaya, ayuda a afinar la apariencia de los poros y a controlar el brillo.', steps: [
         { name: 'Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
         { name: 'Clay Stick Mask', when: '1 o 2 veces por semana', c: P, k: 'stick' },
-        { name: 'Fresh Ampoule', when: 'Mañana y noche', c: P, k: 'ampoule' }, SUN] },
+        { name: 'Fresh Ampoule', when: 'Mañana y noche', ml: '100 ml', c: P, k: 'ampoule' }, SUN] },
       granitos: { l: 'tea', routineName: 'Rutina granitos', why: 'La línea verde combina árbol de té y centella para acompañar a la piel con granitos.', steps: [
         { name: 'Purifying Toner', when: 'Mañana y noche', c: T, k: 'bottle' },
-        { name: 'Relief Ampoule', when: 'Mañana y noche', c: T, k: 'ampoule' },
+        { name: 'Relief Ampoule', when: 'Mañana y noche', ml: '100 ml', c: T, k: 'ampoule' },
         { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
       manchas: { l: 'tone', routineName: 'Rutina tono parejo', why: 'La línea blanca ayuda a emparejar el tono y a darle luminosidad a la piel. El protector de día no se saltea.', steps: [
-        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
+        { name: 'Toning Toner', when: 'Mañana y noche', ml: '[ml]', c: C, k: 'bottle' },
         { name: 'Capsule Ampoule', when: 'Mañana y noche', c: W, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN] },
+        { name: 'Moisture Cream', when: 'Mañana y noche', ml: '75 ml', c: H, k: 'jar' }, SUN] },
       hidratacion: { l: 'hyalu', routineName: 'Rutina hidratación', why: 'La línea azul suma ácido hialurónico a la centella para ayudar a hidratar la piel deshidratada.', steps: [
         { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
         { name: 'First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN] }
+        { name: 'Moisture Cream', when: 'Mañana y noche', ml: '75 ml', c: H, k: 'jar' }, SUN] }
     };
 
     const step = s.step;
@@ -219,8 +251,8 @@ class Component extends DCLogic {
     const qi = asking ? step : 0;
     const cur = Q[qi];
     const picked = s.answers[qi];
-    const has = picked !== null && picked !== undefined;
 
+    // Preguntas ágiles: tocar una opción guarda la respuesta y pasa a la siguiente.
     const options = cur.o.map((o) => {
       const on = picked === o.v;
       return {
@@ -231,7 +263,7 @@ class Component extends DCLogic {
         pick: () => {
           const answers = s.answers.slice();
           answers[qi] = o.v;
-          this.setState({ answers });
+          this.setState({ answers, step: qi + 1, added: [], saved: false });
         }
       };
     });
@@ -242,10 +274,30 @@ class Component extends DCLogic {
     });
     const res = R[s.answers[1] || 'rojeces'];
     const line = LINE[res.l];
+    const added = s.added || [];
+    const toggle = (i) => () => {
+      const next = added.indexOf(i) >= 0 ? added.filter((x) => x !== i) : added.concat([i]);
+      this.setState({ added: next });
+    };
+    const steps = res.steps.map((x, i) => {
+      const on = added.indexOf(i) >= 0;
+      return Object.assign({}, x, shape(x.k), {
+        n: String(i + 1),
+        meta: x.when + ', ' + (x.ml || '[ml]'),
+        price: x.price || '[precio]',
+        net: x.net || '[precio]',
+        add: toggle(i),
+        pressed: on ? 'true' : 'false',
+        label: on ? 'Agregado' : 'Agregar',
+        aria: on ? x.name + ', agregado al carrito. Tocá para quitarlo' : 'Agregar ' + x.name + ' al carrito',
+        bg: on ? '#FFFFFF' : '#141414',
+        ink: on ? '#141414' : '#FFFFFF'
+      });
+    });
     const result = {
       line: line.name, c: line.c, tab: TAB[line.slot],
-      routineName: res.routineName, why: res.why, count: res.steps.length,
-      steps: res.steps.map((x, i) => Object.assign({}, x, shape(x.k), { n: String(i + 1) }))
+      routineName: res.routineName, why: res.why, count: String(res.steps.length),
+      steps
     };
 
     const found = (i) => Q[i].o.find((o) => o.v === s.answers[i]);
@@ -262,32 +314,40 @@ class Component extends DCLogic {
 
     const fields = [
       { k: 'Según tus respuestas', v: summary, span: '1 / -1' },
-      { k: 'Ingrediente', v: line.ingr, span: 'auto' },
-      { k: 'Contenido', v: res.steps.length + ' productos', span: 'auto' },
+      { k: 'Ingrediente', v: line.ingr, span: '1 / -1' },
       { k: 'Consejo', v: tip, span: '1 / -1' }
     ];
 
+    const cartCount = 1 + (done ? added.length : 0);
+    const n = added.length;
+
     return {
       intro, asking, done,
+      promise: [
+        { k: 'Tu línea', v: 'La que va con tu piel, entre las seis de SKIN1004' },
+        { k: 'Tu rutina', v: '4 pasos, en el orden en que se aplican' },
+        { k: 'Tu precio', v: 'Precio de set: ahorrás [ahorro del set] frente a comprar cada paso por separado' }
+      ],
       start: () => this.setState({ step: 0 }),
       stepNumber: String(qi + 1),
       progress: Math.round(((qi + 1) / 3) * 100) + '%',
       question: cur.q, options,
-      canBack: asking && step > 0,
-      back: () => this.setState({ step: Math.max(0, step - 1) }),
-      next: () => { if (has) this.setState({ step: step + 1 }); },
-      nextLabel: qi === 2 ? 'Ver mi rutina' : 'Siguiente',
-      nextDisabled: has ? 'false' : 'true',
-      nextBg: has ? '#141414' : '#FFFFFF',
-      nextInk: has ? '#FFFFFF' : '#6B6B66',
-      nextRing: has ? '#141414' : '#CFCAC0',
-      nextCursor: has ? 'pointer' : 'not-allowed',
-      helper: has ? 'Podés cambiar tu respuesta antes de seguir.' : 'Elegí una opción para seguir.',
-      result, fields,
+      back: () => this.setState({ step: step - 1 }),
+      helper: qi === 2 ? 'Tocá una opción y vemos tu rutina.' : 'Tocá una opción y pasás a la siguiente.',
+      ahead: qi === 2 ? 'Última pregunta. Después: tu rutina de 4 pasos con precio de set.' : 'Al final: tu rutina de 4 pasos con precio de set.',
+      result, fields, terms: [
+        { t: 'Envío gratis desde $\u00a0119.999' },
+        { t: '10% off con transferencia' },
+        { t: '6 cuotas sin interés desde $\u00a0150.000' },
+        { t: '2 muestras de regalo en cada pedido' }
+      ],
+      addedNote: n === 0 ? '' : (n === 1 ? 'Sumaste 1 producto al carrito.' : 'Sumaste ' + n + ' productos al carrito.'),
+      cartCount: String(cartCount),
+      cartLabel: 'Carrito, ' + cartCount + (cartCount === 1 ? ' producto' : ' productos'),
       save: () => this.setState({ saved: true }),
-      saveLabel: s.saved ? 'Rutina enviada' : 'Enviarme la rutina',
-      saveNote: s.saved ? 'Listo: te mandamos la ' + res.routineName.toLowerCase() + ' a tu mail.' : '',
-      restart: () => this.setState({ step: 0, answers: [null, null, null], saved: false })
+      saveLabel: s.saved ? 'Enviada' : 'Enviarme',
+      saveNote: s.saved ? 'Listo: te mandamos la ' + res.routineName.toLowerCase() + ' y su precio de set a tu mail.' : '',
+      restart: () => this.setState({ step: 0, answers: [null, null, null], saved: false, added: [] })
     };
   }
 }

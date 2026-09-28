@@ -19,17 +19,15 @@ a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 1440px; height: 6600px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+<div style="width: 1440px; height: 6040px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden; position: relative">
 
-<div style="flex-shrink: 0; background: #141414; color: #F7F4EE; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; padding: 10px 144px; display: flex; justify-content: center; gap: 88px">
-  <p style="margin: 0">Envío gratis desde $ 119.999</p>
-  <p style="margin: 0">10% off con transferencia</p>
-  <p style="margin: 0">6 cuotas sin interés desde $ 150.000</p>
-</div>
+<p aria-live="polite" style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{cartStatus}}</p>
+
+<p style="flex-shrink: 0; margin: 0; background: #141414; color: #F7F4EE; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; padding: 10px 144px; text-align: center">Tienda oficial de SKIN1004 en Argentina. <a href="Main.dc.html" style="color: #F7F4EE; text-underline-offset: 3px">Consultanos por WhatsApp antes de comprar</a></p>
 
 <header style="flex-shrink: 0; background: #FFFFFF; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; padding: 14px 144px; border-bottom: 1px solid #E8E4DC">
   <nav aria-label="Principal" style="display: flex; gap: 32px; font-size: 15px; font-weight: 500">
-    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Líneas</a>
+    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Productos</a>
     <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Rutinas y kits</a>
     <a href="Test.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Test de piel</a>
     <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">La marca</a>
@@ -38,212 +36,267 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   <div style="display: flex; justify-content: flex-end; gap: 4px">
     <button type="button" aria-label="Buscar" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg></button>
     <a href="Main.dc.html" aria-label="Mi cuenta" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4"></path></svg></a>
-    <a href="Carrito.dc.html" aria-label="Carrito, 1 producto" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span></a>
+    <a href="Carrito.dc.html" aria-label="{{cartLabel}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">{{cartCount}}</span></a>
   </div>
 </header>
 
-<section aria-labelledby="hero-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
-  <div style="grid-column: 1 / span 5; grid-row: 1; padding-top: 88px; display: flex; flex-direction: column">
-    <h1 id="hero-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 64px; line-height: 1.06; letter-spacing: -0.01em; text-wrap: balance">Todo empieza por la centella de Madagascar</h1>
-    <p style="margin: 28px 0 0; max-width: 440px; font-size: 18px; line-height: 1.65; color: #4A4A46">Fórmulas cortas, con el ingrediente al frente, que ayudan a calmar la piel sensible. Tienda oficial de SKIN1004 en Argentina.</p>
-  </div>
-
-  <div style="grid-column: 1 / span 4; grid-row: 2; align-self: end; display: flex; flex-direction: column; padding-bottom: 4px">
-    <p style="margin: 0; max-width: 320px; font-size: 16px; line-height: 1.6; color: #4A4A46">¿Todavía no sabés cuál es tu línea? El test de piel te la dice con tres preguntas.</p>
-    <a href="Test.dc.html" style="align-self: flex-start; margin-top: 16px; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Hacé el test de piel</a>
-  </div>
-
-  <div role="img" aria-label="Foto editorial: retrato de perfil con piel real y luz de ventana, una gota de la Centella Ampoule sobre el pómulo, rostro en el tercio derecho" style="grid-column: 6 / span 7; grid-row: 1; margin-right: -144px; height: 680px; background: #F2EDE4; padding: 24px 32px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 2px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
-    <p style="margin: 0; max-width: 340px; font-size: 13px; line-height: 1.5; color: #6B6B66">Foto editorial: la misma sesión del hero de celular en horizontal. Retrato de perfil, piel real sin maquillaje, luz de ventana lateral, una gota de la Centella Ampoule sobre el pómulo. Pared de cal color hueso. Rostro en el tercio derecho; el tercio inferior izquierdo queda tapado por el rótulo.</p>
-  </div>
-
-  <article aria-labelledby="hero-product" style="grid-column: 6 / span 5; grid-row: 2; margin-top: -96px; position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 32px 24px 28px; display: flex; flex-direction: column">
-    <span aria-hidden="true" style="position: absolute; top: -10px; left: {{heroTab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: #C9A24A; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
-    <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">Madagascar Centella</span>
-    <h2 id="hero-product" style="margin: 6px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em">Centella Ampoule</h2>
-    <span lang="ko" style="margin-top: 4px; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 13px; line-height: 1.5; color: #6B6B66">마다가스카르 센텔라 앰플</span>
-    <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">Ampolla liviana que calma la piel sensible o con rojeces.</p>
-    <dl style="margin: 24px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; border-top: 1px solid #E8E4DC">
-      <sc-for list="{{heroFields}}" as="f" hint-placeholder-count="4">
-        <div style="padding: 14px 0; border-bottom: 1px solid #E8E4DC; display: flex; flex-direction: column; gap: 2px">
-          <dt style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{f.k}}</dt>
-          <dd style="margin: 0; font-size: 15px; line-height: 1.45; color: #141414">{{f.v}}</dd>
+<section aria-labelledby="hero-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
+  <div style="grid-column: 1 / span 5; grid-row: 1; position: relative; z-index: 1; margin-right: -72px; padding: 36px 0 40px; display: flex; flex-direction: column">
+    <h1 id="hero-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.1; letter-spacing: -0.01em; white-space: nowrap">Calmá la piel sensible</h1>
+    <article aria-labelledby="hero-product" style="margin-top: 30px; position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 24px 24px 22px; display: flex; flex-direction: column">
+      <span aria-hidden="true" style="position: absolute; top: -10px; left: {{heroTab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: #C9A24A; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px">
+        <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">Madagascar Centella</span>
+        <span lang="ko" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 13px; line-height: 1.5; color: #6B6B66">마다가스카르 센텔라 앰플</span>
+      </div>
+      <div style="margin-top: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px">
+        <h2 id="hero-product" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em">Centella Ampoule</h2>
+        <a href="Ficha.dc.html" style="font-size: 13px; line-height: 1.5; color: #4A4A46; text-underline-offset: 3px; white-space: nowrap">[puntaje] de 5, [cantidad] reseñas</a>
+      </div>
+      <p style="margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">Ampolla liviana que ayuda a calmar rojeces y sensibilidad.</p>
+      <dl style="margin: 18px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{heroFields}}" as="f" hint-placeholder-count="4">
+          <div style="padding: 10px 0; border-bottom: 1px solid #E8E4DC; display: flex; flex-direction: column; gap: 1px">
+            <dt style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{f.k}}</dt>
+            <dd style="margin: 0; font-size: 15px; line-height: 1.45; color: #141414">{{f.v}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+      <div style="margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; align-items: start; font-variant-numeric: tabular-nums">
+        <div style="display: flex; flex-direction: column">
+          <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.1">{{hero.price}}</span>
+          <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{hero.net}}</span>
         </div>
-      </sc-for>
-    </dl>
-    <div style="margin-top: 24px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
-      <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 30px; line-height: 1.15">{{hero.price}}</span>
-      <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{hero.net}}</span>
-      <span style="margin-top: 8px; font-size: 15px; line-height: 1.5; font-weight: 500; color: #2F6B45">{{hero.transfer}} con transferencia</span>
-      <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">6 cuotas sin interés en compras desde $ 150.000</span>
-    </div>
-    <div style="margin-top: 24px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 8px">
-      <a href="Ficha.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; white-space: nowrap">Ver la Centella Ampoule</a>
-      <a href="Carrito.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 16px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; white-space: nowrap">Agregar al carrito</a>
-    </div>
-  </article>
+        <div style="display: flex; flex-direction: column">
+          <span style="font-size: 16px; line-height: 1.5; font-weight: 600; color: #2F6B45">{{hero.transfer}} con transferencia</span>
+          <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">6 cuotas sin interés en compras desde $&nbsp;150.000</span>
+        </div>
+      </div>
+      <div style="margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 8px">
+        <a href="Carrito.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Agregar al carrito</a>
+        <a href="Ficha.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Ver producto</a>
+      </div>
+      <p style="margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">Producto original importado por el representante oficial. Llega en [plazo] a CABA y GBA.</p>
+    </article>
+  </div>
+  <div role="img" aria-label="Foto editorial: retrato de perfil con piel real y luz de ventana, una gota de la Centella Ampoule sobre el pómulo, rostro en el tercio derecho" style="grid-column: 6 / span 7; grid-row: 1; margin-right: -144px; background: #F2EDE4; padding: 24px 32px 24px 96px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 2px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+    <p style="margin: 0; max-width: 360px; font-size: 13px; line-height: 1.5; color: #6B6B66">Foto editorial: la misma sesión del hero de celular, en horizontal. Retrato de perfil, piel real sin maquillaje, luz de ventana lateral, una gota de la Centella Ampoule sobre el pómulo. Rostro en el tercio derecho; el borde izquierdo queda tapado por el rótulo.</p>
+  </div>
 </section>
 
-<section aria-labelledby="lineas-t" style="flex-shrink: 0; background: #F7F4EE; padding: 112px 144px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start">
-  <div style="grid-column: 10 / span 3; grid-row: 1; display: flex; flex-direction: column">
-    <h2 id="lineas-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Buscá por el color del frasco</h2>
-    <p style="margin: 24px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">La pestaña tiene el color del frasco y ocupa siempre el mismo lugar. La vas a ver igual en cada producto de la tienda.</p>
-    <a href="Coleccion.dc.html" style="align-self: flex-start; margin-top: 16px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver todos los productos</a>
-  </div>
-  <ul aria-label="Líneas de SKIN1004" style="grid-column: 1 / span 8; grid-row: 1; list-style: none; margin: 10px 0 0; padding: 0; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px">
-    <sc-for list="{{lines}}" as="l" hint-placeholder-count="6">
-      <li style="position: relative; border-top: {{l.rule}}">
-        <span aria-hidden="true" style="position: absolute; top: -10px; left: {{l.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{l.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
-        <a href="Coleccion.dc.html" style="display: grid; grid-template-columns: 250px minmax(0, 1fr) 200px; align-items: center; column-gap: 24px; min-height: 80px; padding: 8px 24px 6px; box-sizing: border-box; text-decoration: none; color: #141414">
-          <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.3">{{l.name}}</span>
-          <span style="font-size: 16px; line-height: 1.5; color: #4A4A46">{{l.need}}</span>
-          <span style="font-size: 13px; line-height: 1.45; color: #6B6B66; text-align: right">{{l.ingr}}</span>
-        </a>
+<section aria-label="Condiciones de compra" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px">
+  <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #E8E4DC; border-bottom: 1px solid #E8E4DC">
+    <sc-for list="{{terms}}" as="t" hint-placeholder-count="4">
+      <li style="padding: 20px 24px 20px {{t.pl}}; border-left: {{t.rule}}; display: flex; flex-direction: column">
+        <span style="font-size: 15px; font-weight: 600; line-height: 1.45; color: #141414; font-variant-numeric: tabular-nums">{{t.title}}</span>
+        <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{t.note}}</span>
       </li>
     </sc-for>
   </ul>
 </section>
 
-<section aria-labelledby="best-t" style="flex-shrink: 0; background: #FFFFFF; padding: 112px 144px; display: flex; flex-direction: column">
+<section aria-labelledby="need-t" style="flex-shrink: 0; background: #FFFFFF; padding: 96px 144px 104px; display: flex; flex-direction: column">
   <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
-    <h2 id="best-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em">Más vendidos</h2>
-    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver todos</a>
+    <h2 id="need-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">¿Qué le pasa a tu piel?</h2>
+    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver todos los productos</a>
   </div>
-  <div style="margin-top: 58px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px">
-    <sc-for list="{{best}}" as="p" hint-placeholder-count="3">
-      <a href="Ficha.dc.html" style="position: relative; display: flex; flex-direction: column; padding: 16px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; text-decoration: none; color: #141414">
-        <span aria-hidden="true" style="position: absolute; top: -10px; left: {{p.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{p.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
-        <span style="height: 280px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center">
-          <sc-if value="{{p.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-          <sc-if value="{{p.isBottle}}" hint-placeholder-val="{{true}}"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-          <sc-if value="{{p.isTube}}" hint-placeholder-val="{{false}}"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-        </span>
-        <span style="display: flex; flex-direction: column; padding: 20px 8px 8px">
-          <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{p.line}}</span>
-          <span style="margin-top: 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3">{{p.name}}</span>
-          <span style="margin-top: 16px; display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 6px 12px; font-size: 13px; line-height: 1.45">
-            <span style="color: #6B6B66">Ingrediente</span><span style="color: #141414">{{p.ingr}}</span>
-            <span style="color: #6B6B66">Paso</span><span style="color: #141414">{{p.step}}</span>
-            <span style="color: #6B6B66">Contenido</span><span style="color: #141414">{{p.size}}</span>
-          </span>
-          <span style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E8E4DC; font-weight: 600; font-size: 18px; line-height: 1.4; font-variant-numeric: tabular-nums">{{p.price}}</span>
-          <span style="font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{p.net}}</span>
-        </span>
-      </a>
+  <div role="group" aria-label="Filtrar por necesidad" style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px">
+    <sc-for list="{{needChips}}" as="n" hint-placeholder-count="7">
+      <button type="button" aria-pressed="{{n.pressed}}" onClick="{{n.pick}}" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid {{n.ring}}; background: {{n.fill}}; color: {{n.ink}}; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">{{n.label}}</button>
     </sc-for>
+  </div>
+  <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">{{needNote}}</p>
+  <ul aria-label="{{needListLabel}}" style="list-style: none; margin: 42px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px">
+    <sc-for list="{{grid}}" as="p" hint-placeholder-count="4">
+      <li style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 16px; display: flex; flex-direction: column">
+        <span aria-hidden="true" style="position: absolute; top: -10px; left: {{p.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{p.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+        <a href="Ficha.dc.html" style="display: flex; flex-direction: column; text-decoration: none; color: #141414">
+          <span style="position: relative; height: 208px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center">
+            <sc-if value="{{p.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isBottle}}" hint-placeholder-val="{{true}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isJar}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isTube}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isStick}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            <sc-if value="{{p.hasTag}}" hint-placeholder-val="{{false}}"><span style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 500; line-height: 1.4; color: #141414">{{p.tag}}</span></sc-if>
+          </span>
+          <span style="margin-top: 16px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{p.line}}</span>
+          <span style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3">{{p.name}}</span>
+        </a>
+        <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">[puntaje] de 5, [cantidad] reseñas</span>
+        <span style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #4A4A46; min-height: 42px">{{p.need}}</span>
+        <span style="margin-top: 12px; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 8px; font-size: 13px; line-height: 1.45">
+          <span style="color: #6B6B66">Paso</span><span style="color: #141414">{{p.step}}</span>
+          <span style="color: #6B6B66">Contenido</span><span style="color: #141414">{{p.size}}</span>
+        </span>
+        <span style="margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+          <span style="padding-top: 14px; border-top: 1px solid #E8E4DC; font-weight: 600; font-size: 18px; line-height: 1.4">{{p.price}}</span>
+          <span style="font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{p.net}}</span>
+          <span style="margin-top: 4px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #2F6B45">{{p.transfer}} con transferencia</span>
+        </span>
+        <button type="button" onClick="{{p.add}}" aria-label="{{p.addAria}}" style="margin-top: 16px; width: 100%; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #141414; background: {{p.addFill}}; color: {{p.addInk}}; font: inherit; font-size: 15px; font-weight: 500; letter-spacing: 0.005em; cursor: pointer; white-space: nowrap">{{p.addLabel}}</button>
+      </li>
+    </sc-for>
+  </ul>
+</section>
+
+<section aria-labelledby="resenas-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 88px">
+  <div style="border-top: 1px solid #E8E4DC; padding-top: 80px; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px">
+      <h2 id="resenas-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em">Reseñas de quienes ya los compraron</h2>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4A46">[puntaje] de 5 en [cantidad] reseñas verificadas</span>
+    </div>
+    <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px">
+      <sc-for list="{{reviews}}" as="rv" hint-placeholder-count="3">
+        <figure style="margin: 0; border-top: 1px solid #141414; padding-top: 24px; display: flex; flex-direction: column">
+          <span style="font-size: 13px; line-height: 1.5; color: #6B6B66">Puntaje: [puntaje] de 5</span>
+          <blockquote style="margin: 10px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; color: #141414">[Texto de la reseña verificada]</blockquote>
+          <figcaption style="margin-top: 12px; font-size: 14px; line-height: 1.5; color: #4A4A46">[Nombre], {{rv.skin}}.</figcaption>
+          <div style="margin-top: 20px; padding: 16px 0 0; border-top: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; align-items: center">
+            <span style="display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+              <a href="Ficha.dc.html" style="font-size: 15px; font-weight: 600; line-height: 1.45; text-decoration: none">{{rv.p.name}}</a>
+              <span style="font-size: 14px; line-height: 1.5; color: #141414">{{rv.p.price}}</span>
+              <span style="font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{rv.p.net}}</span>
+            </span>
+            <button type="button" onClick="{{rv.p.add}}" aria-label="{{rv.p.addAria}}" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #141414; background: {{rv.p.addFill}}; color: {{rv.p.addInk}}; font: inherit; font-size: 15px; font-weight: 500; letter-spacing: 0.005em; cursor: pointer; white-space: nowrap">{{rv.p.addLabel}}</button>
+          </div>
+        </figure>
+      </sc-for>
+    </div>
   </div>
 </section>
 
 <section aria-labelledby="rutina-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px">
-  <div style="border-top: 1px solid #E8E4DC; padding-top: 112px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
-    <div style="grid-column: 1 / span 8; display: flex; flex-direction: column">
-      <h2 id="rutina-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Tu rutina, en el orden en que se aplica</h2>
-      <p style="margin: 16px 0 0; font-size: 18px; line-height: 1.65; color: #4A4A46">De la textura más liviana a la más densa. Elegí qué querés cuidar:</p>
-      <div role="group" aria-label="Elegí una rutina" style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px">
-        <sc-for list="{{routineTabs}}" as="t" hint-placeholder-count="4">
-          <button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid {{t.ring}}; background: {{t.fill}}; color: {{t.ink}}; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">{{t.label}}</button>
-        </sc-for>
-      </div>
-      <ol aria-label="{{routine.name}}, paso por paso" style="list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
-        <sc-for list="{{routine.steps}}" as="st" hint-placeholder-count="4">
-          <li style="display: flex; flex-direction: column">
-            <span style="height: 196px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
-              <sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="88" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-              <sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="58" height="148" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            </span>
-            <span style="margin-top: 16px; padding: 0 8px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 18px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
-            <span style="margin-top: 4px; padding: 0 8px; font-size: 16px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
-            <span style="margin-top: 4px; padding: 0 8px; font-size: 14px; line-height: 1.45; color: #6B6B66">{{st.when}}</span>
-          </li>
-        </sc-for>
-      </ol>
-      <div style="margin-top: 40px; display: flex; align-items: center; gap: 24px">
-        <a href="Carrito.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 28px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Agregar la rutina al carrito</a>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4A46">{{routine.name}}, {{routine.count}} productos: [precio del set]</p>
-      </div>
+  <div style="border-top: 1px solid #E8E4DC; padding-top: 88px; display: flex; flex-direction: column">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end">
+      <h2 id="rutina-t" style="grid-column: 1 / span 7; margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Armá tu rutina en 4 pasos</h2>
+      <p style="grid-column: 8 / span 5; margin: 0; font-size: 16px; line-height: 1.6; color: #4A4A46">Cada set trae los productos en el orden en que se aplican, de la textura más liviana a la más densa. Con precio de set: [ahorro del set] frente a comprarlos por separado.</p>
     </div>
-    <aside aria-labelledby="test-t" style="grid-column: 10 / span 3; border-left: 1px solid #E8E4DC; padding: 8px 0 0 24px; display: flex; flex-direction: column">
-      <h3 id="test-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.3; text-wrap: balance">¿No sabés cuál es la tuya?</h3>
-      <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">El test de piel te la arma con tres preguntas, en menos de un minuto.</p>
-      <a href="Test.dc.html" style="align-self: flex-start; margin-top: 24px; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Hacé el test de piel</a>
-    </aside>
-  </div>
-</section>
-
-<section aria-labelledby="marca-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
-  <div role="img" aria-label="Foto de origen: campo de centella asiática en Madagascar a ras del suelo, con la tierra roja visible y sin personas" style="grid-column: 1 / span 7; grid-row: 1; margin-left: -144px; height: 640px; background: #F2EDE4; padding: 24px 24px 24px 144px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 2px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
-    <p style="margin: 0; max-width: 340px; font-size: 13px; line-height: 1.5; color: #6B6B66">Foto de origen: plano general de un campo de centella asiática en Madagascar, tomado a ras del suelo. Tierra roja visible, sin personas, luz rasante de mañana.</p>
-  </div>
-  <article style="grid-column: 7 / span 6; grid-row: 1; align-self: center; position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 40px; display: flex; flex-direction: column">
-    <h2 id="marca-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em">Por qué se llama 1004</h2>
-    <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">En coreano, 1004 se lee cheon-sa, igual que <span lang="ko" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 500; color: #141414">천사</span>: ángel. La marca eligió el nombre para cuidar la piel como un ángel guardián.</p>
-    <dl style="margin: 24px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
-      <sc-for list="{{brandFields}}" as="bf" hint-placeholder-count="5">
-        <div style="display: grid; grid-template-columns: 128px minmax(0, 1fr); column-gap: 16px; padding: 14px 0; border-bottom: 1px solid #E8E4DC">
-          <dt style="font-size: 13px; font-weight: 500; line-height: 1.6; color: #6B6B66">{{bf.k}}</dt>
-          <dd style="margin: 0; font-size: 15px; line-height: 1.5; color: #141414">{{bf.v}}</dd>
-        </div>
+    <div style="margin-top: 58px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px">
+      <sc-for list="{{bundles}}" as="b" hint-placeholder-count="3">
+        <article aria-labelledby="{{b.id}}" style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 24px; display: flex; flex-direction: column">
+          <span aria-hidden="true" style="position: absolute; top: -10px; left: {{b.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{b.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+          <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{b.line}}</span>
+          <h3 id="{{b.id}}" style="margin: 4px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.25; letter-spacing: -0.005em">{{b.name}}</h3>
+          <span style="margin-top: 4px; font-size: 14px; line-height: 1.5; color: #4A4A46">{{b.for}}</span>
+          <ol aria-label="{{b.name}}, paso por paso" style="list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+            <sc-for list="{{b.steps}}" as="st" hint-placeholder-count="4">
+              <li style="display: flex; flex-direction: column">
+                <span style="height: 112px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0"><sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if></span>
+                <span style="margin-top: 10px; padding: 0 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.3; color: #8A6A24">{{st.n}}</span>
+                <span style="margin-top: 2px; padding: 0 2px; font-size: 13px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
+                <span style="margin-top: 2px; padding: 0 2px; font-size: 12px; line-height: 1.45; color: #6B6B66">{{st.when}}</span>
+              </li>
+            </sc-for>
+          </ol>
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+            <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.15">[precio del set]</span>
+            <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: [precio del set]</span>
+            <span style="margin-top: 6px; font-size: 14px; font-weight: 500; line-height: 1.5; color: #2F6B45">[precio del set] con transferencia</span>
+            <span style="margin-top: 2px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #141414">Ahorrás [ahorro del set] frente a comprarlos por separado</span>
+          </div>
+          <a href="Carrito.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Llevá la rutina</a>
+          <a href="Coleccion.dc.html" style="align-self: center; margin-top: 4px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; font-size: 14px">Ver los 4 productos</a>
+        </article>
       </sc-for>
-    </dl>
-    <a href="Main.dc.html" style="align-self: flex-start; margin-top: 16px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Conocé la historia</a>
-  </article>
+    </div>
+  </div>
 </section>
 
-<section aria-labelledby="resenas-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px; display: flex; flex-direction: column">
-  <div style="border-top: 1px solid #E8E4DC; padding-top: 112px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
-    <h2 id="resenas-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em">Reseñas</h2>
-    <span style="font-size: 14px; line-height: 1.5; color: #6B6B66">[puntaje] de 5, [cantidad] reseñas verificadas</span>
+<section aria-label="Ayuda para elegir" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px">
+  <div style="border-top: 1px solid #E8E4DC; border-bottom: 1px solid #E8E4DC; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
+    <div style="grid-column: 1 / span 6; padding: 40px 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; align-items: center">
+      <div style="display: flex; flex-direction: column">
+        <h2 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.25">¿No sabés por dónde empezar?</h2>
+        <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">Tres preguntas y te mostramos tu rutina, con el precio del set.</p>
+      </div>
+      <a href="Test.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Hacé el test de piel</a>
+    </div>
+    <div style="grid-column: 7 / span 6; margin-left: 12px; padding: 40px 0 40px 36px; border-left: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; align-items: center">
+      <div style="display: flex; flex-direction: column">
+        <h2 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.25">Consultanos antes de comprar</h2>
+        <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">Te ayudamos a elegir por WhatsApp, [horario de atención].</p>
+      </div>
+      <a href="Main.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Escribinos por WhatsApp</a>
+    </div>
   </div>
-  <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
-    <sc-for list="{{reviews}}" as="rv" hint-placeholder-count="2">
-      <figure style="grid-column: {{rv.col}}; margin: 0; padding: 32px 0; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
-        <span style="font-size: 13px; line-height: 1.5; color: #6B6B66">Puntaje: [puntaje] de 5</span>
-        <blockquote style="margin: 12px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: {{rv.size}}; line-height: 1.4; color: #141414">[Texto de la reseña verificada]</blockquote>
-        <figcaption style="margin-top: 16px; font-size: 14px; line-height: 1.5; color: #4A4A46">[Nombre], {{rv.skin}}. Compró {{rv.product}}.</figcaption>
-      </figure>
+</section>
+
+<section aria-labelledby="lineas-t" style="flex-shrink: 0; background: #F7F4EE; padding: 104px 144px 112px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start">
+  <div style="grid-column: 1 / span 12; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+    <h2 id="lineas-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Comprá por línea</h2>
+    <p style="margin: 0; max-width: 420px; font-size: 16px; line-height: 1.6; color: #4A4A46">La pestaña tiene el color del frasco. Elegí una línea y comprá sus productos sin salir de acá.</p>
+  </div>
+  <ul aria-label="Líneas de SKIN1004" style="grid-column: 1 / span 5; list-style: none; margin: 58px 0 0; padding: 0; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px">
+    <sc-for list="{{lines}}" as="l" hint-placeholder-count="6">
+      <li style="position: relative; border-top: {{l.rule}}">
+        <span aria-hidden="true" style="position: absolute; top: {{l.tabTop}}; left: {{l.tab}}; width: 48px; height: {{l.tabH}}; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{l.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+        <button type="button" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}" style="width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; min-height: 78px; padding: 10px 24px 14px; box-sizing: border-box; border: 0; background: transparent; font: inherit; color: #141414; text-align: left; cursor: pointer">
+          <span style="display: flex; flex-direction: column"><span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 21px; line-height: 1.3">{{l.name}}</span><span style="margin-top: 2px; font-size: 14px; line-height: 1.5; color: #4A4A46">{{l.need}}</span></span>
+          <span style="font-size: 13px; font-weight: {{l.countW}}; line-height: 1.45; color: {{l.countInk}}; text-align: right; white-space: nowrap">{{l.count}}</span>
+        </button>
+      </li>
     </sc-for>
-  </div>
-  <a href="Ficha.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver todas las reseñas</a>
-</section>
-
-<section aria-labelledby="guias-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px">
-  <div style="border-top: 1px solid #E8E4DC; padding-top: 112px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start">
-    <h2 id="guias-t" style="grid-column: 1 / span 4; margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Para leer antes de elegir</h2>
-    <ul style="grid-column: 5 / span 8; list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px">
-      <sc-for list="{{guides}}" as="g" hint-placeholder-count="3">
-        <li style="border-top: 1px solid #E8E4DC">
-          <a href="Main.dc.html" style="display: flex; flex-direction: column; padding: 20px 0; text-decoration: none; color: #141414">
-            <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.35; text-wrap: balance">{{g.title}}</span>
-            <span style="margin-top: 8px; font-size: 13px; line-height: 1.5; color: #6B6B66">{{g.time}} de lectura</span>
-          </a>
+  </ul>
+  <div aria-live="polite" style="grid-column: 6 / span 7; margin-top: 58px; position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 28px 28px 8px; display: flex; flex-direction: column">
+    <span aria-hidden="true" style="position: absolute; top: -10px; left: {{shelf.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{shelf.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding-bottom: 20px; border-bottom: 1px solid #E8E4DC">
+      <div style="display: flex; flex-direction: column">
+        <h3 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em">{{shelf.name}}</h3>
+        <span style="margin-top: 4px; font-size: 14px; line-height: 1.5; color: #4A4A46">{{shelf.need}}. Ingrediente: {{shelf.ingr}}.</span>
+      </div>
+      <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; font-size: 14px; white-space: nowrap">Ver la línea completa</a>
+    </div>
+    <ul style="list-style: none; margin: 0; padding: 0">
+      <sc-for list="{{shelf.items}}" as="q" hint-placeholder-count="3">
+        <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 196px; column-gap: 20px; align-items: center; padding: 20px 0; border-top: {{q.rule}}">
+          <a href="Ficha.dc.html" aria-label="Ver {{q.name}}" style="height: 120px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center"><sc-if value="{{q.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isBottle}}" hint-placeholder-val="{{true}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isJar}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isTube}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isStick}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if></a>
+          <div style="display: flex; flex-direction: column">
+            <a href="Ficha.dc.html" style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3; text-decoration: none">{{q.name}}</a>
+            <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">[puntaje] de 5, [cantidad] reseñas</span>
+            <span style="margin-top: 4px; font-size: 14px; line-height: 1.5; color: #4A4A46">{{q.need}}</span>
+            <span style="margin-top: 6px; font-size: 13px; line-height: 1.45; color: #6B6B66">Paso: <span style="color: #141414">{{q.step}}</span>. Contenido: <span style="color: #141414; white-space: nowrap">{{q.size}}</span></span>
+          </div>
+          <div style="display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+            <span style="font-weight: 600; font-size: 18px; line-height: 1.4">{{q.price}}</span>
+            <span style="font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{q.net}}</span>
+            <span style="margin-top: 2px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #2F6B45">{{q.transfer}} con transferencia</span>
+            <button type="button" onClick="{{q.add}}" aria-label="{{q.addAria}}" style="margin-top: 10px; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #141414; background: {{q.addFill}}; color: {{q.addInk}}; font: inherit; font-size: 15px; font-weight: 500; letter-spacing: 0.005em; cursor: pointer; white-space: nowrap">{{q.addLabel}}</button>
+          </div>
         </li>
       </sc-for>
     </ul>
   </div>
 </section>
 
-<section aria-labelledby="club-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 128px">
-  <div style="border-top: 1px solid #E8E4DC; padding-top: 112px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end">
-    <div style="grid-column: 1 / span 6; display: flex; flex-direction: column">
-      <h2 id="club-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Tu primera compra, con [beneficio de bienvenida]</h2>
-      <p style="margin: 16px 0 0; max-width: 500px; font-size: 18px; line-height: 1.65; color: #4A4A46">Dejanos tu mail: te avisamos de lanzamientos y sumás puntos con cada pedido y cada reseña.</p>
+<section aria-labelledby="marca-t" style="flex-shrink: 0; background: #FFFFFF; padding: 104px 144px 96px">
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start">
+    <div style="grid-column: 1 / span 5; display: flex; flex-direction: column">
+      <h2 id="marca-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em">Por qué se llama 1004</h2>
+      <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">En coreano, 1004 se lee cheon-sa, igual que <span lang="ko" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 500; color: #141414">천사</span>: ángel. SKIN1004 nace en Seúl con una idea: el ingrediente primero, empezando por la centella de Madagascar.</p>
+      <a href="Main.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Conocé la historia</a>
     </div>
-    <div style="grid-column: 8 / span 5; display: flex; flex-direction: column">
-      <form style="display: flex; flex-direction: column; margin: 0">
-        <label for="club-email-d" style="font-size: 14px; font-weight: 500; line-height: 1.5">Tu mail</label>
-        <div style="margin-top: 8px; display: flex; gap: 8px">
-          <input id="club-email-d" type="email" autocomplete="email" placeholder="nombre@correo.com" style="flex: 1 1 auto; min-width: 0; height: 48px; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF; box-sizing: border-box">
-          <button type="button" style="height: 48px; padding: 0 28px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer">Suscribirme</button>
+    <dl style="grid-column: 7 / span 6; margin: 4px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+      <sc-for list="{{brandFields}}" as="bf" hint-placeholder-count="3">
+        <div style="display: grid; grid-template-columns: 128px minmax(0, 1fr); column-gap: 16px; padding: 14px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 13px; font-weight: 500; line-height: 1.6; color: #6B6B66">{{bf.k}}</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5; color: #141414">{{bf.v}}</dd>
         </div>
-        <span style="margin-top: 10px; font-size: 13px; line-height: 1.5; color: #6B6B66">Podés darte de baja cuando quieras.</span>
-      </form>
-      <p style="margin: 16px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">¿Preferís WhatsApp? <a href="Main.dc.html" style="font-weight: 500; text-underline-offset: 3px">Sumate al canal</a> y recibí las novedades ahí.</p>
+      </sc-for>
+    </dl>
+  </div>
+</section>
+
+<section aria-labelledby="club-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px 112px">
+  <div style="border-top: 1px solid #E8E4DC; padding-top: 80px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end">
+    <div style="grid-column: 1 / span 6; display: flex; flex-direction: column">
+      <h2 id="club-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">Tu primera compra, con [beneficio de bienvenida]</h2>
+      <p style="margin: 12px 0 0; max-width: 500px; font-size: 16px; line-height: 1.6; color: #4A4A46">Dejanos tu mail y te lo mandamos. También te avisamos de lanzamientos.</p>
     </div>
+    <form style="grid-column: 7 / span 6; display: flex; flex-direction: column; margin: 0">
+      <label for="club-email-d" style="font-size: 14px; font-weight: 500; line-height: 1.5">Tu mail</label>
+      <div style="margin-top: 8px; display: flex; gap: 8px">
+        <input id="club-email-d" type="email" autocomplete="email" placeholder="nombre@correo.com" style="flex: 1 1 auto; min-width: 0; height: 48px; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF; box-sizing: border-box">
+        <button type="button" style="height: 48px; padding: 0 28px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer; white-space: nowrap">Quiero el beneficio</button>
+      </div>
+      <span style="margin-top: 10px; font-size: 13px; line-height: 1.5; color: #6B6B66">Podés darte de baja cuando quieras.</span>
+    </form>
   </div>
 </section>
 
@@ -253,8 +306,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
       <a href="HomeDesktop.dc.html" aria-label="SKIN1004, inicio" style="align-self: flex-start; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.34em; text-decoration: none; color: #141414; line-height: 1.4">SKIN1004</a>
       <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: #6B6B66">The Untouched Nature</p>
     </div>
-    <nav aria-label="Comprar" style="grid-column: 5 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Comprar</span><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Líneas</a><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Rutinas y kits</a><a href="Test.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Test de piel</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">La marca</a></nav>
-    <nav aria-label="Ayuda" style="grid-column: 7 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Ayuda</span><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Envíos y plazos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cuotas y pagos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Producto original</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cambios y devoluciones</a></nav>
+    <nav aria-label="Comprar" style="grid-column: 5 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Comprar</span><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Productos</a><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Rutinas y kits</a><a href="Test.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Test de piel</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">La marca</a></nav>
+    <nav aria-label="Ayuda" style="grid-column: 7 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Ayuda</span><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Envíos y plazos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Consultas por WhatsApp</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cuotas y pagos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Producto original</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cambios y devoluciones</a></nav>
     <div style="grid-column: 10 / span 3; display: flex; flex-direction: column">
       <nav aria-label="Legales" style="display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Legales</span><a href="Main.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Términos y condiciones</a><a href="Main.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Política de privacidad</a></nav>
       <a href="Main.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px">Botón de arrepentimiento</a>
@@ -265,7 +318,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
       <a href="Main.dc.html" aria-label="Data Fiscal, código QR" style="width: 72px; height: 72px; background: #FFFFFF; border: 1px solid #E0DBD1; box-sizing: border-box; color: #4A4A46; font-size: 12px; line-height: 1.3; display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border-radius: 4px">QR Data Fiscal</a>
       <a href="Main.dc.html" style="color: #141414; font-size: 15px; line-height: 1.6; text-underline-offset: 3px">Defensa de las y los consumidores. Para reclamos, ingresá acá.</a>
     </div>
-    <p style="grid-column: 7 / span 6; margin: 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Pagá con Mercado Pago, MODO, tarjetas o transferencia. 10% off con transferencia y 6 cuotas sin interés desde $ 150.000.</p>
+    <p style="grid-column: 7 / span 6; margin: 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Pagá con Mercado Pago, MODO, tarjetas o transferencia. Envío gratis desde $&nbsp;119.999, 10% off con transferencia, 6 cuotas sin interés desde $&nbsp;150.000 y 2 muestras de regalo en cada pedido.</p>
     <div style="grid-column: 1 / span 8; display: flex; flex-direction: column">
       <p style="margin: 0; font-size: 13px; line-height: 1.65; color: #6B6B66">Grupo Skinfree, representante oficial de SKIN1004 en Argentina. Gurruchaga 592, CABA. Importa Laboratorio BEK SRL, legajo ANMAT [número]. Los precios incluyen IVA; junto a cada precio se informa el precio sin impuestos nacionales.</p>
       <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B6B66">SKIN1004 es una marca de Craver Corporation, Seúl.</p>
@@ -275,116 +328,191 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6040}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { routine: 'calmante' };
+    // need: filtro de "¿Qué le pasa a tu piel?"; line: línea elegida en el índice; added: productos agregados desde esta pantalla.
+    this.state = { need: 'best', line: 'centella', added: {} };
   }
   renderVals() {
     const s = this.state;
+    const added = s.added || {};
     // Pestaña de línea: cada línea ocupa siempre la misma posición (slot 0 a 5).
     // left = 20 + slot * (W - 88) / 5, con W = ancho interior del contenedor (ver DESIGN_SYSTEM.md, 4.4).
     const tabs = (w) => [0, 1, 2, 3, 4, 5].map((i) => Math.round(20 + i * (w - 88) / 5) + 'px');
-    const TAB_INDEX = tabs(758); // cajón del índice, columnas 1 a 8 (760 px con borde): 20, 154, 288, 422, 556, 690
-    const TAB_CARD = tabs(366);  // rótulo compacto vertical, 4 columnas (368 px con borde): 20, 76, 131, 187, 242, 298
+    const TAB_GRID = tabs(268);   // rótulo comprable de 3 columnas (270 px con borde): 20, 56, 92, 128, 164, 200
+    const TAB_BUNDLE = tabs(366); // rótulo de rutina de 4 columnas (368 px con borde): 20, 76, 131, 187, 242, 298
+    const TAB_INDEX = tabs(464);  // cajón del índice, columnas 1 a 5 (466 px con borde): 20, 95, 170, 246, 321, 396
+    const TAB_SHELF = tabs(660);  // panel de productos de la línea, columnas 6 a 12 (662 px con borde)
     const LINE = {
-      centella: { name: 'Madagascar Centella', c: '#C9A24A', slot: 0 },
-      hyalu: { name: 'Hyalu-Cica', c: '#4A7FB5', slot: 1 },
-      tone: { name: 'Tone Brightening', c: '#EFEDE6', slot: 2 },
-      pore: { name: 'Poremizing', c: '#D98E93', slot: 3 },
-      tea: { name: 'Tea-Trica', c: '#4F8A5E', slot: 4 },
-      probio: { name: 'Probio-Cica', c: '#6B4A36', slot: 5 }
+      centella: { name: 'Madagascar Centella', c: '#C9A24A', slot: 0, need: 'Piel sensible y rojeces', ingr: 'centella asiática' },
+      hyalu: { name: 'Hyalu-Cica', c: '#4A7FB5', slot: 1, need: 'Hidratación', ingr: 'ácido hialurónico y centella' },
+      tone: { name: 'Tone Brightening', c: '#EFEDE6', slot: 2, need: 'Manchas y tono apagado', ingr: '[ingrediente clave]' },
+      pore: { name: 'Poremizing', c: '#D98E93', slot: 3, need: 'Poros y brillo', ingr: 'sal rosa del Himalaya' },
+      tea: { name: 'Tea-Trica', c: '#4F8A5E', slot: 4, need: 'Granitos', ingr: 'árbol de té y centella' },
+      probio: { name: 'Probio-Cica', c: '#6B4A36', slot: 5, need: 'Barrera de la piel', ingr: 'cica fermentada' }
     };
-    const needs = {
-      centella: { need: 'Piel sensible y rojeces', ingr: 'Centella asiática' },
-      hyalu: { need: 'Hidratación', ingr: 'Ácido hialurónico y centella' },
-      tone: { need: 'Manchas y tono apagado', ingr: '[ingrediente clave]' },
-      pore: { need: 'Poros y brillo', ingr: 'Sal rosa del Himalaya' },
-      tea: { need: 'Granitos', ingr: 'Árbol de té y centella' },
-      probio: { need: 'Barrera de la piel', ingr: 'Cica fermentada' }
-    };
-    const lines = Object.keys(LINE).map((k, i) => Object.assign({}, LINE[k], needs[k], {
-      tab: TAB_INDEX[LINE[k].slot],
-      rule: i === 0 ? '0' : '1px solid #E0DBD1'
-    }));
 
+    // Catálogo: solo productos reales. El único precio real es el de la Centella Ampoule de 55 ml.
+    const PH = { price: '[precio]', net: '[precio]', transfer: '[precio]' };
+    const CAT = {
+      ampoule: { l: 'centella', name: 'Centella Ampoule', k: 'ampoule', need: 'Ayuda a calmar rojeces y sensibilidad', step: 'Después del tónico', size: '55 ml', price: '$\u00a042.999', net: '$\u00a035.536', transfer: '$\u00a038.699' },
+      toner: { l: 'centella', name: 'Centella Toning Toner', k: 'bottle', need: 'Prepara y calma la piel sensible', step: 'Después de limpiar', size: '[ml]' },
+      cream: { l: 'centella', name: 'Centella Soothing Cream', k: 'jar', need: 'Calma e hidrata la piel sensible', step: 'Después de la ampolla', size: '[ml]' },
+      oil: { l: 'centella', name: 'Centella Light Cleansing Oil', k: 'bottle', need: 'Saca maquillaje y protector sin tirantez', step: 'Primera limpieza, de noche', size: '[ml]' },
+      foam: { l: 'centella', name: 'Centella Ampoule Foam', k: 'tube', need: 'Limpia suave, sin resecar', step: 'Limpieza', size: '[ml]' },
+      sun: { l: 'hyalu', name: 'Water-Fit Sun Serum', k: 'tube', need: 'Protector FPS 50+ liviano que ayuda a hidratar', step: 'Último, solo de día', size: '50 ml' },
+      first: { l: 'hyalu', name: 'Hyalu-Cica First Ampoule', k: 'ampoule', need: 'Ayuda a sumar hidratación', step: 'Después del tónico', size: '[ml]' },
+      moist: { l: 'hyalu', name: 'Hyalu-Cica Moisture Cream', k: 'jar', need: 'Hidrata y ayuda a cuidar la barrera', step: 'Después de la ampolla', size: '75 ml' },
+      capsule: { l: 'tone', name: 'Tone Brightening Capsule Ampoule', k: 'ampoule', need: 'Ayuda a emparejar el tono', step: 'Después del tónico', size: '[ml]' },
+      fresh: { l: 'pore', name: 'Poremizing Fresh Ampoule', k: 'ampoule', need: 'Ayuda a disimular poros y brillo', step: 'Después del tónico', size: '100 ml' },
+      stick: { l: 'pore', name: 'Poremizing Clay Stick Mask', k: 'stick', need: 'Máscara en barra para poros y brillo', step: '1 o 2 veces por semana, después de limpiar', size: '[g]' },
+      purif: { l: 'tea', name: 'Tea-Trica Purifying Toner', k: 'bottle', need: 'Ayuda a calmar la piel con granitos', step: 'Después de limpiar', size: '[ml]' },
+      relief: { l: 'tea', name: 'Tea-Trica Relief Ampoule', k: 'ampoule', need: 'Calma la piel con granitos', step: 'Después del tónico', size: '100 ml' },
+      essence: { l: 'probio', name: 'Probio-Cica Essence Toner', k: 'bottle', need: 'Ayuda a cuidar la barrera de la piel', step: 'Después de limpiar', size: '[ml]' }
+    };
     const shape = (x) => ({
       isAmpoule: x === 'ampoule', isBottle: x === 'bottle', isTube: x === 'tube',
       isJar: x === 'jar', isStick: x === 'stick'
     });
-    const best = [
-      { l: 'centella', name: 'Centella Toning Toner', shape: 'bottle', ingr: 'Centella asiática', step: 'Primero, después de limpiar', size: '[ml]' },
-      { l: 'hyalu', name: 'Water-Fit Sun Serum FPS 50+', shape: 'tube', ingr: 'Ácido hialurónico y centella', step: 'Último, solo de día', size: '50 ml' },
-      { l: 'pore', name: 'Poremizing Fresh Ampoule', shape: 'ampoule', ingr: 'Sal rosa del Himalaya', step: 'Después del tónico', size: '100 ml' }
-    ].map((p) => Object.assign({}, p, shape(p.shape), {
-      line: LINE[p.l].name, c: LINE[p.l].c, tab: TAB_CARD[LINE[p.l].slot],
-      price: '[precio]', net: '[precio]'
-    }));
-
-    const C = LINE.centella.c, H = LINE.hyalu.c, P = LINE.pore.c, T = LINE.tea.c, B = LINE.probio.c;
-    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', c: H, k: 'tube' };
-    const ROUTINES = [
-      { id: 'calmante', label: 'Calmar rojeces', name: 'Rutina calmante', steps: [
-        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
-        { name: 'Centella Ampoule', when: 'Mañana y noche', c: C, k: 'ampoule' },
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
-      { id: 'poros', label: 'Poros y brillo', name: 'Rutina poros y brillo', steps: [
-        { name: 'Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
-        { name: 'Clay Stick Mask', when: '1 o 2 veces por semana', c: P, k: 'stick' },
-        { name: 'Fresh Ampoule', when: 'Mañana y noche', c: P, k: 'ampoule' }, SUN] },
-      { id: 'granitos', label: 'Granitos', name: 'Rutina granitos', steps: [
-        { name: 'Purifying Toner', when: 'Mañana y noche', c: T, k: 'bottle' },
-        { name: 'Relief Ampoule', when: 'Mañana y noche', c: T, k: 'ampoule' },
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
-      { id: 'hidratacion', label: 'Hidratación', name: 'Rutina hidratación', steps: [
-        { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
-        { name: 'First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN] }
-    ];
-    const cur = ROUTINES.find((r) => r.id === s.routine) || ROUTINES[0];
-    const routine = {
-      name: cur.name,
-      count: cur.steps.length,
-      steps: cur.steps.map((x, i) => Object.assign({}, x, shape(x.k), { n: String(i + 1) }))
+    const addedCount = Object.keys(added).length;
+    // Un producto listo para comprar: datos + botón "Agregar" con estado.
+    const buy = (id, extra) => {
+      const p = CAT[id];
+      const ln = LINE[p.l];
+      const on = !!added[id];
+      return Object.assign({ id }, PH, p, shape(p.k), {
+        line: ln.name, c: ln.c,
+        addLabel: on ? 'Agregado' : 'Agregar',
+        addAria: on ? p.name + ', agregado al carrito' : 'Agregar ' + p.name + ' al carrito',
+        addFill: on ? '#FFFFFF' : '#141414',
+        addInk: on ? '#141414' : '#FFFFFF',
+        add: () => {
+          if (added[id]) return;
+          const next = Object.assign({}, added);
+          next[id] = true;
+          this.setState({ added: next, lastAdded: p.name });
+        }
+      }, extra || {});
     };
-    const routineTabs = ROUTINES.map((r) => {
-      const on = r.id === cur.id;
+
+    const NEEDS = [
+      { id: 'best', label: 'Lo más elegido', items: ['toner', 'sun', 'fresh', 'cream'], note: '[Los más vendidos según las ventas de la tienda].' },
+      { id: 'rojeces', label: 'Rojeces', items: ['ampoule', 'toner', 'cream', 'oil'], note: 'Para piel sensible o con rojeces: la línea Madagascar Centella.' },
+      { id: 'poros', label: 'Poros y brillo', items: ['fresh', 'stick', 'foam', 'oil'], note: 'Para poros y brillo: Poremizing y una limpieza suave.' },
+      { id: 'granitos', label: 'Granitos', items: ['purif', 'relief', 'foam', 'cream'], note: 'Para granitos: Tea-Trica, con una crema que calma.' },
+      { id: 'manchas', label: 'Manchas', items: ['capsule', 'sun', 'toner', 'foam'], note: 'Para manchas y tono apagado: Tone Brightening y protector todos los días.' },
+      { id: 'hidratacion', label: 'Hidratación', items: ['first', 'moist', 'essence', 'sun'], note: 'Para piel deshidratada: Hyalu-Cica y Probio-Cica.' },
+      { id: 'protector', label: 'Protector solar', items: ['sun', 'first', 'moist', 'cream'], note: 'El protector va último y solo de día. Estos suelen ir antes.' }
+    ];
+    const curNeed = NEEDS.find((n) => n.id === s.need) || NEEDS[0];
+    const needChips = NEEDS.map((n) => {
+      const on = n.id === curNeed.id;
       return {
-        label: r.label,
+        label: n.label,
         pressed: on ? 'true' : 'false',
         fill: on ? '#141414' : '#FFFFFF',
         ink: on ? '#FFFFFF' : '#141414',
         ring: on ? '#141414' : '#CFCAC0',
-        pick: () => this.setState({ routine: r.id })
+        pick: () => this.setState({ need: n.id })
       };
     });
+    const grid = curNeed.items.map((id, i) => buy(id, {
+      tab: TAB_GRID[LINE[CAT[id].l].slot],
+      hasTag: curNeed.id === 'best' && i === 0,
+      tag: '[etiqueta]'
+    }));
 
+    // Índice de líneas: cada fila elige la línea y el panel de al lado muestra sus productos comprables.
+    const SHELF = {
+      centella: ['ampoule', 'toner', 'cream'],
+      hyalu: ['sun', 'first', 'moist'],
+      tone: ['capsule'],
+      pore: ['fresh', 'stick'],
+      tea: ['purif', 'relief'],
+      probio: ['essence']
+    };
+    const curLine = LINE[s.line] ? s.line : 'centella';
+    const lines = Object.keys(LINE).map((k, i) => {
+      const on = k === curLine;
+      const n = SHELF[k].length;
+      return Object.assign({}, LINE[k], {
+        tab: TAB_INDEX[LINE[k].slot],
+        tabH: on ? '20px' : '10px',
+        tabTop: on ? '-20px' : '-10px',
+        rule: i === 0 ? '0' : '1px solid #E0DBD1',
+        pressed: on ? 'true' : 'false',
+        count: on ? 'Viendo ' + n + (n === 1 ? ' producto' : ' productos') : n + (n === 1 ? ' producto' : ' productos'),
+        countInk: on ? '#141414' : '#6B6B66',
+        countW: on ? '600' : '400',
+        pick: () => this.setState({ line: k })
+      });
+    });
+    const shelf = {
+      name: LINE[curLine].name,
+      need: LINE[curLine].need,
+      ingr: LINE[curLine].ingr,
+      c: LINE[curLine].c,
+      tab: TAB_SHELF[LINE[curLine].slot],
+      items: SHELF[curLine].map((id, i) => buy(id, { rule: i === 0 ? '0' : '1px solid #E8E4DC' }))
+    };
+
+    // Rutinas como bundle, en el orden real de aplicación.
+    const C = LINE.centella.c, H = LINE.hyalu.c, P = LINE.pore.c, B = LINE.probio.c;
+    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', c: H, k: 'tube' };
+    const bundles = [
+      { id: 'b-calma', l: 'centella', name: 'Rutina calmante', for: 'Para piel sensible y con rojeces', steps: [
+        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
+        { name: 'Centella Ampoule', when: 'Mañana y noche', c: C, k: 'ampoule' },
+        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
+      { id: 'b-poros', l: 'pore', name: 'Rutina poros y brillo', for: 'Para piel mixta o grasa', steps: [
+        { name: 'Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
+        { name: 'Clay Stick Mask', when: '1 o 2 por semana', c: P, k: 'stick' },
+        { name: 'Fresh Ampoule', when: 'Mañana y noche', c: P, k: 'ampoule' }, SUN] },
+      { id: 'b-hidra', l: 'hyalu', name: 'Rutina hidratación', for: 'Para piel deshidratada o tirante', steps: [
+        { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
+        { name: 'First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
+        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN] }
+    ].map((b) => Object.assign({}, b, {
+      line: LINE[b.l].name, c: LINE[b.l].c, tab: TAB_BUNDLE[LINE[b.l].slot],
+      steps: b.steps.map((x, i) => Object.assign({}, x, shape(x.k), { n: String(i + 1) }))
+    }));
+
+    const cartCount = 1 + addedCount;
     return {
-      heroTab: tabs(464)[LINE.centella.slot], // rótulo principal, 5 columnas (466 px con borde), slot 0
-      hero: { price: '$ 42.999', net: '$ 35.536', transfer: '$ 38.699' },
+      cartCount: String(cartCount),
+      cartLabel: 'Carrito, ' + cartCount + (cartCount === 1 ? ' producto' : ' productos'),
+      cartStatus: s.lastAdded ? s.lastAdded + ' agregado al carrito' : '',
+      heroTab: tabs(536)[LINE.centella.slot], // rótulo del hero, columnas 1 a 5 más 72 px sobre la foto (538 px con borde), slot 0
+      hero: { price: '$\u00a042.999', net: '$\u00a035.536', transfer: '$\u00a038.699' },
       heroFields: [
         { k: 'Ingrediente', v: 'Centella asiática de Madagascar' },
         { k: 'Paso', v: 'Después del tónico' },
         { k: 'Piel', v: 'Sensible o con rojeces' },
-        { k: 'Contenido', v: '55 ml y 100 ml' }
+        { k: 'Contenido', v: '55 ml' }
       ],
-      lines, best, routine, routineTabs,
+      terms: [
+        { title: 'Envío gratis desde $\u00a0119.999', note: 'Llega en [plazo] a CABA y GBA' },
+        { title: '10% off con transferencia', note: 'La Centella Ampoule queda en $\u00a038.699' },
+        { title: '6 cuotas sin interés', note: 'En compras desde $\u00a0150.000, con tarjeta o Mercado Pago' },
+        { title: '2 muestras de regalo', note: 'En cada pedido. Las elegís en el carrito' }
+      ].map((t, i) => Object.assign(t, { pl: i === 0 ? '0' : '24px', rule: i === 0 ? '0' : '1px solid #E8E4DC' })),
+      needChips,
+      needNote: curNeed.note,
+      needListLabel: curNeed.label + ', ' + grid.length + ' productos',
+      grid,
+      reviews: [
+        { skin: 'piel sensible', p: buy('ampoule') },
+        { skin: 'piel mixta', p: buy('sun') },
+        { skin: 'piel grasa', p: buy('fresh') }
+      ],
+      bundles,
+      lines, shelf,
       brandFields: [
-        { k: 'Lema', v: 'The Untouched Nature' },
         { k: 'Origen', v: 'Seúl, Corea del Sur. Craver Corporation.' },
-        { k: 'Ingrediente', v: 'Centella asiática de Madagascar, de una región poco poblada y lejos de la contaminación.' },
         { k: 'Sellos', v: 'Vegana, certificada por PETA. Hipoalergénica.' },
         { k: 'En Argentina', v: 'Grupo Skinfree, representante oficial. Importa Laboratorio BEK SRL, legajo ANMAT [número].' }
-      ],
-      reviews: [
-        { skin: 'piel sensible', product: 'Centella Ampoule', size: '26px', col: '1 / span 6' },
-        { skin: 'piel mixta', product: 'Water-Fit Sun Serum', size: '20px', col: '8 / span 5' }
-      ],
-      guides: [
-        { title: 'Cómo sumar la ampolla a tu rutina', time: '4 min' },
-        { title: 'Protector solar todos los días, también en invierno', time: '5 min' },
-        { title: 'Piel sensible: qué mirar en la etiqueta', time: '6 min' }
       ]
     };
   }

@@ -3,7 +3,7 @@
   "attachments": {},
   "boards": {
     "Carrito.dc.html": {
-      "h": 2760,
+      "h": 3480,
       "is_interactive": true,
       "title": "Carrito",
       "w": 390,
@@ -11,7 +11,7 @@
       "y": 0
     },
     "Coleccion.dc.html": {
-      "h": 4680,
+      "h": 4180,
       "is_interactive": true,
       "title": "Colección por línea",
       "w": 390,
@@ -19,7 +19,7 @@
       "y": 0
     },
     "Ficha.dc.html": {
-      "h": 5760,
+      "h": 6280,
       "is_interactive": true,
       "title": "Ficha: Centella Ampoule",
       "w": 390,
@@ -27,7 +27,7 @@
       "y": 0
     },
     "HomeDesktop.dc.html": {
-      "h": 6600,
+      "h": 6040,
       "is_interactive": true,
       "title": "Home (escritorio)",
       "w": 1440,
@@ -35,7 +35,7 @@
       "y": 8400
     },
     "Main.dc.html": {
-      "h": 7960,
+      "h": 7900,
       "is_interactive": true,
       "title": "Home (celular)",
       "w": 390,
@@ -43,7 +43,7 @@
       "y": 0
     },
     "Test.dc.html": {
-      "h": 1840,
+      "h": 2460,
       "is_interactive": true,
       "title": "Test de piel",
       "w": 390,

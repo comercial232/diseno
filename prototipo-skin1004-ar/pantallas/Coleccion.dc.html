@@ -19,9 +19,9 @@ a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 390px; height: 4680px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+<div style="width: 390px; height: 4180px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
 
-<p style="margin: 0; background: #141414; color: #F7F4EE; font-size: 12px; font-weight: 500; letter-spacing: 0.01em; padding: 10px 24px; text-align: center; line-height: 1.4">Envío gratis desde $ 119.999</p>
+<p style="margin: 0; background: #141414; color: #F7F4EE; font-size: 12px; font-weight: 500; letter-spacing: 0.01em; padding: 10px 24px; text-align: center; line-height: 1.4">Envío gratis desde $ 119.999 y 10% off con transferencia</p>
 
 <header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
   <div style="display: flex">
@@ -31,87 +31,110 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="justify-self: center; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
   <div style="display: flex; justify-content: flex-end">
     <a href="Main.dc.html" aria-label="Mi cuenta" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4"></path></svg></a>
-    <a href="Carrito.dc.html" aria-label="Carrito, 1 producto" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span></a>
+    <a href="Carrito.dc.html" aria-label="{{cart.label}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums">{{cart.count}}</span></a>
   </div>
 </header>
+<p aria-live="polite" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{cart.announce}}</p>
 
-<section aria-labelledby="linea-t" style="background: #FFFFFF; padding: 12px 24px 40px; display: flex; flex-direction: column">
-  <nav aria-label="Ruta de navegación" style="display: flex; align-items: center; flex-wrap: wrap; column-gap: 6px; font-size: 13px; line-height: 1.5; color: #6B6B66">
-    <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; color: #6B6B66; text-underline-offset: 3px">Inicio</a>
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5"></path></svg>
-    <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; color: #6B6B66; text-underline-offset: 3px">Líneas</a>
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5"></path></svg>
-    <span aria-current="page" style="color: #4A4A46">{{line.name}}</span>
-  </nav>
-  <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">La pestaña tiene el color del frasco. Tocá otra para cambiar de línea.</p>
-
-  <div style="position: relative; margin-top: 16px; padding-top: 44px">
+<section aria-labelledby="linea-t" style="background: #FFFFFF; padding: 8px 24px 0; display: flex; flex-direction: column">
+  <div style="position: relative; padding-top: 44px">
     <span aria-hidden="true" style="position: absolute; top: 10px; left: {{line.labelLeft}}; right: {{line.labelRight}}; text-align: {{line.labelAlign}}; font-size: 12px; font-weight: 500; line-height: 16px; color: #141414; white-space: nowrap">{{line.name}}</span>
-    <div role="group" aria-label="Líneas de SKIN1004" style="position: absolute; top: 0; left: 1px; right: 1px; height: 45px; z-index: 1">
+    <div role="group" aria-label="Elegí la línea" style="position: absolute; top: 0; left: 1px; right: 1px; height: 45px; z-index: 1">
       <sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
         <button type="button" aria-pressed="{{t.pressed}}" aria-label="{{t.label}}" onClick="{{t.pick}}" style="position: absolute; bottom: 0; left: {{t.left}}; width: 48px; height: 45px; padding: 0; border: 0; background: transparent; display: flex; align-items: flex-end; cursor: pointer">
           <span style="display: block; width: 48px; height: {{t.h}}; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{t.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
         </button>
       </sc-for>
     </div>
-    <article style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 24px 20px 12px; display: flex; flex-direction: column">
-      <h1 id="linea-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">{{line.name}}</h1>
-      <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">{{line.desc}}</p>
-      <dl style="margin: 20px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
-        <sc-for list="{{lineFields}}" as="lf" hint-placeholder-count="4">
-          <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: {{lf.rule}}">
-            <dt style="font-size: 12px; font-weight: 500; line-height: 1.6; color: #6B6B66">{{lf.k}}</dt>
-            <dd style="margin: 0; font-size: 14px; line-height: 1.5; color: #141414">{{lf.v}}</dd>
-          </div>
-        </sc-for>
-      </dl>
-    </article>
+    <div style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 16px 20px 14px; display: flex; flex-direction: column">
+      <h1 id="linea-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 24px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">{{line.title}}</h1>
+      <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">{{line.sub}}</p>
+    </div>
   </div>
 </section>
 
-<div role="img" aria-label="{{line.photoAlt}}" style="width: 390px; height: 280px; background: #F2EDE4; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 1px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
-  <p style="margin: 0; max-width: 262px; font-size: 12px; line-height: 1.5; color: #6B6B66">{{line.photo}}</p>
-</div>
-
-<section aria-labelledby="prod-t" style="background: #FFFFFF; padding: 48px 24px 64px; display: flex; flex-direction: column">
-  <h2 id="prod-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">Elegí por paso de la rutina</h2>
-  <div role="group" aria-label="Filtrar por tipo de producto" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px">
+<section aria-labelledby="prod-t" style="background: #FFFFFF; padding: 16px 24px 56px; display: flex; flex-direction: column">
+  <h2 id="prod-t" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Productos de {{line.name}}</h2>
+  <div role="group" aria-label="Filtrar por paso de la rutina" style="margin: 0 -24px; padding: 0 24px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none">
     <sc-for list="{{cats}}" as="k" hint-placeholder-count="8">
-      <button type="button" aria-pressed="{{k.pressed}}" onClick="{{k.pick}}" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{k.ring}}; background: {{k.fill}}; color: {{k.ink}}; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">{{k.label}}</button>
+      <button type="button" aria-pressed="{{k.pressed}}" onClick="{{k.pick}}" style="flex: 0 0 auto; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{k.ring}}; background: {{k.fill}}; color: {{k.ink}}; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap">{{k.label}}</button>
     </sc-for>
   </div>
-  <p aria-live="polite" style="margin: 20px 0 0; padding-top: 16px; border-top: 1px solid #E8E4DC; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{countLabel}}</p>
+
+  <div style="position: relative; margin-top: 8px; display: flex; align-items: center; justify-content: space-between; column-gap: 12px; border-bottom: 1px solid #E8E4DC">
+    <p aria-live="polite" style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{countLabel}}</p>
+    <button type="button" aria-expanded="{{sortOpenAttr}}" aria-controls="orden" onClick="{{toggleSort}}" style="min-height: 44px; padding: 0 0 0 12px; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; white-space: nowrap"><span style="color: #4A4A46; font-weight: 400">Ordenar:</span>{{sortLabel}}<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate({{sortRot}})"><path d="M2.5 4.5L6 8l3.5-3.5"></path></svg></button>
+    <sc-if value="{{sortOpen}}" hint-placeholder-val="{{false}}">
+      <div id="orden" role="group" aria-label="Ordenar productos" style="position: absolute; top: 45px; right: 0; z-index: 3; width: 232px; background: #FFFFFF; border: 1px solid #CFCAC0; border-radius: 12px; padding: 6px 0; display: flex; flex-direction: column">
+        <sc-for list="{{sorts}}" as="o" hint-placeholder-count="3">
+          <button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-height: 44px; padding: 0 16px; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: {{o.weight}}; color: #141414; text-align: left; display: flex; align-items: center; justify-content: space-between; cursor: pointer">{{o.label}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="{{o.check}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></button>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
 
   <sc-if value="{{hasItems}}" hint-placeholder-val="{{true}}">
-    <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px">
-      <sc-for list="{{shown}}" as="p" hint-placeholder-count="6">
-        <a href="Ficha.dc.html" style="display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 16px; padding: 12px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; text-decoration: none; color: #141414">
-          <span style="background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center; min-height: 148px">
-            <sc-if value="{{p.isAmpoule}}" hint-placeholder-val="{{true}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            <sc-if value="{{p.isBottle}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            <sc-if value="{{p.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true"><path d="M8 4H52L46 118H14Z" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            <sc-if value="{{p.isJar}}" hint-placeholder-val="{{false}}"><svg width="52" height="100" viewBox="0 30 60 120" aria-hidden="true"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            <sc-if value="{{p.isStick}}" hint-placeholder-val="{{false}}"><svg width="36" height="92" viewBox="0 0 60 150" aria-hidden="true"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-            <sc-if value="{{p.isKit}}" hint-placeholder-val="{{false}}"><svg width="80" height="73" viewBox="0 0 110 100" aria-hidden="true"><rect x="4" y="40" width="22" height="56" rx="5" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="9" y="28" width="12" height="14" rx="2" fill="#141414"></rect><rect x="32" y="22" width="20" height="74" rx="5" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="36" y="8" width="12" height="16" rx="5" fill="#141414"></rect><rect x="58" y="50" width="22" height="46" rx="5" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="62" y="40" width="14" height="12" rx="2" fill="#141414"></rect><rect x="86" y="62" width="22" height="34" rx="5" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="86" y="54" width="22" height="10" rx="2" fill="#141414"></rect></svg></sc-if>
-          </span>
-          <span style="display: flex; flex-direction: column; padding: 4px 0">
-            <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{p.type}}</span>
-            <span style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.3">{{p.name}}</span>
-            <span style="margin-top: 10px; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 4px 8px; font-size: 12px; line-height: 1.45">
-              <span style="color: #6B6B66">Ingrediente</span><span style="color: #141414">{{p.ingr}}</span>
-              <span style="color: #6B6B66">Paso</span><span style="color: #141414">{{p.step}}</span>
-              <span style="color: #6B6B66">Contenido</span><span style="color: #141414">{{p.size}}</span>
-              <sc-if value="{{p.hasNote}}" hint-placeholder-val="{{false}}"><span style="color: #6B6B66">Destacado</span><span style="color: #141414">{{p.note}}</span></sc-if>
-            </span>
-            <span style="margin-top: 12px; font-weight: 600; font-size: 16px; line-height: 1.4; font-variant-numeric: tabular-nums">{{p.price}}</span>
-            <span style="font-size: 12px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">Precio sin impuestos nacionales: <span style="white-space: nowrap">{{p.net}}</span></span>
-            <sc-if value="{{p.hasTransfer}}" hint-placeholder-val="{{false}}">
-              <span style="margin-top: 6px; font-size: 13px; line-height: 1.5; font-weight: 500; color: #2F6B45; font-variant-numeric: tabular-nums">{{p.transfer}} con transferencia</span>
-              <span style="font-size: 12px; line-height: 1.5; color: #6B6B66">{{p.priceFor}}</span>
-            </sc-if>
-          </span>
-        </a>
+    <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 10px">
+      <sc-for list="{{grid}}" as="it" hint-placeholder-count="7">
+        <div style="grid-column: {{it.col}}; display: flex; min-width: 0">
+          <sc-if value="{{it.isProd}}" hint-placeholder-val="{{true}}">
+            <article aria-labelledby="{{it.id}}" style="flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 8px 10px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px">
+              <a href="Ficha.dc.html" tabindex="-1" aria-hidden="true" style="position: relative; height: 132px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-decoration: none">
+<sc-if value="{{it.isAmpoule}}" hint-placeholder-val="{{true}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            <sc-if value="{{it.isBottle}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            <sc-if value="{{it.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true"><path d="M8 4H52L46 118H14Z" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            <sc-if value="{{it.isJar}}" hint-placeholder-val="{{false}}"><svg width="52" height="100" viewBox="0 30 60 120" aria-hidden="true"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            <sc-if value="{{it.isStick}}" hint-placeholder-val="{{false}}"><svg width="36" height="92" viewBox="0 0 60 150" aria-hidden="true"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            <sc-if value="{{it.isKit}}" hint-placeholder-val="{{false}}"><svg width="80" height="73" viewBox="0 0 110 100" aria-hidden="true"><rect x="4" y="40" width="22" height="56" rx="5" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="9" y="28" width="12" height="14" rx="2" fill="#141414"></rect><rect x="32" y="22" width="20" height="74" rx="5" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="36" y="8" width="12" height="16" rx="5" fill="#141414"></rect><rect x="58" y="50" width="22" height="46" rx="5" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="62" y="40" width="14" height="12" rx="2" fill="#141414"></rect><rect x="86" y="62" width="22" height="34" rx="5" fill="{{it.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="86" y="54" width="22" height="10" rx="2" fill="#141414"></rect></svg></sc-if>
+          
+                <sc-if value="{{it.hasFlag}}" hint-placeholder-val="{{false}}"><span style="position: absolute; top: 8px; left: 8px; padding: 2px 8px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 500; line-height: 1.5; color: #141414">{{it.flag}}</span></sc-if>
+              </a>
+              <span style="margin-top: 12px; font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{it.kind}}</span>
+              <a id="{{it.id}}" href="Ficha.dc.html" style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 1.3; color: #141414; text-decoration: none">{{it.name}}</a>
+              <span aria-label="{{it.rateLabel}}" style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">[puntaje] ([cantidad])</span>
+              <span style="margin-top: 6px; font-size: 13px; line-height: 1.45; color: #4A4A46">{{it.need}}</span>
+              <span style="margin-top: auto; padding-top: 12px; font-weight: 600; font-size: 16px; line-height: 1.4; font-variant-numeric: tabular-nums">{{it.price}}</span>
+              <span style="font-size: 12px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">Precio sin impuestos nacionales: <span style="white-space: nowrap">{{it.net}}</span></span>
+              <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; font-weight: 500; color: #2F6B45; font-variant-numeric: tabular-nums"><span style="white-space: nowrap">{{it.transfer}}</span> con transferencia</span>
+              <sc-if value="{{it.notAdded}}" hint-placeholder-val="{{true}}">
+                <button type="button" onClick="{{it.add}}" aria-label="{{it.addLabel}}" style="margin-top: 12px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Agregar</button>
+              </sc-if>
+              <sc-if value="{{it.added}}" hint-placeholder-val="{{false}}">
+                <a href="Carrito.dc.html" style="margin-top: 12px; min-height: 44px; padding: 0 12px; box-sizing: border-box; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2F6B45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>Ver carrito</a>
+              </sc-if>
+            </article>
+          </sc-if>
+          <sc-if value="{{it.isSet}}" hint-placeholder-val="{{false}}">
+            <section aria-labelledby="set-t" style="flex: 1; position: relative; background: #F7F4EE; border-radius: 12px; padding: 20px 16px 16px; display: flex; flex-direction: column">
+              <span aria-hidden="true" style="position: absolute; top: -10px; left: {{line.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{line.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+              <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{routine.name}}</span>
+              <h3 id="set-t" style="margin: 4px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25; letter-spacing: -0.005em; text-wrap: balance">Llevá la rutina completa en {{routine.count}} pasos</h3>
+              <ol aria-label="{{routine.name}}, paso por paso" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+                <sc-for list="{{routine.steps}}" as="st" hint-placeholder-count="4">
+                  <li style="display: flex; flex-direction: column; min-width: 0">
+                    <span style="height: 96px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
+<sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="31" height="78" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="11" height="20" rx="7" fill="#141414"></rect><rect x="18" y="26" width="19" height="11" rx="2" fill="#141414"></rect><rect x="8" y="40" width="34" height="83" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="23" height="31" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="34" height="86" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="19" height="20" rx="3" fill="#141414"></rect><rect x="22" y="30" width="12" height="8" fill="#141414"></rect><rect x="6" y="38" width="37" height="84" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="25" height="34" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="47" height="86" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="41" height="14" rx="4" fill="#141414"></rect><rect x="6" y="88" width="37" height="45" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="25" height="22" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="31" height="78" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="19" height="22" rx="3" fill="#141414"></rect><rect x="17" y="40" width="20" height="31" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="28" height="72" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="25" height="27" rx="6" fill="#141414"></rect><rect x="14" y="36" width="25" height="86" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="16" height="31" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+        
+                    </span>
+                    <span style="margin-top: 8px; padding: 0 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 14px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
+                    <span style="margin-top: 2px; padding: 0 4px; font-size: 12px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
+                  </li>
+                </sc-for>
+              </ol>
+              <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E0DBD1; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+                <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.2">[precio del set]</span>
+                <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: [precio]</span>
+                <span style="margin-top: 6px; font-size: 14px; line-height: 1.5; font-weight: 500; color: #2F6B45">[precio] con transferencia</span>
+                <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #141414">Ahorrás [ahorro del set] frente a comprarlos por separado</span>
+              </div>
+              <a href="Carrito.dc.html" style="margin-top: 16px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Llevá la rutina</a>
+            </section>
+          </sc-if>
+        </div>
       </sc-for>
     </div>
   </sc-if>
@@ -130,32 +153,29 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   </sc-if>
 </section>
 
-<section aria-labelledby="rutina-t" style="background: #FFFFFF; padding: 0 24px 64px; display: flex; flex-direction: column">
-  <div style="border-top: 1px solid #E8E4DC; padding-top: 56px; display: flex; flex-direction: column">
-    <h2 id="rutina-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">En qué orden se aplica</h2>
-    <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">{{routine.intro}}</p>
+<section aria-labelledby="compra-t" style="background: #FFFFFF; padding: 0 24px 56px; display: flex; flex-direction: column">
+  <div style="border-top: 1px solid #E8E4DC; padding-top: 40px; display: flex; flex-direction: column">
+    <h2 id="compra-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25; letter-spacing: -0.005em; text-wrap: balance">Lo que incluye tu compra</h2>
+    <dl style="margin: 16px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+      <sc-for list="{{terms}}" as="tm" hint-placeholder-count="6">
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 12px; font-weight: 500; line-height: 1.6; color: #6B6B66">{{tm.k}}</dt>
+          <dd style="margin: 0; font-size: 14px; line-height: 1.5; color: #141414">{{tm.v}}</dd>
+        </div>
+      </sc-for>
+    </dl>
+    <p style="margin: 28px 0 0; font-size: 15px; line-height: 1.6; color: #141414">¿No sabés si {{line.name}} es tu línea?</p>
+    <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px">
+      <a href="Test.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Hacé el test de piel</a>
+      <a href="Main.dc.html" style="align-self: center; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Consultanos por WhatsApp antes de comprar</a>
+    </div>
   </div>
-  <ol aria-label="{{routine.name}}, paso por paso" style="list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
-    <sc-for list="{{routine.steps}}" as="st" hint-placeholder-count="4">
-      <li style="display: flex; flex-direction: column">
-        <span style="height: 124px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
-          <sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-          <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="44" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-          <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="60" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-          <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-          <sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="36" height="92" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
-        </span>
-        <span style="margin-top: 12px; padding: 0 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
-        <span style="margin-top: 4px; padding: 0 4px; font-size: 13px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
-        <span style="margin-top: 4px; padding: 0 4px; font-size: 12px; line-height: 1.45; color: #6B6B66">{{st.when}}</span>
-      </li>
-    </sc-for>
-  </ol>
-  <p style="margin: 28px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">{{routine.name}}, {{routine.count}} productos: [precio del set]</p>
-  <a href="Carrito.dc.html" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar la rutina al carrito</a>
-  <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
-    <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #141414">¿No sabés si esta es tu línea? El test de piel te la dice con tres preguntas.</p>
-    <a href="Test.dc.html" style="align-self: flex-start; margin-top: 16px; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Hacé el test de piel</a>
+</section>
+
+<section aria-labelledby="sobre-t" style="background: #FFFFFF; padding: 0 24px 56px; display: flex; flex-direction: column">
+  <div style="border-top: 1px solid #E8E4DC; padding-top: 32px; display: flex; flex-direction: column">
+    <h2 id="sobre-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.3">Sobre {{line.name}}</h2>
+    <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">{{line.desc}} El frasco es {{line.bottleLower}}, del mismo color que la pestaña.</p>
   </div>
 </section>
 
@@ -179,11 +199,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4680}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4180}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { line: 'centella', cat: 'Todos' };
+    this.state = { line: 'centella', cat: 'Todos', sort: 'best', sortOpen: false, added: [] };
   }
   renderVals() {
     const s = this.state;
@@ -194,66 +214,124 @@ class Component extends DCLogic {
     const W = 340; // ancho interior del rótulo de la línea
     const LINES = [
       { id: 'centella', name: 'Madagascar Centella', c: '#C9A24A', bottle: 'Dorado',
-        need: 'Piel sensible y rojeces', ingr: 'Centella asiática de Madagascar', short: 'Centella asiática',
-        desc: 'Ayuda a calmar la piel sensible o con rojeces. Todas las fórmulas llevan centella asiática de Madagascar.',
-        photo: 'Foto de producto: la Centella Ampoule sobre hojas frescas de centella. Fondo hueso, luz lateral dura con sombra marcada. 390 × 280 a sangre.' },
+        title: 'Calmá la piel sensible', need: 'Piel sensible y rojeces', ingr: 'Centella asiática de Madagascar', short: 'centella de Madagascar',
+        desc: 'Ayuda a calmar la piel sensible o con rojeces. Todas las fórmulas llevan centella asiática de Madagascar.' },
       { id: 'hyalu', name: 'Hyalu-Cica', c: '#4A7FB5', bottle: 'Azul',
-        need: 'Hidratación', ingr: 'Ácido hialurónico y centella',
-        desc: 'Ayuda a hidratar la piel con ácido hialurónico y centella, en texturas livianas.',
-        photo: 'Foto de producto: frasco de Hyalu-Cica sobre vidrio con agua. Fondo hueso, luz lateral dura con sombra marcada. 390 × 280 a sangre.' },
+        title: 'Hidratá la piel sin sensación pesada', need: 'Hidratación', ingr: 'Ácido hialurónico y centella', short: 'ácido hialurónico y centella',
+        desc: 'Ayuda a hidratar la piel con ácido hialurónico y centella, en texturas livianas.' },
       { id: 'tone', name: 'Tone Brightening', c: '#EFEDE6', bottle: 'Blanco',
-        need: 'Manchas y tono apagado', ingr: '[ingrediente clave]',
-        desc: 'Acompaña la piel con manchas o tono apagado.',
-        photo: 'Foto de producto: la Capsule Ampoule sobre [material del ingrediente clave]. Fondo hueso, luz lateral dura con sombra marcada. 390 × 280 a sangre.' },
+        title: 'Para la piel con manchas y tono apagado', need: 'Manchas y tono apagado', ingr: '[ingrediente clave]', short: '[ingrediente clave]',
+        desc: 'Acompaña la piel con manchas o tono apagado.' },
       { id: 'pore', name: 'Poremizing', c: '#D98E93', bottle: 'Rosa',
-        need: 'Poros y brillo', ingr: 'Sal rosa del Himalaya',
-        desc: 'Ayuda a cuidar la piel con poros visibles y brillo, con sal rosa del Himalaya.',
-        photo: 'Foto de producto: la Poremizing Fresh Ampoule sobre sal rosa en piedra. Fondo hueso, luz lateral dura con sombra marcada. 390 × 280 a sangre.' },
+        title: 'Cuidá la piel con poros y brillo', need: 'Poros y brillo', ingr: 'Sal rosa del Himalaya', short: 'sal rosa del Himalaya',
+        desc: 'Ayuda a cuidar la piel con poros visibles y brillo, con sal rosa del Himalaya.' },
       { id: 'tea', name: 'Tea-Trica', c: '#4F8A5E', bottle: 'Verde',
-        need: 'Granitos', ingr: 'Árbol de té y centella',
-        desc: 'Ayuda a calmar la piel con tendencia a granitos, con árbol de té y centella.',
-        photo: 'Foto de producto: la Tea-Trica Relief Ampoule sobre hojas de árbol de té. Fondo hueso, luz lateral dura con sombra marcada. 390 × 280 a sangre.' },
+        title: 'Calmá la piel con granitos', need: 'Granitos', ingr: 'Árbol de té y centella', short: 'árbol de té y centella',
+        desc: 'Ayuda a calmar la piel con tendencia a granitos, con árbol de té y centella.' },
       { id: 'probio', name: 'Probio-Cica', c: '#6B4A36', bottle: 'Marrón',
-        need: 'Barrera de la piel', ingr: 'Cica fermentada',
-        desc: 'Cuida la barrera de la piel con cica fermentada.',
-        photo: 'Foto de producto: el Probio-Cica Essence Toner sobre [material a definir]. Fondo hueso, luz lateral dura con sombra marcada. 390 × 280 a sangre.' }
+        title: 'Cuidá la barrera de la piel', need: 'Barrera de la piel', ingr: 'Cica fermentada', short: 'cica fermentada',
+        desc: 'Cuida la barrera de la piel con cica fermentada.' }
     ].map((l, slot) => Object.assign({}, l, { slot }));
     const byId = {};
     LINES.forEach((l) => { byId[l.id] = l; });
     const line = byId[s.line] || LINES[0];
 
-    // Catálogo: solo productos reales del brief. Precio real solo de la Centella Ampoule 55 ml.
+    // Catálogo: solo productos reales del brief, en orden de aplicación (así funciona "Orden de la rutina").
+    // Precio real solo de la Centella Ampoule 55 ml. "best" es el orden de "Más vendidos": [a confirmar con las ventas de Shopify].
     const PRODUCTS = [
-      { l: 'centella', name: 'Centella Light Cleansing Oil', cat: 'Limpieza', type: 'Limpieza', shape: 'bottle', step: 'Primera limpieza', size: '[ml]' },
-      { l: 'centella', name: 'Centella Ampoule Foam', cat: 'Limpieza', type: 'Limpieza', shape: 'tube', step: 'Segunda limpieza', size: '[ml]' },
-      { l: 'centella', name: 'Centella Toning Toner', cat: 'Tónico', type: 'Tónico', shape: 'bottle', step: 'Primero, después de limpiar', size: '[ml]' },
-      { l: 'centella', name: 'Centella Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', step: 'Después del tónico', size: '55 ml y 100 ml',
-        note: 'Producto estrella de la marca', price: '$ 42.999', net: '$ 35.536', transfer: '$ 38.699', priceFor: 'Precio de la versión de 55 ml' },
-      { l: 'centella', name: 'Centella Soothing Cream', cat: 'Crema', type: 'Crema', shape: 'jar', step: 'Después de la ampolla', size: '[ml]' },
-      { l: 'centella', name: 'Centella Travel Kit', cat: 'Kits', type: 'Kit', shape: 'kit', step: 'La rutina completa, en 5 pasos', size: '5 productos, [ml] cada uno' },
-      { l: 'hyalu', name: 'Hyalu-Cica First Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', step: 'Después del tónico', size: '[ml]' },
-      { l: 'hyalu', name: 'Hyalu-Cica Moisture Cream', cat: 'Crema', type: 'Crema', shape: 'jar', step: 'Después de la ampolla', size: '75 ml' },
-      { l: 'hyalu', name: 'Hyalu-Cica Water-Fit Sun Serum FPS 50+', cat: 'Protector', type: 'Protector solar', shape: 'tube', step: 'Último, solo de día', size: '50 ml' },
-      { l: 'tone', name: 'Tone Brightening Capsule Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', step: 'Después del tónico', size: '[ml]' },
-      { l: 'pore', name: 'Poremizing Clay Stick Mask', cat: 'Máscara', type: 'Máscara', shape: 'stick', step: 'Después de limpiar, 1 o 2 veces por semana', size: '[g]' },
-      { l: 'pore', name: 'Poremizing Fresh Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', step: 'Después del tónico', size: '100 ml' },
-      { l: 'tea', name: 'Tea-Trica Purifying Toner', cat: 'Tónico', type: 'Tónico', shape: 'bottle', step: 'Primero, después de limpiar', size: '[ml]' },
-      { l: 'tea', name: 'Tea-Trica Relief Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', step: 'Después del tónico', size: '100 ml' },
-      { l: 'probio', name: 'Probio-Cica Essence Toner', cat: 'Tónico', type: 'Tónico', shape: 'bottle', step: 'Primero, después de limpiar', size: '[ml]' }
-    ];
+      { l: 'centella', name: 'Centella Light Cleansing Oil', cat: 'Limpieza', type: 'Limpieza', shape: 'bottle', size: '[ml]', best: 6,
+        need: 'Primera limpieza: retira maquillaje y protector.' },
+      { l: 'centella', name: 'Centella Ampoule Foam', cat: 'Limpieza', type: 'Limpieza', shape: 'tube', size: '[ml]', best: 5,
+        need: 'Segunda limpieza, suave con la piel sensible.' },
+      { l: 'centella', name: 'Centella Toning Toner', cat: 'Tónico', type: 'Tónico', shape: 'bottle', size: '[ml]', best: 2,
+        need: 'Prepara la piel después de limpiar.' },
+      { l: 'centella', name: 'Centella Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', size: '55 ml', best: 1,
+        need: 'Ayuda a calmar la piel sensible o con rojeces.', flag: 'Producto estrella',
+        price: '$ 42.999', net: '$ 35.536', transfer: '$ 38.699' },
+      { l: 'centella', name: 'Centella Soothing Cream', cat: 'Crema', type: 'Crema', shape: 'jar', size: '[ml]', best: 3,
+        need: 'Hidrata y ayuda a calmar, mañana y noche.' },
+      { l: 'centella', name: 'Centella Travel Kit', cat: 'Kits', type: 'Kit de 5 pasos', shape: 'kit', size: '[ml]', best: 4,
+        need: 'La rutina completa en tamaño viaje.' },
+      { l: 'hyalu', name: 'Hyalu-Cica First Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', size: '[ml]', best: 2,
+        need: 'Hidratación liviana después del tónico.' },
+      { l: 'hyalu', name: 'Hyalu-Cica Moisture Cream', cat: 'Crema', type: 'Crema', shape: 'jar', size: '75 ml', best: 3,
+        need: 'Hidrata sin sensación pesada.' },
+      { l: 'hyalu', name: 'Hyalu-Cica Water-Fit Sun Serum FPS 50+', cat: 'Protector', type: 'Protector solar', shape: 'tube', size: '50 ml', best: 1,
+        need: 'Protector FPS 50+ con textura de serum.' },
+      { l: 'tone', name: 'Tone Brightening Capsule Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', size: '[ml]', best: 1,
+        need: 'Acompaña la piel con tono apagado.' },
+      { l: 'pore', name: 'Poremizing Clay Stick Mask', cat: 'Máscara', type: 'Máscara', shape: 'stick', size: '[g]', best: 2,
+        need: 'Máscara de arcilla en barra, 1 o 2 veces por semana.' },
+      { l: 'pore', name: 'Poremizing Fresh Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', size: '100 ml', best: 1,
+        need: 'Ayuda a controlar el brillo.' },
+      { l: 'tea', name: 'Tea-Trica Purifying Toner', cat: 'Tónico', type: 'Tónico', shape: 'bottle', size: '[ml]', best: 2,
+        need: 'Tónico para la piel con granitos.' },
+      { l: 'tea', name: 'Tea-Trica Relief Ampoule', cat: 'Ampolla', type: 'Ampolla', shape: 'ampoule', size: '100 ml', best: 1,
+        need: 'Ayuda a calmar la piel con granitos.' },
+      { l: 'probio', name: 'Probio-Cica Essence Toner', cat: 'Tónico', type: 'Tónico', shape: 'bottle', size: '[ml]', best: 1,
+        need: 'Cuida la barrera de la piel.' }
+    ].map((p, i) => Object.assign({}, p, { ord: i }));
     const shape = (x) => ({
       isAmpoule: x === 'ampoule', isBottle: x === 'bottle', isTube: x === 'tube',
       isJar: x === 'jar', isStick: x === 'stick', isKit: x === 'kit'
     });
 
+    // Carrito del prototipo: arranca con 1 producto (como el resto de las pantallas).
+    const added = s.added || [];
+    const cartCount = 1 + added.length;
+    const last = added[added.length - 1];
+    const cart = {
+      count: String(cartCount),
+      label: 'Carrito, ' + cartCount + (cartCount === 1 ? ' producto' : ' productos'),
+      announce: last ? 'Agregaste ' + last + ' al carrito.' : ''
+    };
+
+    // Orden: "Más vendidos" por defecto.
+    const SORTS = [
+      { id: 'best', label: 'Más vendidos' },
+      { id: 'routine', label: 'Orden de la rutina' },
+      { id: 'az', label: 'Nombre, de la A a la Z' }
+    ];
+    const sortBy = {
+      best: (a, b) => a.best - b.best,
+      routine: (a, b) => a.ord - b.ord,
+      az: (a, b) => a.name.localeCompare(b.name, 'es')
+    };
+    const sortId = sortBy[s.sort] ? s.sort : 'best';
+    const sortLabel = SORTS.find((o) => o.id === sortId).label;
+    const sorts = SORTS.map((o) => {
+      const on = o.id === sortId;
+      return {
+        label: o.label, pressed: on ? 'true' : 'false', weight: on ? '600' : '400', check: on ? '#141414' : 'transparent',
+        pick: () => this.setState({ sort: o.id, sortOpen: false })
+      };
+    });
+
     const inLine = PRODUCTS.filter((p) => p.l === line.id);
     const cat = s.cat;
-    const shown = inLine.filter((p) => cat === 'Todos' || p.cat === cat).map((p) => Object.assign({}, p, shape(p.shape), {
-      c: line.c, ingr: line.short || line.ingr,
-      price: p.price || '[precio]', net: p.net || '[precio]',
-      hasTransfer: !!p.transfer, transfer: p.transfer || '', priceFor: p.priceFor || '',
-      hasNote: !!p.note, note: p.note || ''
-    }));
+    const shown = inLine.filter((p) => cat === 'Todos' || p.cat === cat).slice().sort(sortBy[sortId]).map((p) => {
+      const isAdded = added.indexOf(p.name) !== -1;
+      return Object.assign({}, p, shape(p.shape), {
+        isProd: true, isSet: false, col: 'auto',
+        id: 'p-' + p.ord, c: line.c,
+        kind: p.type + ', ' + p.size,
+        hasFlag: !!p.flag, flag: p.flag || '',
+        rateLabel: 'Puntaje: [puntaje] de 5, [cantidad] reseñas',
+        price: p.price || '[precio]', net: p.net || '[precio]', transfer: p.transfer || '[precio]',
+        notAdded: !isAdded, added: isAdded,
+        addLabel: 'Agregar ' + p.name + ' al carrito',
+        add: () => this.setState({ added: added.concat([p.name]), sortOpen: false })
+      });
+    });
+
+    // El bundle de la rutina de la línea va intercalado después del segundo producto.
+    const SET = Object.assign(shape(''), {
+      isProd: false, isSet: true, col: '1 / -1', id: 'set', c: line.c, name: '', kind: '', need: '',
+      hasFlag: false, flag: '', rateLabel: '', price: '', net: '', transfer: '',
+      notAdded: false, added: false, addLabel: '', add: () => {}
+    });
+    const at = Math.min(2, shown.length);
+    const grid = shown.slice(0, at).concat([SET], shown.slice(at));
 
     // Pestañas: la activa sube a 24 px; el nombre se escribe al lado (a la derecha en los slots 0-2, a la izquierda en 3-5).
     const tabs = LINES.map((l) => {
@@ -262,26 +340,21 @@ class Component extends DCLogic {
         c: l.c, left: TAB[l.slot], h: on ? '24px' : '10px',
         pressed: on ? 'true' : 'false',
         label: on ? l.name + ', línea actual' : 'Ver la línea ' + l.name,
-        pick: () => this.setState({ line: l.id, cat: 'Todos' })
+        pick: () => this.setState({ line: l.id, cat: 'Todos', sortOpen: false })
       };
     });
     const x = TABX[line.slot];
     const labelRight = line.slot >= 3;
+    const count = inLine.length;
+    const total = count === 1 ? '1 producto' : count + ' productos';
     const lineVals = {
-      name: line.name, desc: line.desc,
-      photo: line.photo, photoAlt: line.photo.replace(' 390 × 280 a sangre.', ''),
+      name: line.name, title: line.title, desc: line.desc, c: line.c, tab: TAB[line.slot],
+      bottleLower: line.bottle.toLowerCase(),
+      sub: (count === 1 ? '1 producto' : count + ' productos') + ' con ' + line.short + '.',
       labelLeft: labelRight ? 'auto' : (x + 1 + 48 + 8) + 'px',
       labelRight: labelRight ? (W + 2 - x - 1 + 8) + 'px' : 'auto',
       labelAlign: labelRight ? 'right' : 'left'
     };
-    const count = inLine.length;
-    const total = count === 1 ? '1 producto' : count + ' productos';
-    const lineFields = [
-      { k: 'Ingrediente', v: line.ingr },
-      { k: 'Necesidad', v: line.need },
-      { k: 'Frasco', v: line.bottle + ', como la pestaña' },
-      { k: 'En la tienda', v: total }
-    ].map((f, i, arr) => Object.assign({}, f, { rule: i === arr.length - 1 ? '0' : '1px solid #E8E4DC' }));
 
     const CATS = ['Todos', 'Limpieza', 'Tónico', 'Ampolla', 'Crema', 'Máscara', 'Protector', 'Kits'];
     const cats = CATS.map((label) => {
@@ -289,7 +362,7 @@ class Component extends DCLogic {
       return {
         label, pressed: on ? 'true' : 'false',
         fill: on ? '#141414' : '#FFFFFF', ink: on ? '#FFFFFF' : '#141414', ring: on ? '#141414' : '#CFCAC0',
-        pick: () => this.setState({ cat: label })
+        pick: () => this.setState({ cat: label, sortOpen: false })
       };
     });
 
@@ -309,48 +382,59 @@ class Component extends DCLogic {
       emptyText = 'Lo encontrás en ' + listNames(altLines.map((l) => l.name)) + '.';
     }
 
-    // Rutina de la línea (estante 4.10), en orden de aplicación. El protector va último, solo de día.
+    // Rutina de la línea (bundle), en orden de aplicación. El protector va último, solo de día.
     const C = byId.centella.c, H = byId.hyalu.c, T0 = byId.tone.c, P = byId.pore.c, T = byId.tea.c, B = byId.probio.c;
-    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', c: H, k: 'tube' };
+    const SUN = { name: 'Water-Fit Sun Serum', c: H, k: 'tube' };
     const ROUTINES = {
       centella: [
-        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
-        { name: 'Centella Ampoule', when: 'Mañana y noche', c: C, k: 'ampoule' },
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN],
+        { name: 'Toning Toner', c: C, k: 'bottle' },
+        { name: 'Centella Ampoule', c: C, k: 'ampoule' },
+        { name: 'Soothing Cream', c: C, k: 'jar' }, SUN],
       hyalu: [
-        { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
-        { name: 'First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN],
+        { name: 'Essence Toner', c: B, k: 'bottle' },
+        { name: 'First Ampoule', c: H, k: 'ampoule' },
+        { name: 'Moisture Cream', c: H, k: 'jar' }, SUN],
       tone: [
-        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
-        { name: 'Capsule Ampoule', when: 'Mañana y noche', c: T0, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN],
+        { name: 'Toning Toner', c: C, k: 'bottle' },
+        { name: 'Capsule Ampoule', c: T0, k: 'ampoule' },
+        { name: 'Moisture Cream', c: H, k: 'jar' }, SUN],
       pore: [
-        { name: 'Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
-        { name: 'Clay Stick Mask', when: '1 o 2 veces por semana', c: P, k: 'stick' },
-        { name: 'Fresh Ampoule', when: 'Mañana y noche', c: P, k: 'ampoule' }, SUN],
+        { name: 'Ampoule Foam', c: C, k: 'tube' },
+        { name: 'Clay Stick Mask', c: P, k: 'stick' },
+        { name: 'Fresh Ampoule', c: P, k: 'ampoule' }, SUN],
       tea: [
-        { name: 'Purifying Toner', when: 'Mañana y noche', c: T, k: 'bottle' },
-        { name: 'Relief Ampoule', when: 'Mañana y noche', c: T, k: 'ampoule' },
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN],
+        { name: 'Purifying Toner', c: T, k: 'bottle' },
+        { name: 'Relief Ampoule', c: T, k: 'ampoule' },
+        { name: 'Soothing Cream', c: C, k: 'jar' }, SUN],
       probio: [
-        { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
-        { name: 'Centella Ampoule', when: 'Mañana y noche', c: C, k: 'ampoule' },
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN]
+        { name: 'Essence Toner', c: B, k: 'bottle' },
+        { name: 'Centella Ampoule', c: C, k: 'ampoule' },
+        { name: 'Soothing Cream', c: C, k: 'jar' }, SUN]
     };
     const steps = ROUTINES[line.id];
     const routine = {
       name: 'Rutina ' + line.name,
-      intro: 'La rutina de ' + line.name + ', de la textura más liviana a la más densa. El protector va al final y solo de día.',
       count: steps.length,
       steps: steps.map((st, i) => Object.assign({}, st, shape(st.k), { n: String(i + 1) }))
     };
 
+    // Condiciones comerciales y confianza, juntas y en texto.
+    const terms = [
+      { k: 'Envío', v: 'Gratis desde $\u00a0119.999. Llega en [plazo] a CABA y GBA.' },
+      { k: 'Transferencia', v: '10% off en todo el pedido.' },
+      { k: 'Cuotas', v: '6 sin interés en compras desde $\u00a0150.000.' },
+      { k: 'Regalo', v: '2 muestras en cada pedido.' },
+      { k: 'Original', v: 'Importado por el representante oficial, con rótulo en español.' },
+      { k: 'Arrepentimiento', v: '10 días para devolverlo, desde que lo recibís.' }
+    ];
+
     return {
-      line: lineVals, tabs, lineFields, cats, shown, routine,
+      line: lineVals, tabs, cats, grid, routine, terms, cart,
+      sorts, sortLabel, sortOpen: !!s.sortOpen, sortOpenAttr: s.sortOpen ? 'true' : 'false', sortRot: s.sortOpen ? '180deg' : '0deg',
+      toggleSort: () => this.setState({ sortOpen: !s.sortOpen }),
       hasItems: shown.length > 0,
       empty: shown.length === 0,
-      countLabel: cat === 'Todos' ? total + ' de ' + line.name : (shown.length === 0 ? 'Sin ' + noun + ' en ' + line.name : shown.length + ' de ' + total + ' de ' + line.name),
+      countLabel: cat === 'Todos' ? total : (shown.length === 0 ? 'Sin ' + noun : shown.length + ' de ' + total),
       emptyTitle: line.name + ' no tiene ' + noun,
       emptyText,
       hasAlt: !!alt,

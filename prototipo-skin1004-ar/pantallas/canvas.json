@@ -1,0 +1,90 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Carrito.dc.html": {
+      "h": 2760,
+      "is_interactive": true,
+      "title": "Carrito",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "Coleccion.dc.html": {
+      "h": 4680,
+      "is_interactive": true,
+      "title": "Colección por línea",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "Ficha.dc.html": {
+      "h": 5760,
+      "is_interactive": true,
+      "title": "Ficha: Centella Ampoule",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "HomeDesktop.dc.html": {
+      "h": 6600,
+      "is_interactive": true,
+      "title": "Home (escritorio)",
+      "w": 1440,
+      "x": 0,
+      "y": 8400
+    },
+    "Main.dc.html": {
+      "h": 7960,
+      "is_interactive": true,
+      "title": "Home (celular)",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Test.dc.html": {
+      "h": 1840,
+      "is_interactive": true,
+      "title": "Test de piel",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-28T15:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "escritorio": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Home en escritorio",
+      "w": 240,
+      "x": 0,
+      "y": 8100
+    },
+    "flujo": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Flujo de compra en celular",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Coleccion.dc.html",
+    "Ficha.dc.html",
+    "Test.dc.html",
+    "Carrito.dc.html",
+    "HomeDesktop.dc.html"
+  ],
+  "pages": [],
+  "title": "SKIN1004 Argentina · Prototipo"
+}

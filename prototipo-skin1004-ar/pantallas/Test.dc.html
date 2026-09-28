@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Test de piel</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@500&display=swap">
+<style>
+body{margin:0;font-family:"Inter","Helvetica Neue",Arial,sans-serif;color:#141414;background:#141414}
+a{color:#141414}a:hover{color:#8A6A24}
+a,button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,opacity .2s ease}
+a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
+@keyframes tab-rise{from{top:-10px;height:10px}to{top:-24px;height:24px}}
+@media (prefers-reduced-motion:reduce){a,button{transition:none}[data-rise]{animation:none !important}}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 1840px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
+  <div style="display: flex">
+    <a href="Main.dc.html" aria-label="Cerrar el test y volver al inicio" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"></path></svg></a>
+  </div>
+  <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="justify-self: center; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
+  <div style="display: flex; justify-content: flex-end">
+    <a href="Carrito.dc.html" aria-label="Carrito, 1 producto" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span></a>
+  </div>
+</header>
+
+<sc-if value="{{intro}}" hint-placeholder-val="{{true}}">
+  <section aria-labelledby="intro-t" style="background: #FFFFFF; display: flex; flex-direction: column">
+    <div role="img" aria-label="Foto de detalle: mejilla con poros visibles y textura real, luz de ventana lateral, sin rostro completo" style="width: 390px; height: 340px; background: #F2EDE4; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 1px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+      <p style="margin: 0; max-width: 262px; font-size: 12px; line-height: 1.5; color: #6B6B66">Foto de detalle: mejilla sin maquillaje, poros y textura visibles. Luz de ventana lateral y dura, sin rostro completo. Fondo de cal color hueso, 390 × 340.</p>
+    </div>
+    <div style="padding: 32px 24px 64px; display: flex; flex-direction: column">
+      <h1 id="intro-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">¿Qué línea de SKIN1004 va con tu piel?</h1>
+      <p style="margin: 16px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">Tres preguntas sobre cómo se siente tu piel. Al final te mostramos la línea que mejor la acompaña y su rutina de cuatro pasos, en el orden en que se aplica.</p>
+      <button type="button" onClick="{{start}}" style="margin-top: 28px; min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Empezar el test</button>
+      <p style="margin: 16px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">Es una orientación cosmética y no reemplaza la consulta con tu dermatóloga o dermatólogo.</p>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{asking}}" hint-placeholder-val="{{false}}">
+  <section aria-labelledby="q-t" style="background: #FFFFFF; padding: 32px 24px 64px; display: flex; flex-direction: column">
+    <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">Pregunta {{stepNumber}} de 3</span>
+    <div role="progressbar" aria-label="Progreso del test" aria-valuemin="0" aria-valuemax="3" aria-valuenow="{{stepNumber}}" aria-valuetext="Pregunta {{stepNumber}} de 3" style="margin-top: 8px; height: 2px; background: #E8E4DC">
+      <div style="height: 2px; width: {{progress}}; background: #A8812F"></div>
+    </div>
+    <h1 id="q-t" style="margin: 28px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">{{question}}</h1>
+    <div role="radiogroup" aria-labelledby="q-t" style="margin-top: 24px; display: flex; flex-direction: column; border-bottom: 1px solid #E8E4DC">
+      <sc-for list="{{options}}" as="o" hint-placeholder-count="4">
+        <button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="min-height: 64px; display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: center; column-gap: 16px; padding: 14px 0; box-sizing: border-box; border: 0; border-top: 1px solid #E8E4DC; background: #FFFFFF; font: inherit; color: #141414; text-align: left; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="display: block">
+            <circle cx="10" cy="10" r="9.25" fill="#FFFFFF" stroke="{{o.ring}}" stroke-width="1.5"></circle>
+            <sc-if value="{{o.on}}" hint-placeholder-val="{{false}}"><circle cx="10" cy="10" r="5" fill="#141414"></circle></sc-if>
+          </svg>
+          <span style="display: flex; flex-direction: column">
+            <span style="font-size: 16px; font-weight: 500; line-height: 1.4">{{o.label}}</span>
+            <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: {{o.hintInk}}">{{o.hint}}</span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="margin-top: 32px; display: flex; gap: 8px">
+      <sc-if value="{{canBack}}" hint-placeholder-val="{{false}}">
+        <button type="button" onClick="{{back}}" style="min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Volver</button>
+      </sc-if>
+      <button type="button" onClick="{{next}}" aria-disabled="{{nextDisabled}}" aria-describedby="q-help" style="flex: 1 1 auto; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid {{nextRing}}; box-sizing: border-box; background: {{nextBg}}; color: {{nextInk}}; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: {{nextCursor}}">{{nextLabel}}</button>
+    </div>
+    <p id="q-help" aria-live="polite" style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">{{helper}}</p>
+  </section>
+</sc-if>
+
+<sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+  <section aria-labelledby="res-t" style="background: #FFFFFF; padding: 48px 24px 0; display: flex; flex-direction: column">
+    <article style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 24px 20px; display: flex; flex-direction: column">
+      <span aria-hidden="true" data-rise="true" style="position: absolute; top: -24px; left: {{result.tab}}; width: 48px; height: 24px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{result.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0; animation: tab-rise 240ms cubic-bezier(.2,.7,.2,1) both"></span>
+      <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">Tu línea, según el test</span>
+      <h1 id="res-t" style="margin: 6px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">{{result.line}}</h1>
+      <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">{{result.why}}</p>
+
+      <dl style="margin: 20px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{fields}}" as="f" hint-placeholder-count="4">
+          <div style="grid-column: {{f.span}}; padding: 12px 0; border-bottom: 1px solid #E8E4DC; display: flex; flex-direction: column; gap: 2px">
+            <dt style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{f.k}}</dt>
+            <dd style="margin: 0; font-size: 14px; line-height: 1.45; color: #141414">{{f.v}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+
+      <h2 style="margin: 24px 0 0; font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">En el orden en que se aplica</h2>
+      <ol aria-label="{{result.routineName}}, paso por paso" style="list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+        <sc-for list="{{result.steps}}" as="st" hint-placeholder-count="4">
+          <li style="display: flex; flex-direction: column">
+            <span style="height: 124px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
+              <sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="44" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="60" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+              <sc-if value="{{st.isStick}}" hint-placeholder-val="{{false}}"><svg width="36" height="92" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+            </span>
+            <span style="margin-top: 12px; padding: 0 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
+            <span style="margin-top: 4px; padding: 0 4px; font-size: 13px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
+            <span style="margin-top: 4px; padding: 0 4px; font-size: 12px; line-height: 1.45; color: #6B6B66">{{st.when}}</span>
+          </li>
+        </sc-for>
+      </ol>
+
+      <p style="margin: 28px 0 0; padding-top: 20px; border-top: 1px solid #E8E4DC; font-size: 14px; line-height: 1.6; color: #4A4A46">{{result.routineName}}, {{result.count}} productos</p>
+      <div style="margin-top: 4px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+        <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.15">[precio del set]</span>
+        <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: [precio]</span>
+        <span style="margin-top: 8px; font-size: 14px; line-height: 1.5; font-weight: 500; color: #2F6B45">[precio] con transferencia</span>
+        <span style="margin-top: 2px; font-size: 12px; line-height: 1.5; color: #6B6B66">6 cuotas sin interés en compras desde $ 150.000</span>
+      </div>
+      <a href="Carrito.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar la rutina al carrito</a>
+      <a href="Coleccion.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver la línea {{result.line}}</a>
+
+      <form style="margin: 20px 0 0; padding-top: 24px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Guardá tu rutina: te mandamos los cuatro pasos por mail para tenerlos a mano cuando compres.</p>
+        <label for="test-email" style="margin-top: 16px; font-size: 14px; font-weight: 500; line-height: 1.5">Tu mail</label>
+        <input id="test-email" type="email" autocomplete="email" placeholder="nombre@correo.com" style="margin-top: 8px; height: 48px; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF; box-sizing: border-box">
+        <button type="button" onClick="{{save}}" style="margin-top: 12px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">{{saveLabel}}</button>
+        <p role="status" style="margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">{{saveNote}}</p>
+      </form>
+    </article>
+
+    <div style="padding: 24px 0 64px; display: flex; flex-direction: column">
+      <div style="display: flex; flex-wrap: wrap; column-gap: 24px">
+        <button type="button" onClick="{{restart}}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer">Hacer el test de nuevo</button>
+        <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Volver al inicio</a>
+      </div>
+      <p style="margin: 24px 0 0; padding-top: 20px; border-top: 1px solid #E8E4DC; font-size: 12px; line-height: 1.5; color: #6B6B66">Es una orientación cosmética y no reemplaza la consulta con tu dermatóloga o dermatólogo.</p>
+      <p style="margin: 8px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">Tenés 10 días corridos desde que recibís tu pedido para arrepentirte de la compra. <a href="Main.dc.html" style="color: #141414; font-weight: 500; text-underline-offset: 3px">Botón de arrepentimiento</a></p>
+    </div>
+  </section>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1840}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: -1, answers: [null, null, null], saved: false };
+  }
+  renderVals() {
+    const s = this.state;
+    // Pestaña de línea: misma posición que en Main (slot 0 a 5, rótulo de 342 px).
+    const TAB = ['20px', '71px', '122px', '172px', '223px', '274px'];
+    const LINE = {
+      centella: { name: 'Madagascar Centella', c: '#C9A24A', slot: 0, ingr: 'Centella asiática de Madagascar' },
+      hyalu: { name: 'Hyalu-Cica', c: '#4A7FB5', slot: 1, ingr: 'Ácido hialurónico y centella' },
+      tone: { name: 'Tone Brightening', c: '#EFEDE6', slot: 2, ingr: '[ingrediente clave]' },
+      pore: { name: 'Poremizing', c: '#D98E93', slot: 3, ingr: 'Sal rosa del Himalaya' },
+      tea: { name: 'Tea-Trica', c: '#4F8A5E', slot: 4, ingr: 'Árbol de té y centella' },
+      probio: { name: 'Probio-Cica', c: '#6B4A36', slot: 5, ingr: 'Cica fermentada' }
+    };
+    const C = LINE.centella.c, H = LINE.hyalu.c, W = LINE.tone.c, P = LINE.pore.c, T = LINE.tea.c, B = LINE.probio.c;
+
+    const Q = [
+      { q: '¿Cómo sentís la piel unas horas después de lavarla?', o: [
+        { v: 'seca', label: 'Tirante o seca', hint: 'Sobre todo en las mejillas', s: 'Piel seca' },
+        { v: 'mixta', label: 'Con brillo en la zona T', hint: 'Frente, nariz y mentón', s: 'Piel mixta' },
+        { v: 'grasa', label: 'Con brillo en toda la cara', hint: 'Necesitás secarla durante el día', s: 'Piel grasa' },
+        { v: 'normal', label: 'Cómoda', hint: 'Ni tirante ni brillante', s: 'Piel normal' }
+      ] },
+      { q: '¿Qué te gustaría mejorar primero?', o: [
+        { v: 'rojeces', label: 'Rojeces y sensibilidad', hint: 'La piel se irrita o se enrojece', s: 'Querés calmar primero las rojeces' },
+        { v: 'poros', label: 'Poros y brillo', hint: 'Poros visibles y exceso de sebo', s: 'Querés cuidar primero los poros y el brillo' },
+        { v: 'granitos', label: 'Granitos', hint: 'Brotes que aparecen seguido', s: 'Querés acompañar primero los granitos' },
+        { v: 'manchas', label: 'Manchas y tono apagado', hint: 'Marcas o falta de luminosidad', s: 'Querés emparejar primero manchas y tono' },
+        { v: 'hidratacion', label: 'Falta de hidratación', hint: 'La piel se ve opaca o áspera', s: 'Querés sumar primero hidratación' }
+      ] },
+      { q: '¿Tu piel reacciona a productos nuevos?', o: [
+        { v: 'seguido', label: 'Seguido', hint: 'Te pica o se enrojece', s: 'reacciona seguido a productos nuevos' },
+        { v: 'aveces', label: 'A veces', hint: 'Depende del producto', s: 'a veces reacciona a productos nuevos' },
+        { v: 'nunca', label: 'Casi nunca', hint: 'Tolerás bien los cambios', s: 'casi nunca reacciona a productos nuevos' }
+      ] }
+    ];
+
+    // Rutinas: mismos pasos y nombres que el estante de Main. Orden de aplicación:
+    // limpieza, máscara semanal, tónico, ampolla, crema y protector solo de día.
+    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', c: H, k: 'tube' };
+    const R = {
+      rojeces: { l: 'centella', routineName: 'Rutina calmante', why: 'La línea dorada, con centella asiática de Madagascar, calma la piel sensible o con rojeces.', steps: [
+        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
+        { name: 'Centella Ampoule', when: 'Mañana y noche', c: C, k: 'ampoule' },
+        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
+      poros: { l: 'pore', routineName: 'Rutina poros y brillo', why: 'La línea rosa, con sal rosa del Himalaya, ayuda a afinar la apariencia de los poros y a controlar el brillo.', steps: [
+        { name: 'Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
+        { name: 'Clay Stick Mask', when: '1 o 2 veces por semana', c: P, k: 'stick' },
+        { name: 'Fresh Ampoule', when: 'Mañana y noche', c: P, k: 'ampoule' }, SUN] },
+      granitos: { l: 'tea', routineName: 'Rutina granitos', why: 'La línea verde combina árbol de té y centella para acompañar a la piel con granitos.', steps: [
+        { name: 'Purifying Toner', when: 'Mañana y noche', c: T, k: 'bottle' },
+        { name: 'Relief Ampoule', when: 'Mañana y noche', c: T, k: 'ampoule' },
+        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
+      manchas: { l: 'tone', routineName: 'Rutina tono parejo', why: 'La línea blanca ayuda a emparejar el tono y a darle luminosidad a la piel. El protector de día no se saltea.', steps: [
+        { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
+        { name: 'Capsule Ampoule', when: 'Mañana y noche', c: W, k: 'ampoule' },
+        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN] },
+      hidratacion: { l: 'hyalu', routineName: 'Rutina hidratación', why: 'La línea azul suma ácido hialurónico a la centella para ayudar a hidratar la piel deshidratada.', steps: [
+        { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
+        { name: 'First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
+        { name: 'Moisture Cream', when: 'Mañana y noche', c: H, k: 'jar' }, SUN] }
+    };
+
+    const step = s.step;
+    const intro = step < 0;
+    const asking = step >= 0 && step < 3;
+    const done = step >= 3;
+    const qi = asking ? step : 0;
+    const cur = Q[qi];
+    const picked = s.answers[qi];
+    const has = picked !== null && picked !== undefined;
+
+    const options = cur.o.map((o) => {
+      const on = picked === o.v;
+      return {
+        label: o.label, hint: o.hint, on,
+        checked: on ? 'true' : 'false',
+        ring: on ? '#141414' : '#6B6B66',
+        hintInk: on ? '#4A4A46' : '#6B6B66',
+        pick: () => {
+          const answers = s.answers.slice();
+          answers[qi] = o.v;
+          this.setState({ answers });
+        }
+      };
+    });
+
+    const shape = (x) => ({
+      isAmpoule: x === 'ampoule', isBottle: x === 'bottle', isTube: x === 'tube',
+      isJar: x === 'jar', isStick: x === 'stick'
+    });
+    const res = R[s.answers[1] || 'rojeces'];
+    const line = LINE[res.l];
+    const result = {
+      line: line.name, c: line.c, tab: TAB[line.slot],
+      routineName: res.routineName, why: res.why, count: res.steps.length,
+      steps: res.steps.map((x, i) => Object.assign({}, x, shape(x.k), { n: String(i + 1) }))
+    };
+
+    const found = (i) => Q[i].o.find((o) => o.v === s.answers[i]);
+    const a0 = found(0), a1 = found(1), a2 = found(2);
+    const summary = [
+      (a0 ? a0.s : 'Tu piel') + (a2 ? ', ' + a2.s : '') + '.',
+      a1 ? a1.s + '.' : ''
+    ].join(' ').trim();
+
+    let tip = 'Sumá un producto nuevo por vez, con unos días entre uno y otro, para ver cómo responde tu piel.';
+    if (s.answers[2] === 'seguido') tip = 'Como tu piel reacciona seguido, empezá con un solo producto por semana y probalo antes en una zona chica, como detrás de la oreja.';
+    if (s.answers[0] === 'seca') tip = tip + ' Si sentís la piel tirante, a la noche podés sumar una segunda capa de crema.';
+    if (s.answers[0] === 'grasa' || s.answers[0] === 'mixta') tip = tip + ' Con brillo, alcanza con una capa fina de crema; no hace falta saltearla.';
+
+    const fields = [
+      { k: 'Según tus respuestas', v: summary, span: '1 / -1' },
+      { k: 'Ingrediente', v: line.ingr, span: 'auto' },
+      { k: 'Contenido', v: res.steps.length + ' productos', span: 'auto' },
+      { k: 'Consejo', v: tip, span: '1 / -1' }
+    ];
+
+    return {
+      intro, asking, done,
+      start: () => this.setState({ step: 0 }),
+      stepNumber: String(qi + 1),
+      progress: Math.round(((qi + 1) / 3) * 100) + '%',
+      question: cur.q, options,
+      canBack: asking && step > 0,
+      back: () => this.setState({ step: Math.max(0, step - 1) }),
+      next: () => { if (has) this.setState({ step: step + 1 }); },
+      nextLabel: qi === 2 ? 'Ver mi rutina' : 'Siguiente',
+      nextDisabled: has ? 'false' : 'true',
+      nextBg: has ? '#141414' : '#FFFFFF',
+      nextInk: has ? '#FFFFFF' : '#6B6B66',
+      nextRing: has ? '#141414' : '#CFCAC0',
+      nextCursor: has ? 'pointer' : 'not-allowed',
+      helper: has ? 'Podés cambiar tu respuesta antes de seguir.' : 'Elegí una opción para seguir.',
+      result, fields,
+      save: () => this.setState({ saved: true }),
+      saveLabel: s.saved ? 'Rutina enviada' : 'Enviarme la rutina',
+      saveNote: s.saved ? 'Listo: te mandamos la ' + res.routineName.toLowerCase() + ' a tu mail.' : '',
+      restart: () => this.setState({ step: 0, answers: [null, null, null], saved: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

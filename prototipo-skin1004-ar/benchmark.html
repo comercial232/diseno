@@ -1,0 +1,617 @@
+<title>SKIN1004 Argentina en Shopify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Albert+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F4F5EF;
+  --surface:#FFFFFF;
+  --surface-2:#EAEDE3;
+  --ink:#1D3328;
+  --ink-2:#4A5C52;
+  --line:#D3D9CC;
+  --accent:#9C7A2E;
+  --accent-soft:#F1E7CF;
+  --ok:#2F6B45;
+  --ok-soft:#DCEBDF;
+  --warn:#8A5A12;
+  --warn-soft:#F5E6C8;
+  --no:#8E3B32;
+  --no-soft:#F4DCD7;
+  --c-centella:#C9A24A;
+  --c-hyalu:#4A7FB5;
+  --c-tone:#E9E6DC;
+  --c-pore:#DE9EA2;
+  --c-tea:#5E9B6B;
+  --c-probio:#6B4A36;
+  --wf-bg:#F7F8F4;
+  --wf-block:#E3E7DC;
+  --wf-ink:#56675D;
+  --display:"Gowun Batang", "Noto Serif KR", Georgia, serif;
+  --body:"Albert Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#111A15; --surface:#18241D; --surface-2:#203027;
+    --ink:#E6ECE4; --ink-2:#A9B8AD; --line:#2E4035;
+    --accent:#D8B25E; --accent-soft:#3A3120;
+    --ok:#8CCB9F; --ok-soft:#1F3A29; --warn:#E3B868; --warn-soft:#3B2F18; --no:#E89A8F; --no-soft:#3F2320;
+    --c-tone:#CFCBBE;
+    --wf-bg:#15201A; --wf-block:#26362C; --wf-ink:#A9B8AD;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#111A15; --surface:#18241D; --surface-2:#203027;
+  --ink:#E6ECE4; --ink-2:#A9B8AD; --line:#2E4035;
+  --accent:#D8B25E; --accent-soft:#3A3120;
+  --ok:#8CCB9F; --ok-soft:#1F3A29; --warn:#E3B868; --warn-soft:#3B2F18; --no:#E89A8F; --no-soft:#3F2320;
+  --c-tone:#CFCBBE;
+  --wf-bg:#15201A; --wf-block:#26362C; --wf-ink:#A9B8AD;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;padding-top:40px;font-size:14px}
+.toc b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px;font-weight:500}
+.toc a{display:block;color:var(--ink-2);text-decoration:none;padding:5px 0 5px 12px;border-left:1px solid var(--line)}
+.toc a:hover,.toc a:focus-visible{color:var(--ink);border-left-color:var(--accent);outline:none}
+main{min-width:0}
+header.top{padding-block:48px 32px;border-bottom:1px solid var(--line);display:grid;gap:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1 .kr{display:block;font-size:.42em;font-weight:400;color:var(--ink-2);margin-top:12px;letter-spacing:0}
+.lede{font-size:18px;color:var(--ink-2);max-width:64ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+section{padding-block:48px 8px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.2;margin:0 0 8px;text-wrap:balance}
+h3{font-family:var(--body);font-weight:700;font-size:18px;margin:28px 0 8px}
+h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--ink-2);margin:18px 0 8px}
+p{margin:0 0 14px;max-width:70ch}
+.sub{color:var(--ink-2);margin-bottom:24px}
+ul{margin:0 0 14px;padding-left:20px;max-width:72ch}
+li{margin-bottom:6px}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border-radius:3px;vertical-align:1px;white-space:nowrap}
+.v{background:var(--ok-soft);color:var(--ok)}
+.i{background:var(--warn-soft);color:var(--warn)}
+.callout{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);padding:18px 20px;border-radius:4px;margin:18px 0;max-width:78ch}
+.callout p:last-child,.callout ul:last-child{margin-bottom:0}
+.decisions{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:20px 0}
+.decision{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px}
+.decision h3{margin:0 0 6px;font-size:16px}
+.decision p{margin:0;font-size:15px;color:var(--ink-2)}
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.line{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px}
+.swatch{width:14px;height:44px;border-radius:3px;border:1px solid var(--line)}
+.line b{display:block;font-size:15px}
+.line span{font-size:14px;color:var(--ink-2)}
+.tablebox{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--ink-2);background:var(--surface-2)}
+tbody th{font-weight:600;white-space:nowrap}
+tr:last-child td,tr:last-child th{border-bottom:0}
+.site{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;margin:18px 0}
+.site-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;margin-bottom:6px}
+.site-head h3{margin:0;font-family:var(--display);font-size:22px}
+.site-head .url{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2);margin:0 6px 6px 0}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:640px){.cols{grid-template-columns:minmax(0,1fr)}}
+.take h4{color:var(--ok)}
+.avoid h4{color:var(--no)}
+.take ul,.avoid ul{font-size:15px}
+.wf-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin:22px 0;align-items:start}
+.phone{background:var(--wf-bg);border:1px solid var(--line);border-radius:22px;padding:12px;max-width:360px;width:100%;margin:0 auto;font-size:11.5px;color:var(--wf-ink);font-family:var(--body);line-height:1.35}
+.phone-cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);text-align:center;margin-bottom:10px}
+.wf{background:var(--wf-block);border-radius:6px;padding:8px 10px;margin-bottom:6px;position:relative}
+.wf.dark{background:var(--ink);color:var(--bg)}
+.wf.hero{height:150px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.wf .n{position:absolute;right:8px;top:6px;font-family:var(--mono);font-size:10px;opacity:.7}
+.wf .ttl{font-family:var(--display);font-size:16px;color:var(--ink)}
+.wf.dark .ttl{color:var(--bg)}
+.btns{display:flex;gap:6px;flex-wrap:wrap}
+.btn{border:1px solid var(--wf-ink);border-radius:99px;padding:2px 10px;font-size:10.5px}
+.btn.fill{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.chip{display:inline-flex;align-items:center;gap:4px;background:var(--wf-bg);border-radius:99px;padding:2px 8px;font-size:10px}
+.dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.card{background:var(--wf-bg);border-radius:4px;padding:6px;font-size:10px}
+.card .img{height:52px;background:var(--wf-block);border-radius:3px;margin-bottom:4px;border:1px dashed var(--line)}
+.card b{color:var(--ink);font-size:11px}
+.tiny{font-size:9.5px;opacity:.85}
+.acc{border-top:1px solid var(--line);padding:5px 0;display:flex;justify-content:space-between}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--ink-2);margin:10px 0 18px}
+.sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px;font-size:14px}
+.node b{display:block;font-family:var(--display);font-size:17px;margin-bottom:6px}
+.node ul{padding-left:16px;margin:0;color:var(--ink-2)}
+.node li{margin-bottom:2px}
+.persona{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+.persona .who{font-family:var(--display);font-size:20px;margin:0 0 2px}
+.persona .role{font-size:14px;color:var(--ink-2);margin-bottom:10px}
+.persona q{display:block;font-family:var(--display);font-size:16px;margin:10px 0;color:var(--ink)}
+.persona ul{font-size:14px}
+.timeline{display:grid;gap:0;margin:18px 0;border-left:2px solid var(--line);padding-left:20px;max-width:760px}
+.step{position:relative;padding-bottom:20px}
+.step::before{content:"";position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.step b{display:block}
+.step .when{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.date{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px;font-size:14px}
+.date .d{font-family:var(--mono);font-size:13px;color:var(--accent);font-variant-numeric:tabular-nums}
+.date b{display:block}
+details{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:600}
+details ul{font-size:13px;word-break:break-word;margin-top:10px}
+.price{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contenido">
+  <b>Contenido</b>
+  <a href="#resumen">Resumen</a>
+  <a href="#metodo">Cómo se hizo</a>
+  <a href="#marca">La marca</a>
+  <a href="#comparativa">Comparativa</a>
+  <a href="#sitios">Sitio por sitio</a>
+  <a href="#argentina">Contexto argentino</a>
+  <a href="#arquitectura">Arquitectura</a>
+  <a href="#wireframes">Wireframes</a>
+  <a href="#personas">Proto-personas</a>
+  <a href="#stack">Stack Shopify</a>
+  <a href="#plan">Plan y pendientes</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<main>
+<header class="top">
+  <div class="eyebrow">Benchmark UX · Prototipo Shopify · Septiembre 2026</div>
+  <h1>SKIN1004 Argentina en Shopify<span class="kr">스킨천사 · The Untouched Nature</span></h1>
+  <p class="lede">Análisis de cinco sitios de referencia (SKIN1004 global y Corea, Derma Space, Oh My Cream y Cosibella) y del contexto argentino, para prototipar la tienda oficial de SKIN1004 del Grupo Skinfree.</p>
+  <div class="meta"><span>5 sitios analizados</span><span>Mercado: Argentina</span><span>Plataforma: Shopify</span><span>Datos a 28/9/2026</span></div>
+</header>
+
+<section id="resumen">
+  <h2>Resumen</h2>
+  <p class="sub">Seis decisiones que salen del análisis y que deberían guiar el prototipo.</p>
+  <div class="decisions">
+    <div class="decision"><h3>Navegar por línea, piel y paso</h3><p>Como hace skin1004.com: cuatro ejes (línea, tipo de producto, tipo de piel, necesidad). El color de cada línea funciona como sistema visual.</p></div>
+    <div class="decision"><h3>Test de piel que termina en rutina</h3><p>Derma Space (más de 37.000 tests) y Oh My Cream (3 preguntas) lo ponen en el centro. El resultado debe ser una rutina SKIN1004 que se agrega al carrito en un clic.</p></div>
+    <div class="decision"><h3>Rutinas y kits como producto</h3><p>Bundles por línea ("Rutina calmante en 3 pasos") y minis de 30 ml como entrada. Suben el ticket sin descontar el producto estrella.</p></div>
+    <div class="decision"><h3>Lo oficial como diferencial</h3><p>Hay al menos 15 canales vendiendo SKIN1004 en Argentina a precios parecidos. La tienda propia gana con autenticidad (representante oficial, rótulo ANMAT), contenido y kits exclusivos.</p></div>
+    <div class="decision"><h3>Comercio argentino a la vista</h3><p>Cuotas sin interés, precio por transferencia y "Precio sin impuestos nacionales" en cada tarjeta y ficha. Shopify no los trae: hay que construirlos en el tema.</p></div>
+    <div class="decision"><h3>Minimalismo de marca, no de droguería</h3><p>Mucho aire, fotos de textura e ingrediente, un solo badge por producto. Descuentos fuertes solo en fechas clave, para no caer en la estética promocional de Cosibella.</p></div>
+  </div>
+</section>
+
+<section id="metodo">
+  <h2>Cómo se hizo</h2>
+  <div class="callout">
+    <p><b>Límite importante:</b> la red de esta sesión bloquea el acceso directo a los cinco dominios. No se pudieron abrir las páginas ni sacar capturas. Todo sale de resultados de búsqueda web (títulos, URLs y fragmentos de las páginas), prensa y sitios de terceros.</p>
+    <p>La estructura, las colecciones, las políticas y los precios quedaron bien documentados. Lo visual (colores exactos, tipografías, maquetación) <b>no se pudo verificar</b> y conviene revisarlo en el navegador o, mejor, pedir el brand book oficial a Craver Corporation.</p>
+  </div>
+  <div class="legend"><span><span class="tag v">Verificado</span> hay una fuente que lo dice</span><span><span class="tag i">Inferido</span> interpretación o conocimiento general</span></div>
+</section>
+
+<section id="marca">
+  <h2>La marca: qué hay que respetar</h2>
+  <p class="sub">SKIN1004 es de Craver Corporation (Seúl). En Argentina la representa oficialmente el Grupo Skinfree.</p>
+  <ul>
+    <li><b>El nombre:</b> "1004" se pronuncia <i>cheon-sa</i> (천사), "ángel" en coreano. La marca quiere ser el ángel guardián de la piel. <span class="tag v">Verificado</span></li>
+    <li><b>El eslogan:</b> "The Untouched Nature". En Corea se habla de "원료주의", la filosofía de poner el ingrediente primero. <span class="tag v">Verificado</span></li>
+    <li><b>El ingrediente:</b> Centella asiática de Madagascar, de "naturaleza intacta, poco poblada y sin contaminación". Lema: "Whatever touches the skin must be pristine". <span class="tag v">Verificado</span></li>
+    <li><b>Los sellos:</b> vegana, cruelty-free certificada por PETA, hipoalergénica, CGMP. En Argentina, rotulada con legajo ANMAT del importador. <span class="tag v">Verificado</span></li>
+    <li><b>El tono:</b> calmo y clínico-natural ("calma", "reconforta", "equilibrio suave"), con promesas prudentes. Encaja con lo que exige ANMAT para cosméticos. <span class="tag i">Inferido</span></li>
+    <li><b>Lo visual:</b> fondos claros, tonos tierra y arena, producto sobre fondo limpio, texturas y naturaleza. La tienda de SoHo (2026) usa capas de madera que evocan un cañón de Madagascar. <span class="tag i">Inferido</span> (la tienda de SoHo está verificada)</li>
+  </ul>
+  <h3>Las líneas y su color</h3>
+  <p>Cada línea tiene un color de packaging. Es la herramienta visual más útil para la tienda: chips, bordes de tarjeta y fondos de colección. Los tonos de abajo son aproximados y hay que reemplazarlos por los del brand book. <span class="tag v">Verificado</span> en retailers <span class="tag i">Inferido</span> los HEX</p>
+  <div class="lines">
+    <div class="line"><div class="swatch" style="background:var(--c-centella)"></div><div><b>Madagascar Centella</b><span>Dorado. Piel sensible y rojeces. Incluye la Ampoule, producto estrella.</span></div></div>
+    <div class="line"><div class="swatch" style="background:var(--c-hyalu)"></div><div><b>Hyalu-Cica</b><span>Azul. Hidratación. Incluye el Water-Fit Sun Serum.</span></div></div>
+    <div class="line"><div class="swatch" style="background:var(--c-tone)"></div><div><b>Tone Brightening</b><span>Blanco. Manchas y tono apagado.</span></div></div>
+    <div class="line"><div class="swatch" style="background:var(--c-pore)"></div><div><b>Poremizing</b><span>Rosa. Poros y sebo, con sal rosa del Himalaya.</span></div></div>
+    <div class="line"><div class="swatch" style="background:var(--c-tea)"></div><div><b>Tea-Trica</b><span>Verde. Granitos y piel grasa.</span></div></div>
+    <div class="line"><div class="swatch" style="background:var(--c-probio)"></div><div><b>Probio-Cica</b><span>Marrón. Barrera cutánea, con cica fermentada.</span></div></div>
+  </div>
+  <p>También existe la línea Centella TECA, la más nueva. En el sitio global, los productos nuevos ya no llevan "Madagascar" en el nombre. <span class="tag i">Inferido</span></p>
+</section>
+
+<section id="comparativa">
+  <h2>Comparativa de los cinco sitios</h2>
+  <p class="sub">Qué hace cada uno en los puntos que más pesan para el prototipo. Desplazá la tabla hacia los costados en el celular.</p>
+  <div class="tablebox">
+  <table>
+    <thead><tr><th></th><th>SKIN1004 global</th><th>SKIN1004 Corea</th><th>Derma Space</th><th>Oh My Cream</th><th>Cosibella</th></tr></thead>
+    <tbody>
+      <tr><th>Qué es</th><td>Tienda oficial de la marca</td><td>Tienda oficial local</td><td>Retailer K-beauty, Dinamarca</td><td>Concept store clean, Francia</td><td>Droguería online, Polonia</td></tr>
+      <tr><th>Plataforma</th><td>Shopify</td><td>Cafe24</td><td>Shopify</td><td>Shopify Plus + POS</td><td>IdoSell</td></tr>
+      <tr><th>Test de piel</th><td>Skin type test (app de quiz)</td><td>No encontrado</td><td>Test de 30 s y rutina firmada por la fundadora</td><td>Quiz de 3 preguntas, diagnóstico en tienda e IA</td><td>"Cosmetóloga virtual" y asesoría gratis</td></tr>
+      <tr><th>Navegación</th><td>Línea, categoría, tipo de piel, necesidad</td><td>Categorías, kits de 30 ml, sets</td><td>Paso de rutina, tipo de piel, necesidad, ingrediente</td><td>Necesidad, tipo de piel, producto</td><td>Categoría, ingrediente, necesidad, tendencia, marca</td></tr>
+      <tr><th>Rutinas y kits</th><td>Sets y kits propios</td><td>Sets con nombres comerciales</td><td>Rutinas vendidas como un solo producto</td><td>Kits de viaje y cofres</td><td>Sets y travel kits</td></tr>
+      <tr><th>Muestras y regalos</th><td>Regalos por escalón de compra</td><td>Mini Ampoule por reseñar</td><td>2 muestras y regalo desde 499 DKK</td><td>Eliminadas en abril de 2026</td><td>Muestras en cada pedido</td></tr>
+      <tr><th>Fidelidad</th><td>Sin puntos</td><td>Puntos de bienvenida, cupones por Kakao</td><td>K-club: 10% en puntos</td><td>Club con puntos y niveles</td><td>Puntos (~2%) y referidos</td></tr>
+      <tr><th>Envío gratis</th><td>Desde USD 60</td><td>Cupón por dejar reseña</td><td>Desde 399 DKK</td><td>Desde 60 €</td><td>Desde 60 €</td></tr>
+      <tr><th>Reseñas</th><td>Sin datos</td><td>Board con votos y fotos</td><td>Trustpilot ~4,9</td><td>Yotpo (baja confianza) · Trustpilot mixto</td><td>Propias verificadas · Trustpilot 1,7</td></tr>
+      <tr><th>Estética</th><td>Minimal, natural</td><td>Promo K-commerce</td><td>Cercana, con caras</td><td>Premium editorial</td><td>Droguería promocional</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>La estética de cada sitio es <span class="tag i">Inferido</span>. El resto está <span class="tag v">Verificado</span> salvo donde se indica.</p>
+</section>
+
+<section id="sitios">
+  <h2>Sitio por sitio</h2>
+  <p class="sub">Qué es cada referencia, qué conviene tomar y qué conviene evitar.</p>
+
+  <article class="site">
+    <div class="site-head"><h3>SKIN1004 global</h3><span class="url">skin1004.com</span></div>
+    <span class="pill">Shopify</span><span class="pill">Envía a ~45 países, incluida Argentina</span><span class="pill">Referencia principal</span>
+    <p>Es el modelo directo: misma plataforma, misma marca. Organiza las colecciones en cuatro ejes: por línea (/collections/centella, /hyalucica…), por categoría (ampollas, limpiadores, protector), por tipo de piel (grasa, mixta, seca, sensible) y por necesidad. Tiene páginas de historia ("The Untouched Nature"), test de piel, tiendas insignia, <b>vendedores autorizados</b> y tiendas oficiales. <span class="tag v">Verificado</span></p>
+    <div class="cols">
+      <div class="take"><h4>Tomar</h4><ul>
+        <li>La arquitectura de colecciones completa, traducida a español.</li>
+        <li>La página de historia de Madagascar y la de "vendedores autorizados".</li>
+        <li>Los sets y kits como productos propios.</li>
+        <li>Regalos por escalón de compra.</li>
+      </ul></div>
+      <div class="avoid"><h4>Evitar</h4><ul>
+        <li>"Clearance hasta 60% off" permanente.</li>
+        <li>Black Friday "hasta 70% en todo el sitio" como costumbre.</li>
+      </ul></div>
+    </div>
+  </article>
+
+  <article class="site">
+    <div class="site-head"><h3>SKIN1004 Corea</h3><span class="url">skin1004korea.com</span></div>
+    <span class="pill">Cafe24</span><span class="pill">Precios en KRW</span>
+    <p>Muestra las tácticas del comercio coreano: ₩2.000 de puntos de bienvenida, cupón por sumarse al canal de KakaoTalk, cupón de envío gratis por dejar reseña, eventos de reseñas con foto de antes y después, y kits de prueba de 30 ml como categoría propia. <span class="tag v">Verificado</span></p>
+    <div class="cols">
+      <div class="take"><h4>Tomar</h4><ul>
+        <li>Cupón por sumarse al canal de WhatsApp (el equivalente argentino de Kakao).</li>
+        <li>Beneficio por reseña con foto.</li>
+        <li>Kits de 30 ml como puerta de entrada.</li>
+        <li>Un evento propio "Día 1004" el 4/10. <span class="tag i">Inferido</span></li>
+      </ul></div>
+      <div class="avoid"><h4>Evitar</h4><ul>
+        <li>La densidad de eventos y cupones simultáneos.</li>
+        <li>Promesas de "antes y después" que ANMAT puede objetar.</li>
+      </ul></div>
+    </div>
+  </article>
+
+  <article class="site">
+    <div class="site-head"><h3>Derma Space</h3><span class="url">dermaspace.dk</span></div>
+    <span class="pill">Shopify</span><span class="pill">Vende SKIN1004</span><span class="pill">Trustpilot ~4,9</span>
+    <p>Retailer danés de K-beauty fundado en 2018 por madre e hija. Su fuerza es la asesoría con caras reales:</p>
+    <ul>
+      <li>Un test de piel de 30 segundos que más de 37.000 personas completaron.</li>
+      <li>Rutinas firmadas por la fundadora ("La rutina de Katrine") y vendidas como un solo producto.</li>
+      <li>La página "Derma Teamet", que presenta al equipo.</li>
+      <li>Una colección de piel sensible con <b>criterios públicos</b>: sin fragancia, sin alcohol secante, sin aceites esenciales. <span class="tag v">Verificado</span></li>
+    </ul>
+    <p>Usa dos umbrales escalonados: envío gratis desde 399 DKK y regalo desde 499 DKK. Las reseñas elogian muestras, tarjeta escrita a mano y entrega rápida. <span class="tag v">Verificado</span></p>
+    <div class="cols">
+      <div class="take"><h4>Tomar</h4><ul>
+        <li>Test de piel en la home, con contador y firmado por una experta de Skinfree.</li>
+        <li>Menú por paso de rutina (el orden coreano).</li>
+        <li>Rutinas como bundles y kit de minis.</li>
+        <li>Muestras y tarjeta a mano en cada pedido.</li>
+        <li>Umbrales de envío y regalo con barra de progreso en el carrito.</li>
+      </ul></div>
+      <div class="avoid"><h4>Evitar</h4><ul>
+        <li>Índice de marcas y surtido de pelo y maquillaje: la tienda es de una sola marca.</li>
+        <li>Prometer entregas de 1 a 3 días fuera del AMBA.</li>
+      </ul></div>
+    </div>
+  </article>
+
+  <article class="site">
+    <div class="site-head"><h3>Oh My Cream</h3><span class="url">en.ohmycream.com</span></div>
+    <span class="pill">Shopify Plus</span><span class="pill">Vende SKIN1004</span><span class="pill">B Corp</span>
+    <p>Concept store parisino de clean beauty (2013) con marca propia, unas 48 tiendas y ventas cercanas a 50 M€. Es la referencia de dirección de arte premium: mucho blanco y aire, acentos empolvados y un tono cercano ("gestes essentiels", "SOS peau sensible"). <span class="tag v">Verificado</span></p>
+    <p>Tiene un quiz de 3 preguntas, guías de compra por necesidad y fichas con textura descrita en palabras. En abril de 2026 dejó de incluir muestras por razones ambientales. Su caso en Shopify cita un 50% más de valor de vida del cliente tras integrar la tienda física y la web. <span class="tag v">Verificado</span></p>
+    <div class="cols">
+      <div class="take"><h4>Tomar</h4><ul>
+        <li>Presentar cada línea como un "método" de 3 o 4 pasos.</li>
+        <li>Fichas con textura, ingredientes clave explicados y AM/PM.</li>
+        <li>Blog de guías enlazado a colecciones.</li>
+        <li>Dirección de arte con aire, con el verde de la centella como acento.</li>
+      </ul></div>
+      <div class="avoid"><h4>Evitar</h4><ul>
+        <li>El discurso "clean" y las listas negras de ingredientes, que pueden traer reparos de ANMAT.</li>
+        <li>Niveles de fidelidad complejos.</li>
+        <li>Análisis de piel con IA por foto: caro, y los datos biométricos son sensibles bajo la Ley 25.326.</li>
+      </ul></div>
+    </div>
+  </article>
+
+  <article class="site">
+    <div class="site-head"><h3>Cosibella</h3><span class="url">cosibella.com.de</span></div>
+    <span class="pill">IdoSell</span><span class="pill">Vende SKIN1004</span><span class="pill">Trustpilot 1,7</span>
+    <p>Droguería online polaca con tiendas en 10 países y más de 100 marcas. Su mejor idea es de arquitectura: cada producto se encuentra por 4 o 5 caminos (categoría, ingrediente, necesidad, tendencia y marca).</p>
+    <p>Tiene una "cosmetóloga virtual", puntos por compra y por reseña, cupón de cumpleaños y muestras en cada pedido. Su estética es promocional, con descuentos permanentes y títulos SEO larguísimos. Tiene mala reputación por demoras en la entrega. <span class="tag v">Verificado</span></p>
+    <div class="cols">
+      <div class="take"><h4>Tomar</h4><ul>
+        <li>Entrada por ingrediente (Centella, probióticos, ácido hialurónico, árbol de té).</li>
+        <li>Puntos por reseña y cupón de cumpleaños.</li>
+        <li>Ficha con INCI completo y claims "sin".</li>
+        <li>Página que explica cómo se verifican las reseñas.</li>
+      </ul></div>
+      <div class="avoid"><h4>Evitar</h4><ul>
+        <li>Sale siempre visible y cupones del 30% al 50%.</li>
+        <li>Grillas densas y muchos badges.</li>
+        <li>Countdowns perpetuos y popups en cascada.</li>
+        <li>Prometer plazos que la logística no cumple.</li>
+      </ul></div>
+    </div>
+  </article>
+</section>
+
+<section id="argentina">
+  <h2>Contexto argentino</h2>
+  <p class="sub">Lo que la tienda tiene que resolver acá y que ninguna de las referencias europeas o coreanas trae.</p>
+
+  <h3>Skinfree hoy</h3>
+  <ul>
+    <li>Es el representante oficial de SKIN1004, ANUA, Coony, BEK y Shisso. Importa a través de Laboratorio BEK SRL, legajo ANMAT 2994. <span class="tag v">Verificado</span> (hay que confirmar el legajo contra el rótulo)</li>
+    <li>Condiciones actuales: 6 cuotas sin interés desde $150.000, 10% por transferencia y envío gratis desde $119.999. <span class="tag v">Verificado</span></li>
+    <li>La web actual parece hecha en Tiendanube. Pasar a Shopify es una <b>migración</b> y hay que redirigir las URLs viejas para no perder posicionamiento en buscadores. <span class="tag i">Inferido</span></li>
+    <li>Existen skin1004.com.ar y skin1004.ar y no está claro quién los opera. Si no son de Skinfree, es un tema de marca a resolver. <span class="tag v">Verificado</span> (que existen)</li>
+  </ul>
+
+  <h3>Pagos</h3>
+  <ul>
+    <li><b>Shopify Payments no existe en Argentina.</b> Hay que usar una pasarela externa, y Shopify cobra una comisión extra: 2% en Basic, 1% en Shopify y 0,5% en Advanced. Se suma a lo que cobra la pasarela. <span class="tag v">Verificado</span></li>
+    <li><b>Mercado Pago</b> tiene integración oficial: checkout con tarjeta sin salir de la tienda, Checkout Pro, cuotas sin interés configurables por monto mínimo y "Cuotas sin Tarjeta" (hasta 12). <span class="tag v">Verificado</span></li>
+    <li>Otras opciones: MODO Checkout, Ualá Bis y Talo Pay (transferencia con CVU por pedido y confirmación automática). <span class="tag v">Verificado</span></li>
+    <li>Según CACE 2025, 8 de cada 10 compradores consideran clave poder pagar en cuotas, y la mayoría de las compras financiadas son en 3 a 6 cuotas. <span class="tag v">Verificado</span></li>
+  </ul>
+
+  <h3>Precios y legales</h3>
+  <ul>
+    <li><b>Ley 27.743 y Res. SIC 4/2025:</b> hay que mostrar el precio final y, más chico, el precio con la leyenda "Precio sin impuestos nacionales". Shopify no lo hace solo: se calcula en el tema (precio / 1,21 con IVA al 21%). <span class="tag v">Verificado</span></li>
+    <li><b>Botón de arrepentimiento</b> (Disp. 954/2025): a simple vista, sin registro previo, con respuesta en 24 horas y código de pedido. El plazo es de 10 días. <span class="tag v">Verificado</span></li>
+    <li><b>Obligatorios en el sitio:</b> Data Fiscal de ARCA (formulario 960/D) en la home y el link a Defensa del Consumidor. <span class="tag v">Verificado</span></li>
+    <li><b>Facturación electrónica</b> con CAE mediante apps como Emitio, Profitar o Facture. Para pedir CUIT o DNI en el checkout hace falta una app, salvo en Shopify Plus. <span class="tag v">Verificado</span></li>
+    <li><b>Textos:</b> los cosméticos no pueden prometer efectos terapéuticos. Usar "calma" o "ayuda a" en vez de "cura" o "trata el acné", y mostrar la foto del rótulo en español. <span class="tag v">Verificado</span> la norma <span class="tag i">Inferido</span> el criterio de redacción</li>
+    <li><b>Ley 25.326:</b> política de privacidad, consentimiento para mails y WhatsApp de marketing, y registro de la base de clientes ante la AAIP. <span class="tag v">Verificado</span></li>
+  </ul>
+
+  <h3>Envíos</h3>
+  <ul>
+    <li>Andreani y Correo Argentino se integran con apps como Shipy o la de Correo Argentino. Envíopack agrega varios transportistas y ofrece depósito y preparación de pedidos. <span class="tag v">Verificado</span></li>
+    <li>Envío en el día en AMBA con Moova o Cabify Logistics. Mercado Envíos Flex no sirve para pedidos de Shopify. <span class="tag v">Verificado</span></li>
+    <li>Las tarifas calculadas por una app externa requieren el plan Shopify con pago anual o superior. <span class="tag v">Verificado</span></li>
+    <li>Conviene un umbral de envío gratis distinto para AMBA y para el interior, y comunicar plazos por zona. <span class="tag i">Inferido</span></li>
+  </ul>
+
+  <h3>Mercado y competencia</h3>
+  <ul>
+    <li>Las exportaciones coreanas de cosmética a México, Brasil y Argentina pasaron de USD 35 millones (2023) a USD 92 millones (2025). Los tónicos con centella están entre lo más vendido. <span class="tag v">Verificado</span></li>
+    <li>SKIN1004 ya se vende en Farmacity, en la tienda oficial de Mercado Libre (operada por Leloir), en Farmacia Leloir, Luxodia, Regy, Bitna, Care City y más. <span class="tag v">Verificado</span></li>
+    <li>La Madagascar Centella Ampoule se ve entre <span class="price">$40.000</span> y <span class="price">$56.000</span> según tamaño y canal. <span class="tag v">Verificado</span> (fragmentos de búsqueda, falta confirmar en vivo)</li>
+    <li>Alrededor del 69% del volumen del e-commerce argentino es móvil. El 55% de las compradoras prefiere recibir recomendaciones por WhatsApp. <span class="tag v">Verificado</span></li>
+    <li>Clima: los veranos húmedos y el UV alto de Buenos Aires favorecen Poremizing, Centella y los protectores livianos. En el interior seco, Hyalu-Cica. <span class="tag i">Inferido</span></li>
+  </ul>
+
+  <h3>Calendario comercial</h3>
+  <div class="cal">
+    <div class="date"><span class="d">4/10</span><b>Día 1004</b>Evento propio de la marca <span class="tag i">Inferido</span></div>
+    <div class="date"><span class="d">18/10/2026</span><b>Día de la Madre</b>Cofres de regalo</div>
+    <div class="date"><span class="d">2–4/11/2026</span><b>CyberMonday</b>Organiza CACE</div>
+    <div class="date"><span class="d">27/11/2026</span><b>Black Friday</b>Y Black Week</div>
+    <div class="date"><span class="d">Sep–Dic</span><b>Temporada solar</b>Hyalu-Cica Sun Serum</div>
+    <div class="date"><span class="d">11–13/5/2027</span><b>Hot Sale</b>Fecha de 2026: 11–13/5</div>
+  </div>
+</section>
+
+<section id="arquitectura">
+  <h2>Arquitectura propuesta</h2>
+  <p class="sub">Menú principal para una tienda de una sola marca con unos 40 a 60 productos. En Shopify se arma con colecciones automáticas por etiquetas y con filtros de Search &amp; Discovery sobre metafields (tipo de piel, necesidad, paso de rutina, línea).</p>
+  <div class="sitemap">
+    <div class="node"><b>Productos</b><ul><li>Limpieza</li><li>Tónicos</li><li>Ampollas y sérums</li><li>Cremas</li><li>Protector solar</li><li>Máscaras</li><li>Minis y viaje</li></ul></div>
+    <div class="node"><b>Líneas</b><ul><li>Madagascar Centella</li><li>Hyalu-Cica</li><li>Tone Brightening</li><li>Poremizing</li><li>Tea-Trica</li><li>Probio-Cica</li></ul></div>
+    <div class="node"><b>Tu piel</b><ul><li>Grasa · Mixta · Seca · Sensible</li><li>Rojeces</li><li>Poros y brillo</li><li>Granitos</li><li>Manchas</li><li>Deshidratación</li></ul></div>
+    <div class="node"><b>Rutinas y kits</b><ul><li>Rutinas por línea</li><li>Kits de viaje</li><li>Regalos</li></ul></div>
+    <div class="node"><b>Test de piel</b><ul><li>3 a 5 preguntas</li><li>Resultado: rutina en un clic</li></ul></div>
+    <div class="node"><b>Nuestra historia</b><ul><li>1004 = ángel</li><li>Centella de Madagascar</li><li>Guías y blog</li></ul></div>
+    <div class="node"><b>Ayuda</b><ul><li>Envíos y plazos</li><li>Cuotas y pagos</li><li>Producto original</li><li>Dónde comprar</li></ul></div>
+  </div>
+</section>
+
+<section id="wireframes">
+  <h2>Wireframes</h2>
+  <p class="sub">Primero para celular, que es donde pasa la mayor parte de la compra. Son esquemas de estructura, sin diseño visual final. Los números marcan el orden de los bloques.</p>
+  <div class="wf-row">
+    <div>
+      <div class="phone-cap">Home</div>
+      <div class="phone" role="img" aria-label="Wireframe de la home en celular">
+        <div class="wf dark"><span class="n">1</span>Envío gratis desde $X · 6 cuotas sin interés · 10% OFF transferencia</div>
+        <div class="wf"><span class="n">2</span>☰ &nbsp; <b>SKIN1004</b> &nbsp; · &nbsp; buscar · cuenta · carrito</div>
+        <div class="wf hero"><span class="n">3</span><div class="ttl">The Untouched Nature</div><div>Centella de Madagascar para piel sensible</div><div class="btns"><span class="btn fill">Hacé el test de piel</span><span class="btn">Ver la Ampoule</span></div></div>
+        <div class="wf"><span class="n">4</span>Representante oficial · Rótulo ANMAT · Vegano · Envíos a todo el país</div>
+        <div class="wf"><span class="n">5</span>Comprá por línea<div class="chips"><span class="chip"><i class="dot" style="background:var(--c-centella)"></i>Centella</span><span class="chip"><i class="dot" style="background:var(--c-hyalu)"></i>Hyalu-Cica</span><span class="chip"><i class="dot" style="background:var(--c-tone)"></i>Tone</span><span class="chip"><i class="dot" style="background:var(--c-pore)"></i>Poremizing</span><span class="chip"><i class="dot" style="background:var(--c-tea)"></i>Tea-Trica</span><span class="chip"><i class="dot" style="background:var(--c-probio)"></i>Probio-Cica</span></div></div>
+        <div class="wf"><span class="n">6</span>Más vendidos<div class="cards">
+          <div class="card"><div class="img"></div><b>Centella Ampoule</b><div>★ 4,8 · 55 ml</div><div><b>$ precio</b></div><div class="tiny">6 x $ sin interés</div><div class="tiny">$ con transferencia</div><div class="tiny">Sin imp. nac.: $</div></div>
+          <div class="card"><div class="img"></div><b>Water-Fit Sun Serum</b><div>★ 4,8 · 50 ml</div><div><b>$ precio</b></div><div class="tiny">6 x $ sin interés</div><div class="tiny">$ con transferencia</div><div class="tiny">Sin imp. nac.: $</div></div>
+        </div></div>
+        <div class="wf"><span class="n">7</span><b>Test de piel:</b> 3 preguntas y tu rutina SKIN1004. +X personas ya lo hicieron.</div>
+        <div class="wf"><span class="n">8</span>Rutinas armadas: calmante · poros · hidratación</div>
+        <div class="wf"><span class="n">9</span>Historia: 1004 = 천사 = ángel · Madagascar</div>
+        <div class="wf"><span class="n">10</span>Reseñas con foto y contenido de clientas</div>
+        <div class="wf"><span class="n">11</span>Guías: cómo usar la ampolla · protector diario</div>
+        <div class="wf"><span class="n">12</span>Club y newsletter: cupón de bienvenida · WhatsApp</div>
+        <div class="wf dark"><span class="n">13</span>Botón de arrepentimiento · Defensa del Consumidor · Data Fiscal · medios de pago · políticas</div>
+      </div>
+    </div>
+    <div>
+      <div class="phone-cap">Ficha de producto</div>
+      <div class="phone" role="img" aria-label="Wireframe de la ficha de producto en celular">
+        <div class="wf" style="height:140px"><span class="n">1</span>Galería: producto · textura · rótulo en español · video corto</div>
+        <div class="wf"><span class="n">2</span><span class="chip"><i class="dot" style="background:var(--c-centella)"></i>Madagascar Centella</span><div class="ttl" style="margin-top:4px">Centella Ampoule</div>Calma la piel sensible · ★ 4,8 (reseñas)</div>
+        <div class="wf"><span class="n">3</span><b>$ precio final</b><div class="tiny">Precio sin impuestos nacionales: $</div><div>6 cuotas sin interés de $ · $ con transferencia</div></div>
+        <div class="wf"><span class="n">4</span>Tamaño: <span class="btn">55 ml</span> <span class="btn">100 ml</span></div>
+        <div class="wf"><span class="n">5</span><div class="btns"><span class="btn fill">Agregar al carrito</span><span class="btn">Consultar por WhatsApp</span></div></div>
+        <div class="wf"><span class="n">6</span>Calculá el envío con tu código postal · plazo por zona</div>
+        <div class="wf"><span class="n">7</span>Producto original · Representante oficial · Vegano</div>
+        <div class="wf"><span class="n">8</span>
+          <div class="acc"><span>Para qué sirve</span><span>+</span></div>
+          <div class="acc"><span>Cómo usar (paso 3 · AM/PM)</span><span>+</span></div>
+          <div class="acc"><span>Ingredientes clave e INCI</span><span>+</span></div>
+          <div class="acc"><span>Tipo de piel y textura</span><span>+</span></div>
+          <div class="acc"><span>Rótulo y datos ANMAT</span><span>+</span></div>
+        </div>
+        <div class="wf"><span class="n">9</span>Completá la rutina: Toner → <b>Ampoule</b> → Cream → Sun Serum <span class="btn">Llevá los 4</span></div>
+        <div class="wf"><span class="n">10</span>Reseñas con foto · filtro por tipo de piel</div>
+      </div>
+    </div>
+  </div>
+  <h3>Carrito</h3>
+  <ul>
+    <li>Barra de progreso con dos umbrales: "Te faltan $X para el envío gratis" y "Te faltan $Y para el mini de regalo".</li>
+    <li>Selector "Elegí 2 muestras", más fácil de controlar que muestras al azar.</li>
+    <li>Resumen en cuotas y con transferencia antes de ir al checkout.</li>
+  </ul>
+</section>
+
+<section id="personas">
+  <h2>Proto-personas</h2>
+  <div class="callout"><p><b>Son hipótesis, no personas validadas.</b> Salen del análisis de mercado, no de entrevistas. Para convertirlas en personas con respaldo, conviene hacer entre 8 y 12 entrevistas a clientas de Skinfree y procesarlas con el generador de personas del skill <code>ux-researcher-designer</code>.</p></div>
+  <div class="decisions">
+    <div class="persona">
+      <p class="who">La que arranca en K-beauty</p>
+      <div class="role">20 a 28 años · AMBA · descubre productos en TikTok · compra desde el celular</div>
+      <q>Quiero probar la ampolla que vi en TikTok, pero que sea original.</q>
+      <ul><li>Necesita: kits de minis, precio en cuotas, reseñas con foto.</li><li>Teme: falsificaciones y gastar de más en algo que no le sirva.</li><li>Diseño: test de piel, video corto en la ficha, sello de producto original.</li></ul>
+    </div>
+    <div class="persona">
+      <p class="who">Piel sensible que busca calmar</p>
+      <div class="role">30 a 45 años · lee los ingredientes · repone la Ampoule y el protector</div>
+      <q>Ya sé qué me funciona. Quiero reponer rápido y sin sorpresas.</q>
+      <ul><li>Necesita: INCI completo, criterios claros de "apto piel sensible", recompra fácil.</li><li>Teme: irritación y cambios de fórmula.</li><li>Diseño: "Repetir pedido", recordatorio por WhatsApp, puntos por compra.</li></ul>
+    </div>
+    <div class="persona">
+      <p class="who">Compra para regalar, desde el interior</p>
+      <div class="role">40 a 60 años · fuera del AMBA · consulta antes de comprar</div>
+      <q>¿Cuánto tarda en llegar a Córdoba? ¿Me asesoran por WhatsApp?</q>
+      <ul><li>Necesita: cofres listos, plazo de envío por zona, atención humana.</li><li>Teme: que no llegue a tiempo para la fecha.</li><li>Diseño: calculador de envío por código postal, botón de WhatsApp, página de regalos.</li></ul>
+    </div>
+  </div>
+  <p>Hay un grupo que cuidar: niñas y adolescentes que llegan por TikTok. Skinfree ya aclara "apto +12 años" en el stick solar. Conviene tener una guía de comunicación sobre menores. <span class="tag v">Verificado</span> (la tendencia y el aviso de Skinfree)</p>
+</section>
+
+<section id="stack">
+  <h2>Stack Shopify recomendado</h2>
+  <p class="sub">Apps con presencia verificada en Argentina. Hay que confirmar precios y compatibilidad antes de contratarlas.</p>
+  <div class="tablebox">
+  <table>
+    <thead><tr><th>Necesidad</th><th>Opción</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><th>Tema</th><td>Dawn u otro tema Online Store 2.0 liviano</td><td>Con bloques a medida: precio sin impuestos, cuotas, transferencia, sellos y legales.</td></tr>
+      <tr><th>Pagos</th><td>Mercado Pago · MODO · Talo Pay</td><td>Cuotas sin interés configuradas por monto mínimo y transferencia con descuento.</td></tr>
+      <tr><th>Envíos</th><td>Envíopack o Shipy · Moova</td><td>Andreani y Correo en todo el país, envío en el día en AMBA. Requiere el plan Shopify o superior.</td></tr>
+      <tr><th>Facturación</th><td>Emitio · Profitar · Facture</td><td>CAE de ARCA y campo de DNI o CUIT en el checkout.</td></tr>
+      <tr><th>Reseñas</th><td>Judge.me</td><td>Fotos, pedido automático de reseña y puntos por reseñar.</td></tr>
+      <tr><th>Test de piel</th><td>App de quiz o desarrollo propio con metafields</td><td>El sitio global usa una app de ese tipo. <span class="tag i">Inferido</span></td></tr>
+      <tr><th>Rutinas y kits</th><td>App de bundles</td><td>O productos-kit con inventario propio.</td></tr>
+      <tr><th>Fidelidad</th><td>Smile · Joy · Yotpo Loyalty</td><td>Puntos por compra, reseña y cumpleaños, más referidos. Sin niveles al principio.</td></tr>
+      <tr><th>WhatsApp</th><td>Storechat o similar</td><td>Botón en la ficha y recuperación de carritos.</td></tr>
+      <tr><th>Mails</th><td>Klaviyo o Shopify Email</td><td>Bienvenida, recompra y carrito abandonado.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="plan">
+  <h2>Plan y pendientes</h2>
+  <div class="timeline">
+    <div class="step"><span class="when">Ahora</span><b>Conseguir insumos de marca y habilitar el relevamiento visual</b>Pedir el brand book a Craver (colores, tipografías, fotos). Habilitar el acceso a los cinco sitios para sacar capturas y completar la parte visual de este análisis.</div>
+    <div class="step"><span class="when">Semanas 1–2</span><b>Arquitectura y contenido</b>Validar el menú, cargar los metafields (línea, piel, necesidad, paso), escribir fichas en español rioplatense con criterio ANMAT e inventariar las URLs de la web actual para las redirecciones.</div>
+    <div class="step"><span class="when">Semanas 2–4</span><b>Wireframes y diseño en Figma</b>Home, colección, ficha, test de piel, carrito e historia. Primero para celular.</div>
+    <div class="step"><span class="when">Semanas 4–7</span><b>Tema y apps</b>Bloques a medida, pagos, envíos, facturación y revisión legal (botón de arrepentimiento, Data Fiscal, precios).</div>
+    <div class="step"><span class="when">Lanzamiento</span><b>Apuntar a Black Friday o a la temporada solar</b>El Día de la Madre (18/10) y el CyberMonday (2 al 4/11) quedan demasiado cerca para una migración bien hecha. Se pueden cubrir con la web actual.</div>
+  </div>
+  <h3>Preguntas para Skinfree</h3>
+  <ul>
+    <li>¿La tienda es solo de SKIN1004 o incluye ANUA, Coony, BEK y Shisso? Cambia toda la arquitectura.</li>
+    <li>¿Quién opera skin1004.com.ar y skin1004.ar? ¿Qué dominio va a usar la tienda nueva?</li>
+    <li>¿Hay acuerdo con Craver sobre el uso de fotos, textos e identidad del sitio global?</li>
+    <li>¿Hay showroom o depósito en CABA para retiro en el local?</li>
+    <li>¿Qué plan de Shopify se va a contratar? Cambia las comisiones y las tarifas de envío.</li>
+  </ul>
+</section>
+
+<section id="fuentes">
+  <h2>Fuentes</h2>
+  <p class="sub">Las páginas de los cinco sitios se leyeron a través de resultados de búsqueda, no en directo.</p>
+  <details><summary>SKIN1004 (global y Corea)</summary><ul>
+    <li><a href="https://www.skin1004.com/collections" target="_blank" rel="noopener">skin1004.com/collections</a></li>
+    <li><a href="https://www.skin1004.com/collections/centella" target="_blank" rel="noopener">skin1004.com/collections/centella</a></li>
+    <li><a href="https://www.skin1004.com/collections/skin-concern" target="_blank" rel="noopener">skin1004.com/collections/skin-concern</a></li>
+    <li><a href="https://www.skin1004.com/pages/the-untouched-nature" target="_blank" rel="noopener">skin1004.com/pages/the-untouched-nature</a></li>
+    <li><a href="https://www.skin1004.com/pages/skin-type-test" target="_blank" rel="noopener">skin1004.com/pages/skin-type-test</a></li>
+    <li><a href="https://www.skin1004.com/pages/authorized-seller" target="_blank" rel="noopener">skin1004.com/pages/authorized-seller</a></li>
+    <li><a href="https://www.skin1004.com/pages/shipping-policy" target="_blank" rel="noopener">skin1004.com/pages/shipping-policy</a></li>
+    <li><a href="https://skin1004korea.com/shopinfo/company.html" target="_blank" rel="noopener">skin1004korea.com/shopinfo/company.html</a></li>
+    <li><a href="https://skin1004korea.com/board/review/4/" target="_blank" rel="noopener">skin1004korea.com/board/review/4/</a></li>
+    <li><a href="https://www.dezeen.com/2026/07/05/skin1004-nyc-flagship-store-soho-lmtls-architecture/" target="_blank" rel="noopener">Dezeen: tienda de SoHo</a></li>
+    <li><a href="https://crueltyfree.peta.org/company/skin1004-co/" target="_blank" rel="noopener">PETA: SKIN1004</a></li>
+    <li><a href="https://kbeautyforyou.com/blogs/korean-beauty-care/the-big-skin1004-test-which-product-line-suits-your-skin" target="_blank" rel="noopener">kbeautyforyou: líneas de SKIN1004</a></li>
+  </ul></details>
+  <details><summary>Derma Space</summary><ul>
+    <li><a href="https://dermaspace.dk/pages/om-os" target="_blank" rel="noopener">dermaspace.dk/pages/om-os</a></li>
+    <li><a href="https://dermaspace.dk/collections/skin1004" target="_blank" rel="noopener">dermaspace.dk/collections/skin1004</a></li>
+    <li><a href="https://dermaspace.dk/collections/sensitiv-hud" target="_blank" rel="noopener">dermaspace.dk/collections/sensitiv-hud</a></li>
+    <li><a href="https://dermaspace.dk/pages/find-din-hudtype-rutine" target="_blank" rel="noopener">dermaspace.dk/pages/find-din-hudtype-rutine</a></li>
+    <li><a href="https://dermaspace.dk/collections/rutiner" target="_blank" rel="noopener">dermaspace.dk/collections/rutiner</a></li>
+    <li><a href="https://dermaspace.dk/pages/kundeklub" target="_blank" rel="noopener">dermaspace.dk/pages/kundeklub</a></li>
+    <li><a href="https://dermaspace.dk/pages/betaling-og-levering" target="_blank" rel="noopener">dermaspace.dk/pages/betaling-og-levering</a></li>
+    <li><a href="https://www.trustpilot.com/review/www.dermaspace.dk" target="_blank" rel="noopener">Trustpilot: Derma Space</a></li>
+  </ul></details>
+  <details><summary>Oh My Cream</summary><ul>
+    <li><a href="https://en.ohmycream.com/collections/skin1004" target="_blank" rel="noopener">en.ohmycream.com/collections/skin1004</a></li>
+    <li><a href="https://www.shopify.com/case-studies/oh-my-cream" target="_blank" rel="noopener">Shopify: caso Oh My Cream</a></li>
+    <li><a href="https://www.ohmycream.com/pages/home-quiz" target="_blank" rel="noopener">ohmycream.com/pages/home-quiz</a></li>
+    <li><a href="https://en.ohmycream.com/pages/programme-de-fidelite" target="_blank" rel="noopener">en.ohmycream.com/pages/programme-de-fidelite</a></li>
+    <li><a href="https://www.ohmycream.com/pages/faq" target="_blank" rel="noopener">ohmycream.com/pages/faq</a></li>
+    <li><a href="https://wwd.com/beauty-industry-news/wellness/oh-my-cream-opens-wellness-flagship-paris-1239075615/" target="_blank" rel="noopener">WWD: flagship de bienestar</a></li>
+    <li><a href="https://www.tuserasbeau.com/projets/oh-my-cream/" target="_blank" rel="noopener">Tu Seras Beau: identidad de marca</a></li>
+  </ul></details>
+  <details><summary>Cosibella</summary><ul>
+    <li><a href="https://cosibella.com.de/de/producers/skin1004-1653323427" target="_blank" rel="noopener">cosibella.com.de: SKIN1004</a></li>
+    <li><a href="https://cosibella.com.de/de/menu/pflege/wirkstoffe/centella-asiatica-7125" target="_blank" rel="noopener">cosibella.com.de: Centella asiatica</a></li>
+    <li><a href="https://cosibella.com.de/de/links/virtueller-kosmetologe-1258" target="_blank" rel="noopener">cosibella.com.de: cosmetóloga virtual</a></li>
+    <li><a href="https://cosibella.com.de/de/about/treueprogramm-von-cosibella-1582" target="_blank" rel="noopener">cosibella.com.de: programa de fidelidad</a></li>
+    <li><a href="https://cosibella.com.de/de/links/-informationen-zur-echtheit-von-kundenbewertungen-1212" target="_blank" rel="noopener">cosibella.com.de: autenticidad de reseñas</a></li>
+    <li><a href="https://at.trustpilot.com/review/www.cosibella.com" target="_blank" rel="noopener">Trustpilot: Cosibella</a></li>
+  </ul></details>
+  <details><summary>Argentina</summary><ul>
+    <li><a href="https://www.skinfree.com.ar/skin1004/" target="_blank" rel="noopener">skinfree.com.ar/skin1004</a></li>
+    <li><a href="https://www.skinfree.com.ar/mediosdepago/" target="_blank" rel="noopener">skinfree.com.ar/mediosdepago</a></li>
+    <li><a href="https://infonegocios.info/plus/el-secreto-mejor-guardado-de-las-coreanas-skin1004-llega-a-la-argentina-de-la-mano-de-skinfree-cinco-marcas-de-cuidado-facial-en-una" target="_blank" rel="noopener">Infonegocios: SKIN1004 llega a Argentina</a></li>
+    <li><a href="https://www.mercadopago.com.ar/developers/es/docs/shopify/integration-configuration/checkout-cards" target="_blank" rel="noopener">Mercado Pago para Shopify</a></li>
+    <li><a href="https://community.shopify.com/c/payments-shipping-and/qu%C3%A9-pasarelas-de-pago-puedo-usar-para-mi-tienda-online-en/m-p/2415061" target="_blank" rel="noopener">Shopify: pasarelas en Argentina</a></li>
+    <li><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/319787/20250117" target="_blank" rel="noopener">Boletín Oficial: transparencia fiscal</a></li>
+    <li><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/330827/20250904" target="_blank" rel="noopener">Boletín Oficial: Disp. 954/2025</a></li>
+    <li><a href="https://www.afip.gob.ar/960/" target="_blank" rel="noopener">ARCA: Data Fiscal</a></li>
+    <li><a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/50000-54999/50139/norma.htm" target="_blank" rel="noopener">ANMAT: Res. 155/98</a></li>
+    <li><a href="https://cace.org.ar/blogs/news/estudio-anual-de-cace-2025-el-ecommerce-como-canal-estructural-del-consumo-argentino" target="_blank" rel="noopener">CACE: estudio anual 2025</a></li>
+    <li><a href="https://www.forbesargentina.com/negocios/la-revolucion-k-beauty-cosmetica-coreana-mueve-us-92-millones-region-acelera-su-negocio-argentina-n98002" target="_blank" rel="noopener">Forbes Argentina: K-beauty</a></li>
+    <li><a href="https://www.farmacity.com/k-beauty" target="_blank" rel="noopener">Farmacity: K-Beauty</a></li>
+    <li><a href="https://www.mercadolibre.com.ar/tienda/skin1004" target="_blank" rel="noopener">Mercado Libre: tienda SKIN1004</a></li>
+    <li><a href="https://apps.shopify.com/enviopack" target="_blank" rel="noopener">Envíopack para Shopify</a></li>
+    <li><a href="https://apps.shopify.com/emitio" target="_blank" rel="noopener">Emitio para Shopify</a></li>
+  </ul></details>
+</section>
+</main>
+</div>

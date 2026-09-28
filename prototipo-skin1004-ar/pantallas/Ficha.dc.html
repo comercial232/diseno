@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Centella Ampoule</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@500&display=swap">
+<style>
+body{margin:0;font-family:"Inter","Helvetica Neue",Arial,sans-serif;color:#141414;background:#141414}
+a{color:#141414}a:hover{color:#8A6A24}
+a,button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,opacity .2s ease}
+a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
+@media (prefers-reduced-motion:reduce){a,button{transition:none}}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 5760px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+
+<p style="margin: 0; background: #141414; color: #F7F4EE; font-size: 12px; font-weight: 500; letter-spacing: 0.01em; padding: 10px 24px; text-align: center; line-height: 1.4">Envío gratis desde $ 119.999</p>
+
+<header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
+  <div style="display: flex">
+    <button type="button" aria-label="Abrir menú" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+    <button type="button" aria-label="Buscar" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg></button>
+  </div>
+  <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="justify-self: center; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
+  <div style="display: flex; justify-content: flex-end">
+    <a href="Main.dc.html" aria-label="Mi cuenta" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4"></path></svg></a>
+    <a href="Carrito.dc.html" aria-label="Carrito, 1 producto" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span></a>
+  </div>
+</header>
+
+<nav aria-label="Ruta de navegación" style="background: #FFFFFF; padding: 0 24px">
+  <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; font-size: 13px; line-height: 1.5; color: #6B6B66">
+    <li style="display: flex; align-items: center; gap: 8px"><a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; color: #4A4A46; text-underline-offset: 3px">Inicio</a><span aria-hidden="true">/</span></li>
+    <li style="display: flex; align-items: center; gap: 8px"><a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; color: #4A4A46; text-underline-offset: 3px">Madagascar Centella</a><span aria-hidden="true">/</span></li>
+    <li aria-current="page" style="display: flex; align-items: center; min-height: 44px">Centella Ampoule</li>
+  </ol>
+</nav>
+
+<section aria-label="Galería de imágenes" style="background: #FFFFFF; display: flex; flex-direction: column">
+  <sc-if value="{{view.isProduct}}" hint-placeholder-val="{{true}}">
+    <div role="img" aria-label="{{view.alt}}" style="width: 390px; height: 440px; background: #F5F2EC; display: flex; align-items: center; justify-content: center">
+      <svg width="128" height="320" viewBox="0 0 60 150" aria-hidden="true"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="#C9A24A" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg>
+    </div>
+  </sc-if>
+  <sc-if value="{{view.isPhoto}}" hint-placeholder-val="{{false}}">
+    <div role="img" aria-label="{{view.caption}}" style="width: 390px; height: 440px; background: #F2EDE4; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 16px; margin-top: 1px"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+      <p style="margin: 0; max-width: 262px; font-size: 12px; line-height: 1.5; color: #6B6B66">{{view.caption}}</p>
+    </div>
+  </sc-if>
+  <div role="group" aria-label="Elegí una vista" style="margin: 12px 24px 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+    <sc-for list="{{thumbs}}" as="t" hint-placeholder-count="4">
+      <button type="button" aria-label="{{t.aria}}" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 64px; box-sizing: border-box; border-radius: 4px; border: 1px solid {{t.ring}}; background: {{t.bg}}; padding: 0 4px; font: inherit; font-size: 12px; font-weight: {{t.weight}}; line-height: 1.3; color: #4A4A46; cursor: pointer; display: flex; align-items: center; justify-content: center">
+        <sc-if value="{{t.isProduct}}" hint-placeholder-val="{{true}}"><svg width="18" height="46" viewBox="0 0 60 150" aria-hidden="true"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="#C9A24A" stroke="#141414" stroke-opacity="0.16"></rect></svg></sc-if>
+        <sc-if value="{{t.isPhoto}}" hint-placeholder-val="{{false}}"><span aria-hidden="true">{{t.label}}</span></sc-if>
+      </button>
+    </sc-for>
+  </div>
+</section>
+
+<section aria-label="Comprar la Centella Ampoule" style="background: #FFFFFF; padding: 32px 24px 0; display: flex; flex-direction: column">
+  <article style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 24px 20px; display: flex; flex-direction: column">
+    <span aria-hidden="true" style="position: absolute; top: -10px; left: 20px; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: #C9A24A; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+    <span style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #4A4A46">Madagascar Centella</span>
+    <h1 style="margin: 6px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 24px; line-height: 1.2; letter-spacing: -0.005em">Centella Ampoule</h1>
+    <span lang="ko" style="margin-top: 4px; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 12px; line-height: 1.5; color: #6B6B66">마다가스카르 센텔라 앰플</span>
+    <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Ampolla liviana que calma la piel sensible o con rojeces.</p>
+    <a href="#resenas" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; line-height: 1.5; color: #4A4A46; text-underline-offset: 3px; font-variant-numeric: tabular-nums">[puntaje] de 5, [cantidad] reseñas</a>
+    <dl style="margin: 8px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; border-top: 1px solid #E8E4DC">
+      <sc-for list="{{fields}}" as="f" hint-placeholder-count="4">
+        <div style="padding: 12px 0; border-bottom: 1px solid #E8E4DC; display: flex; flex-direction: column; gap: 2px">
+          <dt style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{f.k}}</dt>
+          <dd style="margin: 0; font-size: 14px; line-height: 1.45; color: #141414">{{f.v}}</dd>
+        </div>
+      </sc-for>
+    </dl>
+
+    <div aria-live="polite" style="margin-top: 20px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+      <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.15">{{price.list}}</span>
+      <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{price.net}}</span>
+      <span style="margin-top: 8px; font-size: 14px; line-height: 1.5; font-weight: 500; color: #2F6B45">{{price.transfer}} con transferencia</span>
+      <span style="margin-top: 2px; font-size: 12px; line-height: 1.5; color: #6B6B66">{{installments}}</span>
+    </div>
+
+    <div role="group" aria-labelledby="tam-k" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
+      <span id="tam-k" style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">Tamaño</span>
+      <div style="margin-top: 8px; display: flex; gap: 8px">
+        <sc-for list="{{sizes}}" as="s" hint-placeholder-count="2">
+          <button type="button" aria-pressed="{{s.pressed}}" onClick="{{s.pick}}" style="min-width: 96px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{s.ring}}; background: {{s.fill}}; color: {{s.ink}}; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; font-variant-numeric: tabular-nums">{{s.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px; display: flex; gap: 8px; align-items: stretch">
+      <div role="group" aria-label="Cantidad" style="flex: 0 0 auto; display: flex; align-items: center; height: 48px; box-sizing: border-box; border: 1px solid #CFCAC0; border-radius: 999px">
+        <button type="button" aria-label="Restar uno" onClick="{{minus}}" style="width: 44px; height: 46px; border: 0; border-radius: 999px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{minusInk}}" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+        <span aria-live="polite" style="min-width: 20px; text-align: center; font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums">{{qty}}</span>
+        <button type="button" aria-label="Sumar uno" onClick="{{plus}}" style="width: 44px; height: 46px; border: 0; border-radius: 999px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{plusInk}}" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"></path></svg></button>
+      </div>
+      <a href="Carrito.dc.html" style="flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar al carrito</a>
+    </div>
+    <sc-if value="{{multi}}" hint-placeholder-val="{{false}}">
+      <p style="margin: 10px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">Subtotal por {{qty}} unidades: <span style="font-weight: 600; color: #141414">{{subtotal}}</span><span style="display: block; font-size: 12px; color: #6B6B66">Precio sin impuestos nacionales: {{subtotalNet}}</span></p>
+    </sc-if>
+    <a href="Ficha.dc.html" style="margin-top: 8px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Consultar por WhatsApp</a>
+  </article>
+</section>
+
+<section aria-labelledby="envio-t" style="background: #FFFFFF; padding: 32px 24px 0; display: flex; flex-direction: column">
+  <h2 id="envio-t" style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4">Envío</h2>
+  <p aria-live="polite" style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{ship.text}}</p>
+  <div aria-hidden="true" style="margin-top: 10px; height: 4px; background: #E8E4DC"><div style="height: 4px; background: #A8812F; width: {{ship.pct}}"></div></div>
+  <form style="margin: 20px 0 0; display: flex; flex-direction: column">
+    <label for="cp" style="font-size: 14px; font-weight: 500; line-height: 1.5">Calculá costo y plazo con tu código postal</label>
+    <div style="margin-top: 8px; display: flex; gap: 8px">
+      <input id="cp" name="cp" inputmode="numeric" autocomplete="postal-code" maxlength="8" placeholder="Ej.: 1414" style="flex: 1 1 auto; min-width: 0; height: 48px; box-sizing: border-box; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF">
+      <button type="button" onClick="{{calcShip}}" style="height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid #141414; background: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; color: #141414; cursor: pointer">Calcular</button>
+    </div>
+    <sc-if value="{{shipShown}}" hint-placeholder-val="{{false}}">
+      <dl aria-live="polite" style="margin: 16px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{shipOptions}}" as="o" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; padding: 12px 0; border-bottom: 1px solid #E8E4DC">
+            <dt style="display: flex; flex-direction: column; font-size: 14px; font-weight: 500; line-height: 1.45; color: #141414">{{o.name}}<span style="margin-top: 2px; font-size: 12px; font-weight: 400; line-height: 1.5; color: #6B6B66">{{o.eta}}</span></dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 500; line-height: 1.45; color: {{o.ink}}; font-variant-numeric: tabular-nums">{{o.cost}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </sc-if>
+  </form>
+</section>
+
+<section aria-label="Información del producto" style="background: #FFFFFF; padding: 48px 24px 64px; display: flex; flex-direction: column">
+  <div style="border-top: 1px solid #E8E4DC">
+    <sc-for list="{{panels}}" as="pn" hint-placeholder-count="4">
+      <div style="border-bottom: 1px solid #E8E4DC">
+        <h2 style="margin: 0">
+          <button type="button" aria-expanded="{{pn.expanded}}" aria-controls="{{pn.pid}}" onClick="{{pn.toggle}}" style="width: 100%; min-height: 56px; display: grid; grid-template-columns: minmax(0, 1fr) auto 18px; align-items: center; column-gap: 12px; border: 0; background: transparent; font: inherit; color: #141414; cursor: pointer; padding: 0; text-align: left">
+            <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; font-weight: 600; line-height: 1.3">{{pn.title}}</span>
+            <span style="font-size: 12px; font-weight: 400; line-height: 1.5; color: #6B6B66">{{pn.hint}}</span>
+            <sc-if value="{{pn.open}}" hint-placeholder-val="{{false}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></sc-if>
+            <sc-if value="{{pn.closed}}" hint-placeholder-val="{{true}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"></path></svg></sc-if>
+          </button>
+        </h2>
+        <sc-if value="{{pn.open}}" hint-placeholder-val="{{false}}">
+          <dl id="{{pn.pid}}" style="margin: 0 0 20px; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+            <sc-for list="{{pn.rows}}" as="r" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: {{r.rule}}">
+                <dt style="font-size: 12px; font-weight: 500; line-height: 1.6; color: #6B6B66">{{r.k}}</dt>
+                <dd style="margin: 0; font-size: 14px; line-height: 1.55; color: #141414">{{r.v}}</dd>
+              </div>
+            </sc-for>
+          </dl>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section aria-labelledby="rotulo-t" style="background: #F7F4EE; padding: 64px 24px; display: flex; flex-direction: column">
+  <h2 id="rotulo-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">El rótulo en español, tal como viene en el envase</h2>
+  <figure style="margin: 28px 0 0; display: flex; flex-direction: column">
+    <div style="background: #FFFFFF; border: 1px solid #CFCAC0; border-radius: 4px; padding: 20px 16px 8px; display: flex; flex-direction: column">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #CFCAC0">
+        <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.34em; line-height: 1.5; color: #141414">SKIN1004</span>
+        <span style="font-size: 12px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">Cont. neto {{sizeLabel}}</span>
+      </div>
+      <p style="margin: 14px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.25; color: #141414">Madagascar Centella Ampoule</p>
+      <p style="margin: 2px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">Ampolla facial con centella asiática</p>
+      <dl style="margin: 14px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{label}}" as="lb" hint-placeholder-count="8">
+          <div style="display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 12px; padding: 10px 0; border-bottom: {{lb.rule}}">
+            <dt style="font-size: 12px; font-weight: 500; line-height: 1.55; color: #6B6B66">{{lb.k}}</dt>
+            <dd style="margin: 0; font-size: 13px; line-height: 1.55; color: #141414; font-weight: {{lb.w}}; font-variant-numeric: tabular-nums">{{lb.v}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+    <figcaption style="margin-top: 16px; font-size: 14px; line-height: 1.6; color: #4A4A46">Réplica del rótulo en español del envase de {{sizeLabel}}. Son los datos del importador oficial, a la vista antes de comprar.</figcaption>
+  </figure>
+  <a href="Main.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Cómo reconocer un producto original</a>
+</section>
+
+<section aria-labelledby="rutina-t" style="background: #FFFFFF; padding: 64px 24px 64px; display: flex; flex-direction: column">
+  <h2 id="rutina-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance">Dónde va en tu rutina</h2>
+  <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Es el paso 2: después del tónico y antes de la crema.</p>
+  <ol aria-label="Rutina calmante, paso por paso" style="list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+    <sc-for list="{{routine}}" as="st" hint-placeholder-count="4">
+      <li aria-current="{{st.current}}" style="display: flex; flex-direction: column">
+        <span style="height: 124px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
+          <sc-if value="{{st.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isBottle}}" hint-placeholder-val="{{true}}"><svg width="44" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isJar}}" hint-placeholder-val="{{false}}"><svg width="60" height="110" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+          <sc-if value="{{st.isTube}}" hint-placeholder-val="{{false}}"><svg width="40" height="100" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
+        </span>
+        <span style="margin-top: 12px; padding: 0 4px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
+        <span style="margin-top: 4px; padding: 0 4px; font-size: 13px; font-weight: 600; line-height: 1.35; color: {{st.ink}}">{{st.name}}</span>
+        <span style="margin-top: 4px; padding: 0 4px; font-size: 12px; line-height: 1.45; color: {{st.whenInk}}">{{st.when}}</span>
+      </li>
+    </sc-for>
+  </ol>
+  <p style="margin: 28px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Rutina calmante, 4 productos: [precio del set]</p>
+  <a href="Carrito.dc.html" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar la rutina al carrito</a>
+  <a href="Coleccion.dc.html" style="align-self: flex-start; margin-top: 12px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver toda la línea Madagascar Centella</a>
+</section>
+
+<section id="resenas" aria-labelledby="resenas-t" style="background: #FFFFFF; padding: 0 24px 64px; display: flex; flex-direction: column">
+  <div style="border-top: 1px solid #E8E4DC; padding-top: 56px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px">
+    <h2 id="resenas-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em">Reseñas</h2>
+    <span style="font-size: 12px; line-height: 1.5; color: #6B6B66; text-align: right">[puntaje] de 5, [cantidad] reseñas</span>
+  </div>
+  <div role="group" aria-label="Filtrar reseñas por tipo de piel" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px">
+    <sc-for list="{{skinFilters}}" as="sf" hint-placeholder-count="5">
+      <button type="button" aria-pressed="{{sf.pressed}}" onClick="{{sf.pick}}" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{sf.ring}}; background: {{sf.fill}}; color: {{sf.ink}}; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">{{sf.label}}</button>
+    </sc-for>
+  </div>
+  <p aria-live="polite" style="margin: 16px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">{{reviewNote}}</p>
+  <div style="margin-top: 12px; display: flex; flex-direction: column">
+    <sc-for list="{{reviews}}" as="rv" hint-placeholder-count="3">
+      <figure style="margin: 0; padding: 24px 0; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
+        <span style="font-size: 12px; line-height: 1.5; color: #6B6B66">Puntaje: [puntaje] de 5</span>
+        <blockquote style="margin: 10px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: {{rv.fs}}; line-height: 1.4; color: #141414">[Texto de la reseña verificada]</blockquote>
+        <figcaption style="margin-top: 12px; font-size: 13px; line-height: 1.5; color: #4A4A46">[Nombre], {{rv.skin}}. Compró Centella Ampoule de {{rv.size}}.</figcaption>
+      </figure>
+    </sc-for>
+  </div>
+  <a href="Ficha.dc.html" style="margin-top: 8px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Escribir una reseña</a>
+</section>
+
+<footer style="flex: 1 0 auto; background: #F2EDE4; color: #4A4A46; padding: 56px 24px 64px; display: flex; flex-direction: column; font-size: 14px">
+  <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="align-self: flex-start; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; text-decoration: none; color: #141414; line-height: 1.4">SKIN1004</a>
+  <p style="margin: 8px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">The Untouched Nature</p>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; margin-top: 36px">
+    <nav aria-label="Comprar" style="display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Comprar</span><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Líneas</a><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Rutinas y kits</a><a href="Test.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Test de piel</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">La marca</a></nav>
+    <nav aria-label="Ayuda" style="display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Ayuda</span><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Envíos y plazos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cuotas y pagos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Producto original</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cambios y devoluciones</a></nav>
+  </div>
+  <nav aria-label="Legales" style="margin-top: 12px; display: flex; flex-wrap: wrap; column-gap: 20px"><a href="Main.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Términos y condiciones</a><a href="Main.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Política de privacidad</a></nav>
+  <a href="Main.dc.html" style="margin-top: 28px; display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px">Botón de arrepentimiento</a>
+  <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid #CFCAC0; display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: center">
+    <a href="Main.dc.html" aria-label="Data Fiscal, código QR" style="width: 72px; height: 72px; background: #FFFFFF; border: 1px solid #E0DBD1; box-sizing: border-box; color: #4A4A46; font-size: 12px; line-height: 1.3; display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border-radius: 4px">QR Data Fiscal</a>
+    <a href="Main.dc.html" style="color: #141414; font-size: 14px; line-height: 1.6; text-underline-offset: 3px">Defensa de las y los consumidores. Para reclamos, ingresá acá.</a>
+  </div>
+  <p style="margin: 24px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Pagá con Mercado Pago, MODO, tarjetas o transferencia. 10% off con transferencia y 6 cuotas sin interés desde $ 150.000.</p>
+  <p style="margin: 20px 0 0; font-size: 12px; line-height: 1.65; color: #6B6B66">Grupo Skinfree, representante oficial de SKIN1004 en Argentina. Gurruchaga 592, CABA. Importa Laboratorio BEK SRL, legajo ANMAT [número]. Los precios incluyen IVA; junto a cada precio se informa el precio sin impuestos nacionales.</p>
+  <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.65; color: #6B6B66">SKIN1004 es una marca de Craver Corporation, Seúl.</p>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":5760}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { view: 'frasco', size: '55', qty: 1, open: 'uso', skin: 'Todas', ship: false };
+  }
+  renderVals() {
+    const s = this.state;
+    const group = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const money = (n) => {
+      const r = Math.round(n * 100) / 100;
+      const int = Math.floor(r);
+      const dec = Math.round((r - int) * 100);
+      return '$ ' + group(int) + (dec ? ',' + String(dec).padStart(2, '0') : '');
+    };
+    // Único precio real: Centella Ampoule 55 ml. El de 100 ml queda como placeholder.
+    const known = s.size === '55';
+    const LIST = 42999, TRANSFER = 38699, NET = 35536, FREE = 119999, CUOTAS = 150000, MAX = 9;
+    const sizeLabel = known ? '55 ml' : '100 ml';
+
+    // Galería: 1 frasco en SVG + 3 tomas (placeholder 4.8, una visible por vez).
+    const VIEWS = [
+      { id: 'frasco', label: 'Frasco', caption: '' },
+      { id: 'textura', label: 'Textura', caption: 'Foto de producto: una gota de la ampolla sobre vidrio, a contraluz. Textura líquida y transparente, fondo hueso, luz natural lateral.' },
+      { id: 'rotulo', label: 'Rótulo', caption: 'Foto de producto: el rótulo en español del envase, con Laboratorio BEK SRL y el legajo ANMAT legibles. Luz lateral dura, fondo de papel hueso.' },
+      { id: 'aplicacion', label: 'Aplicación', caption: 'Foto de aplicación: manos con piel real dejando caer dos gotas del gotero sobre la palma. Luz natural de ventana, sin maquillaje.' }
+    ];
+    const cur = VIEWS.find((v) => v.id === s.view) || VIEWS[0];
+    const view = {
+      isProduct: cur.id === 'frasco', isPhoto: cur.id !== 'frasco',
+      caption: cur.caption,
+      alt: 'Centella Ampoule, frasco gotero dorado de ' + sizeLabel
+    };
+    const thumbs = VIEWS.map((v) => {
+      const on = v.id === cur.id;
+      return {
+        label: v.label, aria: 'Ver ' + v.label.toLowerCase(),
+        isProduct: v.id === 'frasco', isPhoto: v.id !== 'frasco',
+        bg: v.id === 'frasco' ? '#F5F2EC' : '#F2EDE4',
+        pressed: on ? 'true' : 'false',
+        ring: on ? '#141414' : '#E0DBD1',
+        weight: on ? '600' : '400',
+        pick: () => this.setState({ view: v.id })
+      };
+    });
+
+    // Precio argentino (4.7) y cuotas: el valor de la cuota solo aparece al llegar al mínimo.
+    const total = known ? LIST * s.qty : null;
+    const price = known
+      ? { list: money(LIST), net: money(NET), transfer: money(TRANSFER) }
+      : { list: '[precio]', net: '[precio]', transfer: '[precio]' };
+    const installments = total !== null && total >= CUOTAS
+      ? 'Con ' + s.qty + ' unidades: 6 cuotas sin interés de ' + money(total / 6)
+      : '6 cuotas sin interés en compras desde $ 150.000';
+
+    let ship;
+    if (total === null) {
+      ship = { text: 'Envío gratis en compras desde $ 119.999.', pct: '0%' };
+    } else if (total >= FREE) {
+      ship = { text: 'Con ' + s.qty + ' unidades tu compra tiene envío gratis.', pct: '100%' };
+    } else {
+      ship = { text: 'Te faltan ' + money(FREE - total) + ' para el envío gratis.', pct: Math.round((total / FREE) * 100) + '%' };
+    }
+    const free = total !== null && total >= FREE;
+    const shipOptions = [
+      { name: 'Andreani a domicilio', eta: 'Llega en [plazo]', freeOk: true },
+      { name: 'Correo Argentino a sucursal', eta: 'Llega en [plazo]', freeOk: true },
+      { name: 'Envío en el día, solo AMBA', eta: 'Comprando antes de las [hora]', freeOk: false }
+    ].map((o) => ({
+      name: o.name, eta: o.eta,
+      cost: free && o.freeOk ? 'Gratis' : '[costo]',
+      ink: free && o.freeOk ? '#2F6B45' : '#141414'
+    }));
+
+    const sizes = [{ v: '55', label: '55 ml' }, { v: '100', label: '100 ml' }].map((x) => {
+      const on = x.v === s.size;
+      return {
+        label: x.label, pressed: on ? 'true' : 'false',
+        fill: on ? '#141414' : '#FFFFFF', ink: on ? '#FFFFFF' : '#141414', ring: on ? '#141414' : '#CFCAC0',
+        pick: () => this.setState({ size: x.v })
+      };
+    });
+
+    // Campos del rótulo principal, en el orden fijo del sistema.
+    const fields = [
+      { k: 'Ingrediente', v: 'Centella asiática de Madagascar' },
+      { k: 'Paso', v: 'Después del tónico' },
+      { k: 'Piel', v: 'Sensible o con rojeces' },
+      { k: 'Contenido', v: sizeLabel }
+    ];
+
+    // Información: ordenada como un rótulo (qué hace, uso, ingredientes, piel).
+    const PANELS = [
+      { id: 'sirve', title: 'Para qué sirve', hint: 'Calmar rojeces', rows: [
+        { k: 'Qué hace', v: 'Calma la piel sensible o con rojeces.' },
+        { k: 'Ingrediente', v: 'Centella asiática de Madagascar.' },
+        { k: 'Fórmula', v: 'Corta, con el ingrediente al frente.' }
+      ] },
+      { id: 'uso', title: 'Cómo usarla', hint: 'Mañana y noche', rows: [
+        { k: 'Paso', v: '2 de 4: después del tónico y antes de la crema.' },
+        { k: 'Cuánto', v: '2 o 3 gotas sobre la piel limpia.' },
+        { k: 'Cómo', v: 'Distribuí con toquecitos hasta que se absorba. De día, terminá con protector solar.' }
+      ] },
+      { id: 'ingr', title: 'Ingredientes', hint: 'Lista INCI', rows: [
+        { k: 'Clave', v: 'Centella asiática de Madagascar.' },
+        { k: 'INCI', v: '[lista INCI completa, tal como figura en el rótulo]' }
+      ] },
+      { id: 'piel', title: 'Tipo de piel y textura', hint: 'Líquida y liviana', rows: [
+        { k: 'Piel', v: 'Todo tipo de piel, en especial sensible o con rojeces.' },
+        { k: 'Textura', v: 'Líquida y liviana. Se absorbe rápido y no deja sensación pegajosa.' },
+        { k: 'Sellos', v: 'Vegana, certificada por PETA. Hipoalergénica.' }
+      ] }
+    ];
+    const panels = PANELS.map((p) => {
+      const open = s.open === p.id;
+      return {
+        title: p.title, hint: p.hint, pid: 'panel-' + p.id,
+        rows: p.rows.map((r, i) => Object.assign({}, r, { rule: i === p.rows.length - 1 ? '0' : '1px solid #E8E4DC' })),
+        open, closed: !open, expanded: open ? 'true' : 'false',
+        toggle: () => this.setState({ open: open ? '' : p.id })
+      };
+    });
+
+    // Réplica del rótulo en español (datos de importación como dato, no como ícono).
+    const LABEL = [
+      { k: 'Contenido neto', v: sizeLabel, w: '600' },
+      { k: 'Origen', v: 'Industria coreana' },
+      { k: 'Marca', v: 'SKIN1004, de Craver Corporation, Seúl' },
+      { k: 'Importa', v: 'Laboratorio BEK SRL', w: '600' },
+      { k: 'Legajo ANMAT', v: '[número]', w: '600' },
+      { k: 'Dir. técnica', v: '[nombre y matrícula]' },
+      { k: 'Representante', v: 'Grupo Skinfree. Gurruchaga 592, CABA' },
+      { k: 'Ingredientes', v: '[lista INCI]' }
+    ];
+    const label = LABEL.map((x, i) => ({
+      k: x.k, v: x.v, w: x.w || '400',
+      rule: i === LABEL.length - 1 ? '0' : '1px solid #E8E4DC'
+    }));
+
+    // Estante (4.10): la Ampoule es el paso 2, marcada sin fondo de color.
+    const C = '#C9A24A', H = '#4A7FB5';
+    const routine = [
+      { name: 'Toning Toner', when: 'Mañana y noche', c: C, k: 'bottle' },
+      { name: 'Centella Ampoule', when: 'Estás viendo este producto', c: C, k: 'ampoule', here: true },
+      { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' },
+      { name: 'Water-Fit Sun Serum', when: 'Solo de día', c: H, k: 'tube' }
+    ].map((x, i) => ({
+      name: x.name, when: x.when, c: x.c, n: String(i + 1),
+      isAmpoule: x.k === 'ampoule', isBottle: x.k === 'bottle', isJar: x.k === 'jar', isTube: x.k === 'tube',
+      current: x.here ? 'true' : 'false',
+      ink: x.here ? '#141414' : '#4A4A46',
+      whenInk: x.here ? '#141414' : '#6B6B66'
+    }));
+
+    const skinFilters = ['Todas', 'Sensible', 'Mixta', 'Grasa', 'Seca'].map((lbl) => {
+      const on = lbl === s.skin;
+      return {
+        label: lbl, pressed: on ? 'true' : 'false',
+        fill: on ? '#141414' : '#FFFFFF', ink: on ? '#FFFFFF' : '#141414', ring: on ? '#141414' : '#CFCAC0',
+        pick: () => this.setState({ skin: lbl })
+      };
+    });
+    const POOL = [
+      { skin: 'piel sensible', type: 'Sensible', size: '55 ml' },
+      { skin: 'piel mixta', type: 'Mixta', size: '100 ml' },
+      { skin: 'piel grasa', type: 'Grasa', size: '55 ml' },
+      { skin: 'piel sensible', type: 'Sensible', size: '100 ml' },
+      { skin: 'piel seca', type: 'Seca', size: '55 ml' },
+      { skin: 'piel mixta', type: 'Mixta', size: '55 ml' }
+    ];
+    const picked = s.skin === 'Todas' ? POOL.slice(0, 3) : POOL.filter((r) => r.type === s.skin).slice(0, 3);
+    const reviews = picked.map((r, i) => Object.assign({}, r, { fs: i === 0 ? '20px' : '17px' }));
+    const reviewNote = s.skin === 'Todas'
+      ? 'Las más recientes, de todos los tipos de piel.'
+      : 'Reseñas de piel ' + s.skin.toLowerCase() + '.';
+
+    return {
+      view, thumbs, fields, price, installments, sizes, sizeLabel,
+      qty: s.qty,
+      multi: s.qty > 1,
+      subtotal: total !== null ? money(total) : '[precio]',
+      subtotalNet: known ? money(NET * s.qty) : '[precio]',
+      minusInk: s.qty > 1 ? '#141414' : '#CFCAC0',
+      plusInk: s.qty < MAX ? '#141414' : '#CFCAC0',
+      minus: () => this.setState({ qty: Math.max(1, s.qty - 1) }),
+      plus: () => this.setState({ qty: Math.min(MAX, s.qty + 1) }),
+      ship, shipOptions,
+      calcShip: () => this.setState({ ship: true }),
+      shipShown: s.ship,
+      panels, label, routine,
+      skinFilters, reviews, reviewNote
+    };
+  }
+}
+</script>
+</body>
+</html>

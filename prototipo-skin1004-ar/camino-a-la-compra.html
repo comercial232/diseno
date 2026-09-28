@@ -1,0 +1,415 @@
+<title>Camino a la compra SKIN1004</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --bone:#F7F4EE; --ink:#141414; --ink-2:#4A4A46; --muted:#6B6B66;
+  --line:#CFCAC0; --rule:#E8E4DC; --gold:#A8812F; --gold-text:#8A6A24; --ok:#2F6B45;
+  --head:"Outfit","Helvetica Neue",Arial,sans-serif; --body:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#151513; --surface:#1D1C19; --bone:#26241F; --ink:#EDEAE3; --ink-2:#C9C5BC; --muted:#A39E94;
+    --line:#4D4A43; --rule:#33312C; --gold:#D2A951; --gold-text:#DDBA6A; --ok:#8CCB9F;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#151513; --surface:#1D1C19; --bone:#26241F; --ink:#EDEAE3; --ink-2:#C9C5BC; --muted:#A39E94;
+  --line:#4D4A43; --rule:#33312C; --gold:#D2A951; --gold-text:#DDBA6A; --ok:#8CCB9F;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0 72px}
+.wrap{max-width:1180px;margin:0 auto}
+header.top{padding-block:56px 28px;display:grid;gap:14px;border-bottom:1px solid var(--rule)}
+.logo{font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:.34em;color:var(--ink)}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.08;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.lede{margin:0;max-width:62ch;color:var(--ink-2);font-size:17px}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.jump a:first-child{background:var(--ink);color:var(--bg)}
+.jump a:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+section{padding-block:48px 8px}
+section+section{border-top:1px solid var(--rule)}
+h2{font-family:var(--head);font-weight:600;font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:.005em;text-wrap:balance}
+h3{font-family:var(--head);font-weight:600;font-size:19px;margin:32px 0 10px}
+p{margin:0 0 14px;max-width:68ch}
+.sub{color:var(--ink-2);margin-bottom:20px}
+.flow{margin:12px 0 0}
+.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:12px;background:var(--surface);padding:12px}
+.flow svg{display:block;width:100%;min-width:980px;height:auto}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:80ch}
+.hint{display:none;font-size:13px;color:var(--muted);margin:0 0 8px}
+@media (max-width:1020px){.hint{display:block}}
+/* svg parts */
+.n rect{fill:var(--surface);stroke:var(--ink);stroke-width:1.2}
+.n.pend rect{fill:var(--bone);stroke:var(--ink-2)}
+.n.out rect{fill:var(--bg);stroke:var(--ink-2);stroke-dasharray:5 4}
+.n.step rect{fill:var(--bone);stroke:var(--line)}
+.n .t{fill:var(--ink);font:600 13.5px var(--head)}
+.n .s{fill:var(--muted);font:11.5px var(--body)}
+.e{fill:none;stroke:var(--ink-2);stroke-width:1.3}
+.e.gold{stroke:var(--gold);stroke-width:2.6}
+.e.dash{stroke-dasharray:5 4}
+.mk{fill:var(--ink-2)}
+.mk-g{fill:var(--gold)}
+.bridge{fill:var(--surface)}
+.lbl rect{fill:var(--surface)}
+.lbl text{fill:var(--ink-2);font:11.5px var(--body)}
+.lbl.gold text{fill:var(--gold-text);font-weight:600}
+.col{fill:var(--muted);font:500 12px var(--body)}
+.group{fill:none;stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:5 4}
+.glbl{fill:var(--ink);font:600 12.5px var(--head)}
+.leg{fill:var(--ink-2);font:12px var(--body)}
+.legbox{stroke:var(--ink-2);stroke-width:1.2}
+.legbox.out{fill:var(--bg);stroke-dasharray:5 4}
+.legbox.pend{fill:var(--bone)}
+/* tables */
+.tablebox{overflow-x:auto;margin:10px 0 0}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-bottom:1px solid var(--rule)}
+thead th{font-weight:600;font-size:13px;color:var(--muted)}
+td.n-steps{font-family:var(--head);font-weight:600;font-size:22px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+tr.best td.n-steps{color:var(--gold-text)}
+td .path{color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+@media (max-width:760px){.cols{grid-template-columns:minmax(0,1fr);gap:8px}}
+.issues{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:0;max-width:880px}
+.issues li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+@media (max-width:560px){.issues li{grid-template-columns:minmax(0,1fr);gap:4px}}
+.issues b{font-family:var(--head);font-weight:600}
+.where{font-size:13px;color:var(--muted);padding-top:2px}
+.checkout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:12px;border-top:1px solid var(--rule)}
+@media (max-width:760px){.checkout{grid-template-columns:minmax(0,1fr)}}
+.checkout div{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule)}
+.checkout .k{font-family:var(--head);font-weight:600;font-size:17px;display:block;margin-bottom:4px}
+.checkout .v{font-size:14px;color:var(--ink-2)}
+.checkout .num{font-family:var(--head);font-weight:600;color:var(--gold-text);margin-right:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <span class="logo">SKIN1004</span>
+  <h1>Camino a la compra</h1>
+  <p class="lede">Todas las rutas que tiene hoy el prototipo para llegar desde la primera visita hasta el pago, en celular y en escritorio, con la cantidad de toques de cada una y los puntos donde alguien se puede trabar.</p>
+  <nav class="jump" aria-label="Ir a">
+    <a href="#celular">Celular</a>
+    <a href="#escritorio">Escritorio</a>
+    <a href="#rutas">Rutas y toques</a>
+    <a href="#fricciones">Dónde se traba</a>
+  </nav>
+</header>
+
+<section id="celular">
+  <h2>Flujo en celular</h2>
+  <p class="sub">Home, colección, ficha, test y carrito están diseñados para celular. "Agregar" en la home y en la colección suma al carrito sin salir de la pantalla; el número del ícono del carrito sube. "Agregar al carrito" en la ficha y "Llevá la rutina" en el test llevan directo al carrito.</p>
+  <p class="hint">Deslizá el diagrama hacia el costado para verlo completo.</p>
+  <figure class="flow">
+<div class="scroll">
+<svg viewBox="0 0 1270 600" role="img" aria-label="Flujo de compra en celular: desde redes, Google o WhatsApp se llega a la home o a la ficha; se puede agregar desde la home, la colección, el test o la ficha; todo termina en el carrito y el checkout de Shopify.">
+<defs><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk"></path></marker><marker id="gm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk-g"></path></marker></defs>
+<text class="col" x="95" y="20" text-anchor="middle">Llega</text>
+<text class="col" x="300" y="20" text-anchor="middle">Elige</text>
+<text class="col" x="525" y="20" text-anchor="middle">Explora</text>
+<text class="col" x="750" y="20" text-anchor="middle">Decide</text>
+<text class="col" x="960" y="20" text-anchor="middle">Revisa</text>
+<text class="col" x="1175" y="20" text-anchor="middle">Paga</text>
+<path class="e " d="M610 100 H920 V204" marker-end="url(#am)"></path>
+<rect class="bridge" x="744" y="95" width="12" height="10"></rect>
+<path class="e " d="M95 80 V44 H750 V218" marker-end="url(#am)"></path>
+<g class="lbl "><rect x="345.7" y="28" width="148.6" height="17" rx="3"></rect><text x="420" y="40" text-anchor="middle">Anuncio de un producto</text></g>
+<path class="e " d="M170 112 L220 232" marker-end="url(#am)"></path>
+<path class="e " d="M170 250 L220 250" marker-end="url(#am)"></path>
+<path class="e " d="M170 388 L220 268" marker-end="url(#am)"></path>
+<path class="e " d="M380 222 L440 124" marker-end="url(#am)"></path>
+<g class="lbl "><rect x="367.2" y="164" width="85.6" height="17" rx="3"></rect><text x="410" y="176" text-anchor="middle">Ver la línea</text></g>
+<path class="e " d="M380 278 L440 376" marker-end="url(#am)"></path>
+<g class="lbl "><rect x="392.4" y="320" width="35.2" height="17" rx="3"></rect><text x="410" y="332" text-anchor="middle">Test</text></g>
+<path class="e " d="M380 250 L670 250" marker-end="url(#am)"></path>
+<g class="lbl "><rect x="482.2" y="242" width="85.6" height="17" rx="3"></rect><text x="525" y="254" text-anchor="middle">Ver producto</text></g>
+<path class="e " d="M610 132 L690 218" marker-end="url(#am)"></path>
+<g class="lbl "><rect x="628.1" y="168" width="47.8" height="17" rx="3"></rect><text x="652" y="180" text-anchor="middle">Nombre</text></g>
+<g class="lbl "><text x="838" y="92" text-anchor="middle">Agregar, luego Ver carrito</text></g>
+<path class="e " d="M525 420 V480 H930 V296" marker-end="url(#am)"></path>
+<g class="lbl "><rect x="637.8" y="472" width="104.5" height="17" rx="3"></rect><text x="690" y="484" text-anchor="middle">Llevá la rutina</text></g>
+<path class="e " d="M830 250 L890 250" marker-end="url(#am)"></path>
+<g class="lbl "><text x="860" y="240" text-anchor="middle">Agregar</text></g>
+<path class="e dash" d="M750 282 V392" marker-end="url(#am)"></path>
+<g class="lbl "><text x="756" y="342" text-anchor="start">Consultar</text></g>
+<path class="e gold" d="M300 296 V540 H990 V296" marker-end="url(#gm)"></path>
+<g class="lbl gold"><rect x="430.2" y="532" width="419.5" height="17" rx="3"></rect><text x="640" y="544" text-anchor="middle">Ruta más corta: Agregar en la oferta y tocar el ícono del carrito</text></g>
+<path class="e" d="M958 204 C958 166, 1008 166, 1008 204" marker-end="url(#am)"></path>
+<g class="lbl "><text x="983" y="146" text-anchor="middle">Sumar el paso</text></g>
+<g class="lbl "><text x="983" y="158" text-anchor="middle">que falta</text></g>
+<path class="e " d="M1030 250 L1100 250" marker-end="url(#am)"></path>
+<g class="lbl "><text x="1065" y="228" text-anchor="middle">Iniciar</text></g>
+<g class="lbl "><text x="1065" y="240" text-anchor="middle">compra</text></g>
+<path class="e " d="M1175 160 V184" marker-end="url(#am)"></path>
+<path class="e " d="M1175 236 V260" marker-end="url(#am)"></path>
+<path class="e " d="M1175 312 V336" marker-end="url(#am)"></path>
+<g class="n ">
+<rect x="20" y="80" width="150" height="64" rx="10"></rect>
+<text class="t" x="95.0" y="108.5" text-anchor="middle">Anuncio en redes</text>
+<text class="s" x="95.0" y="123.5" text-anchor="middle">Instagram o TikTok</text>
+</g>
+<g class="n ">
+<rect x="20" y="218" width="150" height="64" rx="10"></rect>
+<text class="t" x="95.0" y="246.5" text-anchor="middle">Google o link directo</text>
+<text class="s" x="95.0" y="261.5" text-anchor="middle">llega a la home</text>
+</g>
+<g class="n ">
+<rect x="20" y="356" width="150" height="64" rx="10"></rect>
+<text class="t" x="95.0" y="384.5" text-anchor="middle">Link por WhatsApp</text>
+<text class="s" x="95.0" y="399.5" text-anchor="middle">de un asesor o campaña</text>
+</g>
+<g class="n ">
+<rect x="220" y="204" width="160" height="92" rx="10"></rect>
+<text class="t" x="300.0" y="239.0" text-anchor="middle">Home</text>
+<text class="s" x="300.0" y="254.0" text-anchor="middle">oferta con precio</text>
+<text class="s" x="300.0" y="269.0" text-anchor="middle">y Agregar</text>
+</g>
+<g class="n ">
+<rect x="440" y="80" width="170" height="64" rx="10"></rect>
+<text class="t" x="525.0" y="108.5" text-anchor="middle">Colección</text>
+<text class="s" x="525.0" y="123.5" text-anchor="middle">por línea, con Agregar</text>
+</g>
+<g class="n ">
+<rect x="440" y="356" width="170" height="64" rx="10"></rect>
+<text class="t" x="525.0" y="384.5" text-anchor="middle">Test de piel</text>
+<text class="s" x="525.0" y="399.5" text-anchor="middle">3 preguntas, rutina</text>
+</g>
+<g class="n ">
+<rect x="670" y="218" width="160" height="64" rx="10"></rect>
+<text class="t" x="750.0" y="246.5" text-anchor="middle">Ficha de producto</text>
+<text class="s" x="750.0" y="261.5" text-anchor="middle">tamaño y Agregar</text>
+</g>
+<g class="n ">
+<rect x="890" y="204" width="140" height="92" rx="10"></rect>
+<text class="t" x="960.0" y="239.0" text-anchor="middle">Carrito</text>
+<text class="s" x="960.0" y="254.0" text-anchor="middle">muestras y</text>
+<text class="s" x="960.0" y="269.0" text-anchor="middle">venta cruzada</text>
+</g>
+<g class="n out">
+<rect x="670" y="392" width="160" height="56" rx="10"></rect>
+<text class="t" x="750.0" y="416.5" text-anchor="middle">WhatsApp</text>
+<text class="s" x="750.0" y="431.5" text-anchor="middle">venta asistida</text>
+</g>
+<rect class="group" x="1100" y="96" width="150" height="324" rx="12"></rect>
+<text class="glbl" x="1175" y="88" text-anchor="middle">Checkout de Shopify</text>
+<g class="n step">
+<rect x="1107" y="108" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="130.5" text-anchor="middle">Datos</text>
+<text class="s" x="1175.0" y="145.5" text-anchor="middle">email y DNI o CUIT</text>
+</g>
+<g class="n step">
+<rect x="1107" y="184" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="206.5" text-anchor="middle">Envío</text>
+<text class="s" x="1175.0" y="221.5" text-anchor="middle">Andreani o Correo</text>
+</g>
+<g class="n step">
+<rect x="1107" y="260" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="282.5" text-anchor="middle">Pago</text>
+<text class="s" x="1175.0" y="297.5" text-anchor="middle">Mercado Pago, MODO</text>
+</g>
+<g class="n step">
+<rect x="1107" y="336" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="358.5" text-anchor="middle">Confirmación</text>
+<text class="s" x="1175.0" y="373.5" text-anchor="middle">y factura</text>
+</g>
+<line class="e gold" x1="20" y1="578" x2="52" y2="578"></line>
+<text class="leg" x="60" y="582">Ruta más corta</text>
+<rect class="legbox out" x="190" y="570" width="28" height="16" rx="4"></rect>
+<text class="leg" x="226" y="582">Fuera del prototipo: WhatsApp y checkout</text>
+</svg>
+</div>
+<figcaption>Todas las rutas convergen en el carrito. La más corta: agregar la Centella Ampoule desde la oferta de la home y abrir el carrito.</figcaption>
+</figure>
+</section>
+
+<section id="escritorio">
+  <h2>Flujo en escritorio</h2>
+  <p class="sub">Solo la home tiene versión de escritorio. En la oferta, "Agregar al carrito" lleva directo al carrito; en la grilla, "Agregar" suma sin salir de la página. El menú superior lleva a Productos, Rutinas y kits y Test de piel.</p>
+  <p class="hint">Deslizá el diagrama hacia el costado para verlo completo.</p>
+  <figure class="flow">
+<div class="scroll">
+<svg viewBox="0 0 1270 600" role="img" aria-label="Flujo de compra en escritorio: mismas entradas; desde la home la oferta lleva directo al carrito con un clic; colección, test, ficha y carrito todavía usan la versión de celular.">
+<defs><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk"></path></marker><marker id="gd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk-g"></path></marker></defs>
+<text class="col" x="95" y="20" text-anchor="middle">Llega</text>
+<text class="col" x="300" y="20" text-anchor="middle">Elige</text>
+<text class="col" x="525" y="20" text-anchor="middle">Explora</text>
+<text class="col" x="750" y="20" text-anchor="middle">Decide</text>
+<text class="col" x="960" y="20" text-anchor="middle">Revisa</text>
+<text class="col" x="1175" y="20" text-anchor="middle">Paga</text>
+<path class="e " d="M610 100 H920 V204" marker-end="url(#ad)"></path>
+<rect class="bridge" x="744" y="95" width="12" height="10"></rect>
+<path class="e " d="M95 80 V44 H750 V218" marker-end="url(#ad)"></path>
+<g class="lbl "><rect x="311.1" y="28" width="217.9" height="17" rx="3"></rect><text x="420" y="40" text-anchor="middle">Anuncio o búsqueda de un producto</text></g>
+<path class="e " d="M170 112 L220 232" marker-end="url(#ad)"></path>
+<path class="e " d="M170 250 L220 250" marker-end="url(#ad)"></path>
+<path class="e " d="M170 388 L220 268" marker-end="url(#ad)"></path>
+<path class="e " d="M380 222 L440 124" marker-end="url(#ad)"></path>
+<g class="lbl "><rect x="376.6" y="164" width="66.7" height="17" rx="3"></rect><text x="410" y="176" text-anchor="middle">Productos</text></g>
+<path class="e " d="M380 278 L440 376" marker-end="url(#ad)"></path>
+<g class="lbl "><rect x="392.4" y="320" width="35.2" height="17" rx="3"></rect><text x="410" y="332" text-anchor="middle">Test</text></g>
+<path class="e " d="M380 250 L670 250" marker-end="url(#ad)"></path>
+<g class="lbl "><rect x="482.2" y="242" width="85.6" height="17" rx="3"></rect><text x="525" y="254" text-anchor="middle">Ver producto</text></g>
+<path class="e " d="M610 132 L690 218" marker-end="url(#ad)"></path>
+<g class="lbl "><rect x="628.1" y="168" width="47.8" height="17" rx="3"></rect><text x="652" y="180" text-anchor="middle">Nombre</text></g>
+<g class="lbl "><text x="838" y="92" text-anchor="middle">Agregar, luego Ver carrito</text></g>
+<path class="e " d="M525 420 V480 H930 V296" marker-end="url(#ad)"></path>
+<g class="lbl "><rect x="637.8" y="472" width="104.5" height="17" rx="3"></rect><text x="690" y="484" text-anchor="middle">Llevá la rutina</text></g>
+<path class="e " d="M830 250 L890 250" marker-end="url(#ad)"></path>
+<g class="lbl "><text x="860" y="240" text-anchor="middle">Agregar</text></g>
+<path class="e dash" d="M750 282 V392" marker-end="url(#ad)"></path>
+<g class="lbl "><text x="756" y="342" text-anchor="start">Consultar</text></g>
+<path class="e gold" d="M300 296 V540 H990 V296" marker-end="url(#gd)"></path>
+<g class="lbl gold"><rect x="408.2" y="532" width="463.6" height="17" rx="3"></rect><text x="640" y="544" text-anchor="middle">Ruta más corta: Agregar al carrito en la oferta lleva directo al carrito</text></g>
+<path class="e" d="M958 204 C958 166, 1008 166, 1008 204" marker-end="url(#ad)"></path>
+<g class="lbl "><text x="983" y="146" text-anchor="middle">Sumar el paso</text></g>
+<g class="lbl "><text x="983" y="158" text-anchor="middle">que falta</text></g>
+<path class="e " d="M1030 250 L1100 250" marker-end="url(#ad)"></path>
+<g class="lbl "><text x="1065" y="228" text-anchor="middle">Iniciar</text></g>
+<g class="lbl "><text x="1065" y="240" text-anchor="middle">compra</text></g>
+<path class="e " d="M1175 160 V184" marker-end="url(#ad)"></path>
+<path class="e " d="M1175 236 V260" marker-end="url(#ad)"></path>
+<path class="e " d="M1175 312 V336" marker-end="url(#ad)"></path>
+<g class="n ">
+<rect x="20" y="80" width="150" height="64" rx="10"></rect>
+<text class="t" x="95.0" y="108.5" text-anchor="middle">Anuncio o newsletter</text>
+<text class="s" x="95.0" y="123.5" text-anchor="middle">campaña en escritorio</text>
+</g>
+<g class="n ">
+<rect x="20" y="218" width="150" height="64" rx="10"></rect>
+<text class="t" x="95.0" y="246.5" text-anchor="middle">Google o link directo</text>
+<text class="s" x="95.0" y="261.5" text-anchor="middle">llega a la home</text>
+</g>
+<g class="n ">
+<rect x="20" y="356" width="150" height="64" rx="10"></rect>
+<text class="t" x="95.0" y="384.5" text-anchor="middle">Link por WhatsApp</text>
+<text class="s" x="95.0" y="399.5" text-anchor="middle">desde la computadora</text>
+</g>
+<g class="n ">
+<rect x="220" y="204" width="160" height="92" rx="10"></rect>
+<text class="t" x="300.0" y="239.0" text-anchor="middle">Home escritorio</text>
+<text class="s" x="300.0" y="254.0" text-anchor="middle">oferta con precio,</text>
+<text class="s" x="300.0" y="269.0" text-anchor="middle">menú y grilla</text>
+</g>
+<g class="n pend">
+<rect x="440" y="80" width="170" height="64" rx="10"></rect>
+<text class="t" x="525.0" y="108.5" text-anchor="middle">Colección</text>
+<text class="s" x="525.0" y="123.5" text-anchor="middle">hoy: versión celular</text>
+</g>
+<g class="n pend">
+<rect x="440" y="356" width="170" height="64" rx="10"></rect>
+<text class="t" x="525.0" y="384.5" text-anchor="middle">Test de piel</text>
+<text class="s" x="525.0" y="399.5" text-anchor="middle">hoy: versión celular</text>
+</g>
+<g class="n pend">
+<rect x="670" y="218" width="160" height="64" rx="10"></rect>
+<text class="t" x="750.0" y="246.5" text-anchor="middle">Ficha de producto</text>
+<text class="s" x="750.0" y="261.5" text-anchor="middle">hoy: versión celular</text>
+</g>
+<g class="n pend">
+<rect x="890" y="204" width="140" height="92" rx="10"></rect>
+<text class="t" x="960.0" y="239.0" text-anchor="middle">Carrito</text>
+<text class="s" x="960.0" y="254.0" text-anchor="middle">hoy: versión</text>
+<text class="s" x="960.0" y="269.0" text-anchor="middle">celular</text>
+</g>
+<g class="n out">
+<rect x="670" y="392" width="160" height="56" rx="10"></rect>
+<text class="t" x="750.0" y="416.5" text-anchor="middle">WhatsApp</text>
+<text class="s" x="750.0" y="431.5" text-anchor="middle">venta asistida</text>
+</g>
+<rect class="group" x="1100" y="96" width="150" height="324" rx="12"></rect>
+<text class="glbl" x="1175" y="88" text-anchor="middle">Checkout de Shopify</text>
+<g class="n step">
+<rect x="1107" y="108" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="130.5" text-anchor="middle">Datos</text>
+<text class="s" x="1175.0" y="145.5" text-anchor="middle">email y DNI o CUIT</text>
+</g>
+<g class="n step">
+<rect x="1107" y="184" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="206.5" text-anchor="middle">Envío</text>
+<text class="s" x="1175.0" y="221.5" text-anchor="middle">Andreani o Correo</text>
+</g>
+<g class="n step">
+<rect x="1107" y="260" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="282.5" text-anchor="middle">Pago</text>
+<text class="s" x="1175.0" y="297.5" text-anchor="middle">Mercado Pago, MODO</text>
+</g>
+<g class="n step">
+<rect x="1107" y="336" width="136" height="52" rx="10"></rect>
+<text class="t" x="1175.0" y="358.5" text-anchor="middle">Confirmación</text>
+<text class="s" x="1175.0" y="373.5" text-anchor="middle">y factura</text>
+</g>
+<line class="e gold" x1="20" y1="578" x2="52" y2="578"></line>
+<text class="leg" x="60" y="582">Ruta más corta</text>
+<rect class="legbox out" x="190" y="570" width="28" height="16" rx="4"></rect>
+<text class="leg" x="226" y="582">Fuera del prototipo: WhatsApp y checkout</text>
+<rect class="legbox pend" x="520" y="570" width="28" height="16" rx="4"></rect>
+<text class="leg" x="556" y="582">Pantalla que todavía no tiene versión de escritorio</text>
+</svg>
+</div>
+<figcaption>En escritorio, Agregar al carrito en la oferta lleva directo al carrito. Colección, test, ficha y carrito todavía usan el diseño de celular.</figcaption>
+</figure>
+</section>
+
+<section id="rutas">
+  <h2>Rutas y toques hasta el checkout</h2>
+  <p class="sub">Cuento cada toque o clic desde que la persona entra hasta que toca "Iniciar compra". El checkout de Shopify se suma después.</p>
+  <div class="cols">
+    <div>
+      <h3>Celular</h3>
+      <div class="tablebox"><table>
+        <thead><tr><th>Toques</th><th>Ruta</th></tr></thead>
+        <tbody>
+          <tr class="best"><td class="n-steps">2</td><td><b>Anuncio de un producto</b><br><span class="path">Ficha, Agregar al carrito, Iniciar compra</span></td></tr>
+          <tr class="best"><td class="n-steps">3</td><td><b>Oferta de la home</b><br><span class="path">Agregar, ícono del carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">3</td><td><b>Ficha desde la home</b><br><span class="path">Ver producto, Agregar al carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">4</td><td><b>Por necesidad</b><br><span class="path">Chip "¿Qué le pasa a tu piel?", Agregar, ícono del carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">4</td><td><b>Colección</b><br><span class="path">Ver la línea, Agregar, Ver carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">7</td><td><b>Test de piel</b><br><span class="path">Hacé el test, Armar mi rutina, 3 respuestas, Llevá la rutina, Iniciar compra</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3>Escritorio</h3>
+      <div class="tablebox"><table>
+        <thead><tr><th>Clics</th><th>Ruta</th></tr></thead>
+        <tbody>
+          <tr class="best"><td class="n-steps">2</td><td><b>Oferta de la home</b><br><span class="path">Agregar al carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">3</td><td><b>Grilla de la home</b><br><span class="path">Agregar, ícono del carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">3</td><td><b>Ficha desde la home</b><br><span class="path">Ver producto, Agregar al carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">4</td><td><b>Menú Productos</b><br><span class="path">Productos, Agregar, Ver carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">7</td><td><b>Test de piel</b><br><span class="path">Test de piel, Armar mi rutina, 3 respuestas, Llevá la rutina, Iniciar compra</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <h3>Después de "Iniciar compra": el checkout de Shopify</h3>
+  <p>Estos pasos no están en el prototipo. Se resuelven configurando Shopify y sus apps.</p>
+  <div class="checkout">
+    <div><span class="k"><span class="num">1</span>Datos</span><span class="v">Email y DNI o CUIT para la factura. Pedir el DNI requiere una app, salvo en Shopify Plus.</span></div>
+    <div><span class="k"><span class="num">2</span>Envío</span><span class="v">Tarifa por código postal con Andreani, Correo Argentino o envío en el día en AMBA con Moova.</span></div>
+    <div><span class="k"><span class="num">3</span>Pago</span><span class="v">Mercado Pago con cuotas sin interés, MODO o transferencia con 10% off.</span></div>
+    <div><span class="k"><span class="num">4</span>Confirmación</span><span class="v">Número de pedido, factura electrónica y seguimiento del envío.</span></div>
+  </div>
+</section>
+
+<section id="fricciones">
+  <h2>Dónde se puede trabar</h2>
+  <p class="sub">Puntos del recorrido que hoy frenan o sacan a la persona del flujo, con lo que conviene resolver.</p>
+  <ul class="issues">
+    <li><span class="where">Celular, home y colección</span><div><b>"Agregar" no cambia de pantalla.</b> La única señal es el número del carrito y el botón que pasa a "Agregado". Conviene sumar un aviso breve con "Ver carrito".</div></li>
+    <li><span class="where">Celular, encabezado</span><div><b>El botón de menú no tiene panel.</b> Hoy la colección solo se alcanza desde "Ver la línea" o el pie. Hay que diseñar el menú con Líneas, Rutinas y Test.</div></li>
+    <li><span class="where">Escritorio</span><div><b>Solo la home tiene versión de escritorio.</b> Colección, ficha, test y carrito abren el diseño de celular. Son las cuatro pantallas siguientes a diseñar.</div></li>
+    <li><span class="where">Carrito</span><div><b>Con más de un producto, "Iniciar compra" baja del primer pantallazo.</b> Una barra de compra fija con total y botón lo resuelve.</div></li>
+    <li><span class="where">Ficha y home</span><div><b>WhatsApp saca a la persona del sitio.</b> El mensaje debería llevar el producto consultado y un link de vuelta al carrito.</div></li>
+    <li><span class="where">Test de piel</span><div><b>Es la ruta más larga: 7 toques.</b> Se compensa porque termina en una rutina completa. Mostrar el precio del set desde la pantalla de inicio del test ayuda a que la persona sepa a dónde va.</div></li>
+  </ul>
+</section>
+</div>

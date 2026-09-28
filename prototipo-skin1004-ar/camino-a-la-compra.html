@@ -94,18 +94,18 @@ td .path{color:var(--ink-2)}
 <header class="top">
   <span class="logo">SKIN1004</span>
   <h1>Camino a la compra</h1>
-  <p class="lede">Todas las rutas que tiene hoy el prototipo para llegar desde la primera visita hasta el pago, en celular y en escritorio, con la cantidad de toques de cada una y los puntos donde alguien se puede trabar.</p>
+  <p class="lede">Todas las rutas que tiene hoy el prototipo para llegar desde la primera visita hasta el pago, en celular y en escritorio, con la cantidad de toques de cada una y lo que se corrigió para que nadie se trabe.</p>
   <nav class="jump" aria-label="Ir a">
     <a href="#celular">Celular</a>
     <a href="#escritorio">Escritorio</a>
     <a href="#rutas">Rutas y toques</a>
-    <a href="#fricciones">Dónde se traba</a>
+    <a href="#fricciones">Qué se corrigió</a>
   </nav>
 </header>
 
 <section id="celular">
   <h2>Flujo en celular</h2>
-  <p class="sub">Home, colección, ficha, test y carrito están diseñados para celular. "Agregar" en la home y en la colección suma al carrito sin salir de la pantalla; el número del ícono del carrito sube. "Agregar al carrito" en la ficha y "Llevá la rutina" en el test llevan directo al carrito.</p>
+  <p class="sub">"Agregar" en la home y en la colección suma al carrito sin salir de la pantalla y muestra un aviso con "Ver carrito". "Agregar al carrito" en la ficha y "Llevá la rutina" en el test llevan directo al carrito. El menú del encabezado lleva a las líneas, las rutinas y el test.</p>
   <p class="hint">Deslizá el diagrama hacia el costado para verlo completo.</p>
   <figure class="flow">
 <div class="scroll">
@@ -125,7 +125,7 @@ td .path{color:var(--ink-2)}
 <path class="e " d="M170 250 L220 250" marker-end="url(#am)"></path>
 <path class="e " d="M170 388 L220 268" marker-end="url(#am)"></path>
 <path class="e " d="M380 222 L440 124" marker-end="url(#am)"></path>
-<g class="lbl "><rect x="367.2" y="164" width="85.6" height="17" rx="3"></rect><text x="410" y="176" text-anchor="middle">Ver la línea</text></g>
+<g class="lbl "><rect x="367.2" y="164" width="85.6" height="17" rx="3"></rect><text x="410" y="176" text-anchor="middle">Menú o línea</text></g>
 <path class="e " d="M380 278 L440 376" marker-end="url(#am)"></path>
 <g class="lbl "><rect x="392.4" y="320" width="35.2" height="17" rx="3"></rect><text x="410" y="332" text-anchor="middle">Test</text></g>
 <path class="e " d="M380 250 L670 250" marker-end="url(#am)"></path>
@@ -139,8 +139,9 @@ td .path{color:var(--ink-2)}
 <g class="lbl "><text x="860" y="240" text-anchor="middle">Agregar</text></g>
 <path class="e dash" d="M750 282 V392" marker-end="url(#am)"></path>
 <g class="lbl "><text x="756" y="342" text-anchor="start">Consultar</text></g>
+<path class="e dash" d="M830 420 H900 V296" marker-end="url(#am)"></path>
 <path class="e gold" d="M300 296 V540 H990 V296" marker-end="url(#gm)"></path>
-<g class="lbl gold"><rect x="430.2" y="532" width="419.5" height="17" rx="3"></rect><text x="640" y="544" text-anchor="middle">Ruta más corta: Agregar en la oferta y tocar el ícono del carrito</text></g>
+<g class="lbl gold"><rect x="439.7" y="532" width="400.6" height="17" rx="3"></rect><text x="640" y="544" text-anchor="middle">Ruta más corta: Agregar en la oferta y Ver carrito en el aviso</text></g>
 <path class="e" d="M958 204 C958 166, 1008 166, 1008 204" marker-end="url(#am)"></path>
 <g class="lbl "><text x="983" y="146" text-anchor="middle">Sumar el paso</text></g>
 <g class="lbl "><text x="983" y="158" text-anchor="middle">que falta</text></g>
@@ -189,13 +190,13 @@ td .path{color:var(--ink-2)}
 <g class="n ">
 <rect x="890" y="204" width="140" height="92" rx="10"></rect>
 <text class="t" x="960.0" y="239.0" text-anchor="middle">Carrito</text>
-<text class="s" x="960.0" y="254.0" text-anchor="middle">muestras y</text>
-<text class="s" x="960.0" y="269.0" text-anchor="middle">venta cruzada</text>
+<text class="s" x="960.0" y="254.0" text-anchor="middle">barra fija con</text>
+<text class="s" x="960.0" y="269.0" text-anchor="middle">Iniciar compra</text>
 </g>
 <g class="n out">
 <rect x="670" y="392" width="160" height="56" rx="10"></rect>
 <text class="t" x="750.0" y="416.5" text-anchor="middle">WhatsApp</text>
-<text class="s" x="750.0" y="431.5" text-anchor="middle">venta asistida</text>
+<text class="s" x="750.0" y="431.5" text-anchor="middle">mensaje armado</text>
 </g>
 <rect class="group" x="1100" y="96" width="150" height="324" rx="12"></rect>
 <text class="glbl" x="1175" y="88" text-anchor="middle">Checkout de Shopify</text>
@@ -225,17 +226,17 @@ td .path{color:var(--ink-2)}
 <text class="leg" x="226" y="582">Fuera del prototipo: WhatsApp y checkout</text>
 </svg>
 </div>
-<figcaption>Todas las rutas convergen en el carrito. La más corta: agregar la Centella Ampoule desde la oferta de la home y abrir el carrito.</figcaption>
+<figcaption>Todas las rutas convergen en el carrito. La más corta: agregar la Centella Ampoule desde la oferta de la home y tocar Ver carrito en el aviso. Quien consulta por WhatsApp vuelve al carrito con el link del mensaje.</figcaption>
 </figure>
 </section>
 
 <section id="escritorio">
   <h2>Flujo en escritorio</h2>
-  <p class="sub">Solo la home tiene versión de escritorio. En la oferta, "Agregar al carrito" lleva directo al carrito; en la grilla, "Agregar" suma sin salir de la página. El menú superior lleva a Productos, Rutinas y kits y Test de piel.</p>
+  <p class="sub">Las cinco pantallas tienen versión de escritorio. En la oferta, "Agregar al carrito" lleva directo al carrito; en las grillas, "Agregar" suma sin salir de la página y muestra el aviso con "Ver carrito". El menú superior lleva a Productos, Rutinas y kits y Test de piel.</p>
   <p class="hint">Deslizá el diagrama hacia el costado para verlo completo.</p>
   <figure class="flow">
 <div class="scroll">
-<svg viewBox="0 0 1270 600" role="img" aria-label="Flujo de compra en escritorio: mismas entradas; desde la home la oferta lleva directo al carrito con un clic; colección, test, ficha y carrito todavía usan la versión de celular.">
+<svg viewBox="0 0 1270 600" role="img" aria-label="Flujo de compra en escritorio: mismas entradas; desde la home la oferta lleva directo al carrito con un clic; colección, test, ficha y carrito tienen su versión de escritorio.">
 <defs><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk"></path></marker><marker id="gd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk-g"></path></marker></defs>
 <text class="col" x="95" y="20" text-anchor="middle">Llega</text>
 <text class="col" x="300" y="20" text-anchor="middle">Elige</text>
@@ -265,6 +266,7 @@ td .path{color:var(--ink-2)}
 <g class="lbl "><text x="860" y="240" text-anchor="middle">Agregar</text></g>
 <path class="e dash" d="M750 282 V392" marker-end="url(#ad)"></path>
 <g class="lbl "><text x="756" y="342" text-anchor="start">Consultar</text></g>
+<path class="e dash" d="M830 420 H900 V296" marker-end="url(#ad)"></path>
 <path class="e gold" d="M300 296 V540 H990 V296" marker-end="url(#gd)"></path>
 <g class="lbl gold"><rect x="408.2" y="532" width="463.6" height="17" rx="3"></rect><text x="640" y="544" text-anchor="middle">Ruta más corta: Agregar al carrito en la oferta lleva directo al carrito</text></g>
 <path class="e" d="M958 204 C958 166, 1008 166, 1008 204" marker-end="url(#ad)"></path>
@@ -297,31 +299,31 @@ td .path{color:var(--ink-2)}
 <text class="s" x="300.0" y="254.0" text-anchor="middle">oferta con precio,</text>
 <text class="s" x="300.0" y="269.0" text-anchor="middle">menú y grilla</text>
 </g>
-<g class="n pend">
+<g class="n ">
 <rect x="440" y="80" width="170" height="64" rx="10"></rect>
 <text class="t" x="525.0" y="108.5" text-anchor="middle">Colección</text>
-<text class="s" x="525.0" y="123.5" text-anchor="middle">hoy: versión celular</text>
+<text class="s" x="525.0" y="123.5" text-anchor="middle">filtros y grilla de 3</text>
 </g>
-<g class="n pend">
+<g class="n ">
 <rect x="440" y="356" width="170" height="64" rx="10"></rect>
 <text class="t" x="525.0" y="384.5" text-anchor="middle">Test de piel</text>
-<text class="s" x="525.0" y="399.5" text-anchor="middle">hoy: versión celular</text>
+<text class="s" x="525.0" y="399.5" text-anchor="middle">preguntas en 2 columnas</text>
 </g>
-<g class="n pend">
+<g class="n ">
 <rect x="670" y="218" width="160" height="64" rx="10"></rect>
 <text class="t" x="750.0" y="246.5" text-anchor="middle">Ficha de producto</text>
-<text class="s" x="750.0" y="261.5" text-anchor="middle">hoy: versión celular</text>
+<text class="s" x="750.0" y="261.5" text-anchor="middle">compra fija a la derecha</text>
 </g>
-<g class="n pend">
+<g class="n ">
 <rect x="890" y="204" width="140" height="92" rx="10"></rect>
 <text class="t" x="960.0" y="239.0" text-anchor="middle">Carrito</text>
-<text class="s" x="960.0" y="254.0" text-anchor="middle">hoy: versión</text>
-<text class="s" x="960.0" y="269.0" text-anchor="middle">celular</text>
+<text class="s" x="960.0" y="254.0" text-anchor="middle">resumen fijo con</text>
+<text class="s" x="960.0" y="269.0" text-anchor="middle">Iniciar compra</text>
 </g>
 <g class="n out">
 <rect x="670" y="392" width="160" height="56" rx="10"></rect>
 <text class="t" x="750.0" y="416.5" text-anchor="middle">WhatsApp</text>
-<text class="s" x="750.0" y="431.5" text-anchor="middle">venta asistida</text>
+<text class="s" x="750.0" y="431.5" text-anchor="middle">mensaje armado</text>
 </g>
 <rect class="group" x="1100" y="96" width="150" height="324" rx="12"></rect>
 <text class="glbl" x="1175" y="88" text-anchor="middle">Checkout de Shopify</text>
@@ -349,11 +351,9 @@ td .path{color:var(--ink-2)}
 <text class="leg" x="60" y="582">Ruta más corta</text>
 <rect class="legbox out" x="190" y="570" width="28" height="16" rx="4"></rect>
 <text class="leg" x="226" y="582">Fuera del prototipo: WhatsApp y checkout</text>
-<rect class="legbox pend" x="520" y="570" width="28" height="16" rx="4"></rect>
-<text class="leg" x="556" y="582">Pantalla que todavía no tiene versión de escritorio</text>
 </svg>
 </div>
-<figcaption>En escritorio, Agregar al carrito en la oferta lleva directo al carrito. Colección, test, ficha y carrito todavía usan el diseño de celular.</figcaption>
+<figcaption>En escritorio, Agregar al carrito en la oferta lleva directo al carrito. Las cinco pantallas tienen versión de escritorio y se enlazan entre sí.</figcaption>
 </figure>
 </section>
 
@@ -367,10 +367,10 @@ td .path{color:var(--ink-2)}
         <thead><tr><th>Toques</th><th>Ruta</th></tr></thead>
         <tbody>
           <tr class="best"><td class="n-steps">2</td><td><b>Anuncio de un producto</b><br><span class="path">Ficha, Agregar al carrito, Iniciar compra</span></td></tr>
-          <tr class="best"><td class="n-steps">3</td><td><b>Oferta de la home</b><br><span class="path">Agregar, ícono del carrito, Iniciar compra</span></td></tr>
+          <tr class="best"><td class="n-steps">3</td><td><b>Oferta de la home</b><br><span class="path">Agregar, Ver carrito en el aviso, Iniciar compra</span></td></tr>
           <tr><td class="n-steps">3</td><td><b>Ficha desde la home</b><br><span class="path">Ver producto, Agregar al carrito, Iniciar compra</span></td></tr>
-          <tr><td class="n-steps">4</td><td><b>Por necesidad</b><br><span class="path">Chip "¿Qué le pasa a tu piel?", Agregar, ícono del carrito, Iniciar compra</span></td></tr>
-          <tr><td class="n-steps">4</td><td><b>Colección</b><br><span class="path">Ver la línea, Agregar, Ver carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">4</td><td><b>Por necesidad</b><br><span class="path">Chip "¿Qué le pasa a tu piel?", Agregar, Ver carrito en el aviso, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">4</td><td><b>Colección</b><br><span class="path">Ver la línea (o Menú y línea, un toque más), Agregar, Ver carrito, Iniciar compra</span></td></tr>
           <tr><td class="n-steps">7</td><td><b>Test de piel</b><br><span class="path">Hacé el test, Armar mi rutina, 3 respuestas, Llevá la rutina, Iniciar compra</span></td></tr>
         </tbody>
       </table></div>
@@ -381,7 +381,7 @@ td .path{color:var(--ink-2)}
         <thead><tr><th>Clics</th><th>Ruta</th></tr></thead>
         <tbody>
           <tr class="best"><td class="n-steps">2</td><td><b>Oferta de la home</b><br><span class="path">Agregar al carrito, Iniciar compra</span></td></tr>
-          <tr><td class="n-steps">3</td><td><b>Grilla de la home</b><br><span class="path">Agregar, ícono del carrito, Iniciar compra</span></td></tr>
+          <tr><td class="n-steps">3</td><td><b>Grilla de la home</b><br><span class="path">Agregar, Ver carrito en el aviso, Iniciar compra</span></td></tr>
           <tr><td class="n-steps">3</td><td><b>Ficha desde la home</b><br><span class="path">Ver producto, Agregar al carrito, Iniciar compra</span></td></tr>
           <tr><td class="n-steps">4</td><td><b>Menú Productos</b><br><span class="path">Productos, Agregar, Ver carrito, Iniciar compra</span></td></tr>
           <tr><td class="n-steps">7</td><td><b>Test de piel</b><br><span class="path">Test de piel, Armar mi rutina, 3 respuestas, Llevá la rutina, Iniciar compra</span></td></tr>
@@ -401,15 +401,17 @@ td .path{color:var(--ink-2)}
 </section>
 
 <section id="fricciones">
-  <h2>Dónde se puede trabar</h2>
-  <p class="sub">Puntos del recorrido que hoy frenan o sacan a la persona del flujo, con lo que conviene resolver.</p>
+  <h2>Qué se corrigió</h2>
+  <p class="sub">Los seis puntos donde se trababa la compra, resueltos en el prototipo.</p>
   <ul class="issues">
-    <li><span class="where">Celular, home y colección</span><div><b>"Agregar" no cambia de pantalla.</b> La única señal es el número del carrito y el botón que pasa a "Agregado". Conviene sumar un aviso breve con "Ver carrito".</div></li>
-    <li><span class="where">Celular, encabezado</span><div><b>El botón de menú no tiene panel.</b> Hoy la colección solo se alcanza desde "Ver la línea" o el pie. Hay que diseñar el menú con Líneas, Rutinas y Test.</div></li>
-    <li><span class="where">Escritorio</span><div><b>Solo la home tiene versión de escritorio.</b> Colección, ficha, test y carrito abren el diseño de celular. Son las cuatro pantallas siguientes a diseñar.</div></li>
-    <li><span class="where">Carrito</span><div><b>Con más de un producto, "Iniciar compra" baja del primer pantallazo.</b> Una barra de compra fija con total y botón lo resuelve.</div></li>
-    <li><span class="where">Ficha y home</span><div><b>WhatsApp saca a la persona del sitio.</b> El mensaje debería llevar el producto consultado y un link de vuelta al carrito.</div></li>
-    <li><span class="where">Test de piel</span><div><b>Es la ruta más larga: 7 toques.</b> Se compensa porque termina en una rutina completa. Mostrar el precio del set desde la pantalla de inicio del test ayuda a que la persona sepa a dónde va.</div></li>
+    <li><span class="where">Celular y escritorio</span><div><b>Aviso al agregar.</b> Cada "Agregar" que no cambia de pantalla muestra el producto sumado, el total o lo que falta para el envío gratis, y el botón "Ver carrito". Se va solo a los 4 segundos.</div></li>
+    <li><span class="where">Celular, encabezado</span><div><b>Menú desplegable.</b> Buscador, las seis líneas con su pestaña de color, Rutinas y kits, Lo más elegido, Test de piel, condiciones de compra y WhatsApp.</div></li>
+    <li><span class="where">Escritorio</span><div><b>Cinco pantallas propias.</b> Colección, ficha, test y carrito tienen su versión de escritorio y se enlazan entre sí sin pasar por las de celular.</div></li>
+    <li><span class="where">Carrito</span><div><b>Iniciar compra siempre a la vista.</b> En celular, una barra fija al pie con total y transferencia. En escritorio, el resumen queda fijo a la derecha.</div></li>
+    <li><span class="where">Home, colección, ficha, test</span><div><b>WhatsApp sin perder la compra.</b> Antes de salir se abre una hoja con el mensaje armado y editable: producto, tamaño, precio y el link para volver al carrito.</div></li>
+    <li><span class="where">Test de piel</span><div><b>Precio del set desde el inicio.</b> La persona sabe desde la primera pantalla que se lleva una rutina completa y cuánto cuesta.</div></li>
   </ul>
+  <h3>Pendiente para la etapa de Shopify</h3>
+  <p>El número de WhatsApp, el horario de atención, los precios que faltan, el precio y el ahorro de cada set, y el plazo de entrega. El checkout (DNI o CUIT, envío por código postal, Mercado Pago con cuotas y factura) se configura con apps de Shopify.</p>
 </section>
 </div>

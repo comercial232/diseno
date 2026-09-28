@@ -20,7 +20,7 @@ button:disabled{cursor:default}button:disabled:hover{opacity:inherit}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 390px; height: 3480px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+<div style="width: 390px; height: 3520px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: clip">
 
 <header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
   <div style="display: flex">
@@ -32,13 +32,26 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   </div>
 </header>
 
+<div role="status" aria-live="polite" style="position: sticky; top: 0; height: 0; z-index: 40">
+  <sc-if value="{{toastOn}}" hint-placeholder-val="{{false}}">
+    <div style="position: absolute; top: 8px; left: 12px; right: 12px; background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 12px 4px 12px 14px; display: grid; grid-template-columns: 28px minmax(0, 1fr) 44px; column-gap: 12px; align-items: start">
+      <span aria-hidden="true" style="width: 28px; height: 44px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; box-sizing: border-box"><svg width="14" height="34" viewBox="0 0 60 150" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{toast.c}}" stroke="#141414" stroke-opacity="0.2"></rect></svg></span>
+      <span style="display: flex; flex-direction: column; min-width: 0; padding-top: 1px">
+        <span style="font-size: 14px; font-weight: 600; line-height: 1.4">{{toast.title}}</span>
+        <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{toast.sub}}</span>
+      </span>
+      <button type="button" aria-label="Cerrar aviso" onClick="{{closeToast}}" style="width: 44px; height: 44px; margin-top: -8px; border: 0; border-radius: 999px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"></path></svg></button>
+    </div>
+  </sc-if>
+</div>
+
 <div style="padding: 20px 24px 0; display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
   <h1 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em">Tu carrito</h1>
   <span aria-live="polite" style="font-size: 14px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums; white-space: nowrap">{{countLabel}}</span>
 </div>
 
 <sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
-  <section aria-labelledby="vacio-t" style="padding: 12px 24px 0; display: flex; flex-direction: column">
+  <section aria-labelledby="vacio-t" style="padding: 12px 24px 48px; display: flex; flex-direction: column">
     <p id="vacio-t" style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4A46">Está vacío. Empezá por la ampolla que calma la piel sensible, o hacé el test y te armamos la rutina.</p>
     <article aria-labelledby="vacio-producto" style="position: relative; margin-top: 34px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 12px; display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 16px">
       <span aria-hidden="true" style="position: absolute; top: -10px; left: 20px; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: #C9A24A; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
@@ -150,8 +163,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
           <dd style="margin: 2px 0 0; font-size: 15px; font-weight: {{cuotasWeight}}; line-height: 1.4; color: #141414">{{cuotasMain}}</dd>
         </div>
       </dl>
-      <a href="Carrito.dc.html" style="margin-top: 16px; display: flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Iniciar compra</a>
-      <ul aria-label="Compra segura" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: #4A4A46; text-align: center">
+      <ul aria-label="Compra segura" style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: #4A4A46; text-align: center">
         <li>Pago seguro con Mercado Pago, MODO, tarjeta o transferencia.</li>
         <li>Producto original importado por el representante oficial.</li>
         <li>Tenés 10 días para arrepentirte. <a href="Main.dc.html" style="display: inline-block; padding: 12px 0; margin: -12px 0; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px">Botón de arrepentimiento</a></li>
@@ -252,13 +264,29 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
       <span style="margin-top: 4px; font-size: 12px; line-height: 1.5; color: #6B6B66; text-align: right">Precio sin impuestos nacionales: {{net}}</span>
       <span style="margin-top: 6px; font-size: 14px; font-weight: 500; line-height: 1.5; color: #2F6B45; text-align: right">{{transfer}} con transferencia</span>
       <span style="font-size: 12px; line-height: 1.5; color: #6B6B66; text-align: right">{{cuotasLine}}</span>
-      <a href="Carrito.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Iniciar compra</a>
-      <a href="Coleccion.dc.html" style="align-self: center; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Seguir comprando</a>
+      <a href="Coleccion.dc.html" style="align-self: center; margin-top: 12px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Seguir comprando</a>
     </article>
+  </section>
+
+  <section aria-label="Total y compra" style="position: sticky; bottom: 0; z-index: 30; margin-top: 32px; background: #FFFFFF; border-top: 1px solid #E8E4DC; padding: 12px 20px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 12px; font-variant-numeric: tabular-nums">
+    <div style="display: flex; flex-direction: column; min-width: 0">
+      <span style="display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 6px">
+        <span style="font-size: 13px; font-weight: 500; line-height: 1.4; color: #4A4A46">Total</span>
+        <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; white-space: nowrap">{{barTotal}}</span>
+        <sc-if value="{{unknown}}" hint-placeholder-val="{{false}}">
+          <span style="font-size: 13px; font-weight: 500; line-height: 1.4; white-space: nowrap">+ [precio]</span>
+        </sc-if>
+      </span>
+      <span style="margin-top: 2px; font-size: 13px; font-weight: 500; line-height: 1.4; color: #2F6B45"><span style="white-space: nowrap">{{transfer}}</span> <span style="white-space: nowrap">con transferencia</span></span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: stretch">
+      <a href="Carrito.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; white-space: nowrap">Iniciar compra</a>
+      <span style="margin-top: 4px; font-size: 12px; line-height: 1.45; color: #6B6B66; text-align: center; white-space: nowrap">{{barMeta}}</span>
+    </div>
   </section>
 </sc-if>
 
-<section aria-label="Datos del vendedor" style="flex: 1 0 auto; margin-top: 48px; padding: 32px 24px 48px; background: #F2EDE4; display: flex; flex-direction: column">
+<section aria-label="Datos del vendedor" style="flex: 1 0 auto; padding: 32px 24px 48px; background: #F2EDE4; display: flex; flex-direction: column">
   <div style="display: flex; flex-direction: column">
     <p style="margin: 0; font-size: 12px; line-height: 1.65; color: #6B6B66">Vende Grupo Skinfree, representante oficial de SKIN1004 en Argentina, Gurruchaga 592, CABA. Importa Laboratorio BEK SRL, legajo ANMAT [número]. Los precios incluyen IVA; junto a cada precio se informa el precio sin impuestos nacionales.</p>
     <a href="Main.dc.html" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px">Botón de arrepentimiento</a>
@@ -267,11 +295,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3480}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3520}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { cart: { toner: 0, ampoule: 1, cream: 0, sun: 0 }, picked: [], gap: '' };
+    this.state = { cart: { toner: 0, ampoule: 1, cream: 0, sun: 0 }, picked: [], gap: '', toast: null };
   }
   renderVals() {
     const s = this.state;
@@ -290,7 +318,7 @@ class Component extends DCLogic {
       const r = Math.round(n * 100) / 100;
       const int = Math.floor(r);
       const dec = Math.round((r - int) * 100);
-      return '$ ' + group(int) + (dec ? ',' + String(dec).padStart(2, '0') : '');
+      return '$\u00a0' + group(int) + (dec ? ',' + String(dec).padStart(2, '0') : '');
     };
 
     // Rutina calmante (misma que Main), en el orden en que se aplica.
@@ -318,6 +346,13 @@ class Component extends DCLogic {
       this.setState({ cart: next, picked: empty ? [] : s.picked });
     };
     const withQty = (id, q) => { const next = Object.assign({}, cart); next[id] = q; return next; };
+    // Aviso de agregado: confirma qué se sumó y cómo quedó el total. Se va solo a los 4 s.
+    const addAndNotify = (next, ids) => {
+      clearTimeout(this.toastTimer);
+      this.setState({ cart: next, toast: { ids } });
+      this.toastTimer = setTimeout(() => this.setState({ toast: null }), 4000);
+    };
+    const closeToast = () => { clearTimeout(this.toastTimer); this.setState({ toast: null }); };
 
     const inCart = ORDER.filter((id) => cart[id] > 0);
     const count = inCart.reduce((a, id) => a + cart[id], 0);
@@ -356,7 +391,7 @@ class Component extends DCLogic {
       s: shape(sugP.k, true, LINE[sugP.l].c, '#141414'),
       price: priceOf(sugId, 1), net: netOf(sugId, 1),
       aria: 'Agregar ' + sugP.full + ' al carrito',
-      add: () => setCart(withQty(sugId, 1))
+      add: () => addAndNotify(withQty(sugId, 1), [sugId])
     } : { full: '', pos: '', line: '', ml: '', c: '', tab: '', s: shape('', true, '', ''), price: '', net: '', aria: '', add: () => {} };
     const sumaSug = sugP ? 'sumá ' + sugP.art + ' ' + sugP.short : '';
     const sinContar = unknown ? ', sin contar ' + listNames(unknownIds.map((id) => P[id].art + ' ' + P[id].short)) : '';
@@ -400,9 +435,21 @@ class Component extends DCLogic {
       n: String(ORDER.indexOf(gapId) + 1), line: LINE[gp.l].name, full: gp.full, why: gp.why,
       price: priceOf(gapId, 1), net: netOf(gapId, 1),
       aria: 'Agregar ' + gp.full + ' al carrito',
-      add: () => setCart(withQty(gapId, 1)),
+      add: () => addAndNotify(withQty(gapId, 1), [gapId]),
       cta: 'Ver ' + gp.art + ' ' + gp.short
     } : { n: '', line: '', full: '', why: '', price: '', net: '', aria: '', add: () => {}, cta: '' };
+
+    // Texto del aviso, calculado con el carrito ya actualizado (mismos valores que el resumen).
+    const tIds = (s.toast && s.toast.ids) ? s.toast.ids : [];
+    const toastOn = tIds.length > 0 && count > 0;
+    let toastSub = 'Tu total pasó a ' + total + '.';
+    if (!unknown && left > 0) toastSub = 'Tu total pasó a ' + total + '. Te faltan ' + money(left) + ' para el envío gratis.';
+    else if (!unknown) toastSub = 'Tu total pasó a ' + total + ' y tu envío es gratis.';
+    const toast = toastOn ? {
+      title: 'Agregaste ' + (tIds.length === 1 ? P[tIds[0]].full : listNames(tIds.map((id) => P[id].short))),
+      sub: toastSub,
+      c: LINE[P[tIds[0]].l].c
+    } : { title: '', sub: '', c: '#FFFFFF' };
 
     const SAMPLES = [
       { id: 'foam', name: 'Centella Ampoule Foam', l: 'centella' },
@@ -430,7 +477,7 @@ class Component extends DCLogic {
     return {
       countLabel: count === 0 ? '0 productos' : count === 1 ? '1 producto' : count + ' productos',
       hasItems: count > 0, isEmpty: count === 0,
-      addHero: () => setCart(withQty('ampoule', 1)),
+      addHero: () => addAndNotify(withQty('ampoule', 1), ['ampoule']),
       rules: [
         { k: 'Envío', v: 'Gratis en compras desde $ 119.999' },
         { k: 'Transferencia', v: '10% off pagando por transferencia' },
@@ -442,6 +489,10 @@ class Component extends DCLogic {
       pct: pctNum + '%', pctNum,
       pctText: left > 0 ? 'Faltan ' + money(left) : 'Envío gratis alcanzado',
       total, net, transfer,
+      toastOn, toast, closeToast,
+      barTotal: known > 0 ? money(known) : '[precio]',
+      unknown: unknown && known > 0,
+      barMeta: (count === 1 ? '1 producto' : count + ' productos') + (left > 0 ? ', más envío' : ', envío gratis'),
       totalNote: left > 0 ? 'Sin envío.' : 'Con envío gratis.',
       cuotasMain, cuotasWeight, cuotasLine,
       shipLabel: left > 0 ? 'Según tu código postal' : 'Gratis',
@@ -451,7 +502,7 @@ class Component extends DCLogic {
       routineIntro: missing.length ? 'En el orden en que se aplica. Tocá un paso que falta para sumarlo.' : 'Tenés los cuatro pasos, en el orden en que se aplican.',
       shelf, hasGap: !!gp, gap,
       hasBundle: missing.length >= 2,
-      addAll: () => setCart({ toner: cart.toner || 1, ampoule: cart.ampoule || 1, cream: cart.cream || 1, sun: cart.sun || 1 }),
+      addAll: () => addAndNotify({ toner: cart.toner || 1, ampoule: cart.ampoule || 1, cream: cart.cream || 1, sun: cart.sun || 1 }, missing.slice()),
       samples,
       pickedLabel: s.picked.length + ' de 2 elegidas',
       samplesRow: s.picked.length === 0 ? 'Sin elegir' : s.picked.length + ' de regalo',

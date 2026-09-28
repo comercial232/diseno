@@ -16,29 +16,65 @@ a{color:#141414}a:hover{color:#8A6A24}
 a,button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,opacity .2s ease}
 a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
 @media (prefers-reduced-motion:reduce){a,button{transition:none}}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 1440px; height: 6040px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden; position: relative">
+<div style="width: 1440px; height: 6040px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: clip; position: relative">
 
-<p aria-live="polite" style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{cartStatus}}</p>
-
-<p style="flex-shrink: 0; margin: 0; background: #141414; color: #F7F4EE; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; padding: 10px 144px; text-align: center">Tienda oficial de SKIN1004 en Argentina. <a href="Main.dc.html" style="color: #F7F4EE; text-underline-offset: 3px">Consultanos por WhatsApp antes de comprar</a></p>
+<p style="flex-shrink: 0; margin: 0; background: #141414; color: #F7F4EE; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; padding: 10px 144px; text-align: center">Tienda oficial de SKIN1004 en Argentina. <button type="button" onClick="{{openWa}}" aria-haspopup="dialog" aria-expanded="{{waExpanded}}" style="border: 0; background: transparent; padding: 0; font: inherit; color: #F7F4EE; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">Consultanos por WhatsApp antes de comprar</button></p>
 
 <header style="flex-shrink: 0; background: #FFFFFF; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; padding: 14px 144px; border-bottom: 1px solid #E8E4DC">
   <nav aria-label="Principal" style="display: flex; gap: 32px; font-size: 15px; font-weight: 500">
-    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Productos</a>
-    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Rutinas y kits</a>
-    <a href="Test.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Test de piel</a>
-    <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">La marca</a>
+    <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Productos</a>
+    <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Rutinas y kits</a>
+    <a href="TestDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Test de piel</a>
+    <a href="#marca-t" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">La marca</a>
   </nav>
   <a href="HomeDesktop.dc.html" aria-label="SKIN1004, inicio" style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
   <div style="display: flex; justify-content: flex-end; gap: 4px">
     <button type="button" aria-label="Buscar" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg></button>
-    <a href="Main.dc.html" aria-label="Mi cuenta" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4"></path></svg></a>
-    <a href="Carrito.dc.html" aria-label="{{cartLabel}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">{{cartCount}}</span></a>
+    <a href="HomeDesktop.dc.html" aria-label="Mi cuenta" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4"></path></svg></a>
+    <a href="CarritoDesktop.dc.html" aria-label="{{cartLabel}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">{{cartCount}}</span></a>
   </div>
 </header>
+
+<div style="flex-shrink: 0; position: sticky; top: 0; height: 0; z-index: 40">
+  <div role="status" aria-live="polite" aria-atomic="true" style="position: absolute; top: 8px; right: 144px; left: auto; width: 400px">
+    <sc-for list="{{toastList}}" as="ta" hint-placeholder-count="0">
+      <div style="background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 14px 12px 16px 16px; display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; column-gap: 14px; align-items: center">
+          <span aria-hidden="true" style="width: 44px; height: 56px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; box-sizing: border-box"><sc-if value="{{ta.isAmpoule}}" hint-placeholder-val="{{true}}"><svg width="18" height="45" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{ta.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{ta.isBottle}}" hint-placeholder-val="{{false}}"><svg width="18" height="45" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{ta.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{ta.isJar}}" hint-placeholder-val="{{false}}"><svg width="18" height="45" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{ta.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{ta.isTube}}" hint-placeholder-val="{{false}}"><svg width="18" height="45" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{ta.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{ta.isStick}}" hint-placeholder-val="{{false}}"><svg width="18" height="45" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{ta.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if></span>
+          <span style="display: flex; flex-direction: column; min-width: 0">
+            <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #141414">Agregaste {{ta.name}}</span>
+            <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{ta.note}}</span>
+          </span>
+          <button type="button" onClick="{{closeToast}}" aria-label="Cerrar aviso" style="align-self: start; width: 44px; height: 44px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+        </div>
+        <a href="CarritoDesktop.dc.html" style="margin-top: 14px; margin-right: 4px; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Ver carrito</a>
+      </div>
+    </sc-for>
+  </div>
+  <sc-if value="{{waOpen}}" hint-placeholder-val="{{false}}">
+    <section role="dialog" aria-modal="false" aria-labelledby="wa-t" style="position: absolute; top: 8px; right: 144px; width: 440px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 20px 16px 24px 24px; display: flex; flex-direction: column">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 44px; column-gap: 12px; align-items: start">
+        <div style="padding-top: 6px; display: flex; flex-direction: column">
+          <h2 id="wa-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25">Consultanos por WhatsApp</h2>
+          <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">Chat de la tienda oficial, [número]</span>
+        </div>
+        <button type="button" onClick="{{closeWa}}" aria-label="Cerrar consulta por WhatsApp" style="width: 44px; height: 44px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+      </div>
+      <div style="margin-right: 8px; display: flex; flex-direction: column">
+        <label for="wa-msg-d" style="margin-top: 18px; font-size: 14px; font-weight: 500; line-height: 1.5; color: #141414">Tu mensaje</label>
+        <textarea id="wa-msg-d" rows="5" style="margin-top: 8px; width: 100%; box-sizing: border-box; resize: vertical; border: 1px solid #E0DBD1; border-radius: 12px 12px 12px 4px; background: #F7F4EE; padding: 14px 16px; font: inherit; font-size: 15px; line-height: 1.6; color: #141414">{{waMsg}}</textarea>
+        <p style="margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">Te respondemos de [horario de atención]. Después volvés a tu carrito con el link del mensaje.</p>
+        <div style="margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px">
+          <a href="https://wa.me/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Abrir WhatsApp</a>
+          <button type="button" onClick="{{closeWa}}" style="min-height: 48px; padding: 0 16px; border-radius: 999px; border: 1px solid #141414; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer; white-space: nowrap">Seguir en la tienda</button>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+</div>
 
 <section aria-labelledby="hero-t" style="flex-shrink: 0; background: #FFFFFF; padding: 0 144px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px">
   <div style="grid-column: 1 / span 5; grid-row: 1; position: relative; z-index: 1; margin-right: -72px; padding: 36px 0 40px; display: flex; flex-direction: column">
@@ -51,7 +87,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
       </div>
       <div style="margin-top: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px">
         <h2 id="hero-product" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em">Centella Ampoule</h2>
-        <a href="Ficha.dc.html" style="font-size: 13px; line-height: 1.5; color: #4A4A46; text-underline-offset: 3px; white-space: nowrap">[puntaje] de 5, [cantidad] reseñas</a>
+        <a href="FichaDesktop.dc.html" style="font-size: 13px; line-height: 1.5; color: #4A4A46; text-underline-offset: 3px; white-space: nowrap">[puntaje] de 5, [cantidad] reseñas</a>
       </div>
       <p style="margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">Ampolla liviana que ayuda a calmar rojeces y sensibilidad.</p>
       <dl style="margin: 18px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; border-top: 1px solid #E8E4DC">
@@ -73,8 +109,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
         </div>
       </div>
       <div style="margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 8px">
-        <a href="Carrito.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Agregar al carrito</a>
-        <a href="Ficha.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Ver producto</a>
+        <a href="CarritoDesktop.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Agregar al carrito</a>
+        <a href="FichaDesktop.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Ver producto</a>
       </div>
       <p style="margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">Producto original importado por el representante oficial. Llega en [plazo] a CABA y GBA.</p>
     </article>
@@ -99,7 +135,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 <section aria-labelledby="need-t" style="flex-shrink: 0; background: #FFFFFF; padding: 96px 144px 104px; display: flex; flex-direction: column">
   <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
     <h2 id="need-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">¿Qué le pasa a tu piel?</h2>
-    <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver todos los productos</a>
+    <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Ver todos los productos</a>
   </div>
   <div role="group" aria-label="Filtrar por necesidad" style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px">
     <sc-for list="{{needChips}}" as="n" hint-placeholder-count="7">
@@ -111,7 +147,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
     <sc-for list="{{grid}}" as="p" hint-placeholder-count="4">
       <li style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 16px; display: flex; flex-direction: column">
         <span aria-hidden="true" style="position: absolute; top: -10px; left: {{p.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{p.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
-        <a href="Ficha.dc.html" style="display: flex; flex-direction: column; text-decoration: none; color: #141414">
+        <a href="FichaDesktop.dc.html" style="display: flex; flex-direction: column; text-decoration: none; color: #141414">
           <span style="position: relative; height: 208px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center">
             <sc-if value="{{p.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isBottle}}" hint-placeholder-val="{{true}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isJar}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isTube}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{p.isStick}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{p.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if>
             <sc-if value="{{p.hasTag}}" hint-placeholder-val="{{false}}"><span style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 500; line-height: 1.4; color: #141414">{{p.tag}}</span></sc-if>
@@ -119,7 +155,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
           <span style="margin-top: 16px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{p.line}}</span>
           <span style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3">{{p.name}}</span>
         </a>
-        <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">[puntaje] de 5, [cantidad] reseñas</span>
+        <a href="FichaDesktop.dc.html" aria-label="Reseñas de {{p.name}}: [puntaje] de 5, [cantidad] reseñas" style="align-self: flex-start; margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66; text-underline-offset: 3px">[puntaje] de 5, [cantidad] reseñas</a>
         <span style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #4A4A46; min-height: 42px">{{p.need}}</span>
         <span style="margin-top: 12px; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 8px; font-size: 13px; line-height: 1.45">
           <span style="color: #6B6B66">Paso</span><span style="color: #141414">{{p.step}}</span>
@@ -150,7 +186,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
           <figcaption style="margin-top: 12px; font-size: 14px; line-height: 1.5; color: #4A4A46">[Nombre], {{rv.skin}}.</figcaption>
           <div style="margin-top: 20px; padding: 16px 0 0; border-top: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; align-items: center">
             <span style="display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
-              <a href="Ficha.dc.html" style="font-size: 15px; font-weight: 600; line-height: 1.45; text-decoration: none">{{rv.p.name}}</a>
+              <a href="FichaDesktop.dc.html" style="font-size: 15px; font-weight: 600; line-height: 1.45; text-decoration: none">{{rv.p.name}}</a>
               <span style="font-size: 14px; line-height: 1.5; color: #141414">{{rv.p.price}}</span>
               <span style="font-size: 12px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{rv.p.net}}</span>
             </span>
@@ -191,8 +227,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
             <span style="margin-top: 6px; font-size: 14px; font-weight: 500; line-height: 1.5; color: #2F6B45">[precio del set] con transferencia</span>
             <span style="margin-top: 2px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #141414">Ahorrás [ahorro del set] frente a comprarlos por separado</span>
           </div>
-          <a href="Carrito.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Llevá la rutina</a>
-          <a href="Coleccion.dc.html" style="align-self: center; margin-top: 4px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; font-size: 14px">Ver los 4 productos</a>
+          <a href="CarritoDesktop.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Llevá la rutina</a>
+          <a href="ColeccionDesktop.dc.html" style="align-self: center; margin-top: 4px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; font-size: 14px">Ver los 4 productos</a>
         </article>
       </sc-for>
     </div>
@@ -206,14 +242,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
         <h2 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.25">¿No sabés por dónde empezar?</h2>
         <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">Tres preguntas y te mostramos tu rutina, con el precio del set.</p>
       </div>
-      <a href="Test.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Hacé el test de piel</a>
+      <a href="TestDesktop.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Hacé el test de piel</a>
     </div>
     <div style="grid-column: 7 / span 6; margin-left: 12px; padding: 40px 0 40px 36px; border-left: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; align-items: center">
       <div style="display: flex; flex-direction: column">
         <h2 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.25">Consultanos antes de comprar</h2>
         <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">Te ayudamos a elegir por WhatsApp, [horario de atención].</p>
       </div>
-      <a href="Main.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Escribinos por WhatsApp</a>
+      <button type="button" onClick="{{openWa}}" aria-haspopup="dialog" aria-expanded="{{waExpanded}}" style="font: inherit; background: #FFFFFF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Escribinos por WhatsApp</button>
     </div>
   </div>
 </section>
@@ -241,15 +277,15 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
         <h3 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em">{{shelf.name}}</h3>
         <span style="margin-top: 4px; font-size: 14px; line-height: 1.5; color: #4A4A46">{{shelf.need}}. Ingrediente: {{shelf.ingr}}.</span>
       </div>
-      <a href="Coleccion.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; font-size: 14px; white-space: nowrap">Ver la línea completa</a>
+      <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; font-size: 14px; white-space: nowrap">Ver la línea completa</a>
     </div>
     <ul style="list-style: none; margin: 0; padding: 0">
       <sc-for list="{{shelf.items}}" as="q" hint-placeholder-count="3">
         <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 196px; column-gap: 20px; align-items: center; padding: 20px 0; border-top: {{q.rule}}">
-          <a href="Ficha.dc.html" aria-label="Ver {{q.name}}" style="height: 120px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center"><sc-if value="{{q.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isBottle}}" hint-placeholder-val="{{true}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isJar}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isTube}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isStick}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if></a>
+          <a href="FichaDesktop.dc.html" aria-label="Ver {{q.name}}" style="height: 120px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center"><sc-if value="{{q.isAmpoule}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isBottle}}" hint-placeholder-val="{{true}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="74" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isJar}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isTube}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="#141414"></rect><rect x="17" y="40" width="26" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if><sc-if value="{{q.isStick}}" hint-placeholder-val="{{false}}"><svg width="38" height="96" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="14" y="4" width="32" height="34" rx="6" fill="#141414"></rect><rect x="14" y="36" width="32" height="110" rx="6" fill="{{q.c}}" stroke="#141414" stroke-opacity="0.16"></rect><rect x="20" y="70" width="20" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></sc-if></a>
           <div style="display: flex; flex-direction: column">
-            <a href="Ficha.dc.html" style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3; text-decoration: none">{{q.name}}</a>
-            <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">[puntaje] de 5, [cantidad] reseñas</span>
+            <a href="FichaDesktop.dc.html" style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3; text-decoration: none">{{q.name}}</a>
+            <a href="FichaDesktop.dc.html" aria-label="Reseñas de {{q.name}}: [puntaje] de 5, [cantidad] reseñas" style="align-self: flex-start; margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66; text-underline-offset: 3px">[puntaje] de 5, [cantidad] reseñas</a>
             <span style="margin-top: 4px; font-size: 14px; line-height: 1.5; color: #4A4A46">{{q.need}}</span>
             <span style="margin-top: 6px; font-size: 13px; line-height: 1.45; color: #6B6B66">Paso: <span style="color: #141414">{{q.step}}</span>. Contenido: <span style="color: #141414; white-space: nowrap">{{q.size}}</span></span>
           </div>
@@ -270,7 +306,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
     <div style="grid-column: 1 / span 5; display: flex; flex-direction: column">
       <h2 id="marca-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em">Por qué se llama 1004</h2>
       <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">En coreano, 1004 se lee cheon-sa, igual que <span lang="ko" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 500; color: #141414">천사</span>: ángel. SKIN1004 nace en Seúl con una idea: el ingrediente primero, empezando por la centella de Madagascar.</p>
-      <a href="Main.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Conocé la historia</a>
+      <a href="HomeDesktop.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Conocé la historia</a>
     </div>
     <dl style="grid-column: 7 / span 6; margin: 4px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
       <sc-for list="{{brandFields}}" as="bf" hint-placeholder-count="3">
@@ -306,17 +342,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
       <a href="HomeDesktop.dc.html" aria-label="SKIN1004, inicio" style="align-self: flex-start; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.34em; text-decoration: none; color: #141414; line-height: 1.4">SKIN1004</a>
       <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: #6B6B66">The Untouched Nature</p>
     </div>
-    <nav aria-label="Comprar" style="grid-column: 5 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Comprar</span><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Productos</a><a href="Coleccion.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Rutinas y kits</a><a href="Test.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Test de piel</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">La marca</a></nav>
-    <nav aria-label="Ayuda" style="grid-column: 7 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Ayuda</span><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Envíos y plazos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Consultas por WhatsApp</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cuotas y pagos</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Producto original</a><a href="Main.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cambios y devoluciones</a></nav>
+    <nav aria-label="Comprar" style="grid-column: 5 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Comprar</span><a href="ColeccionDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Productos</a><a href="ColeccionDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Rutinas y kits</a><a href="TestDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Test de piel</a><a href="#marca-t" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">La marca</a></nav>
+    <nav aria-label="Ayuda" style="grid-column: 7 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Ayuda</span><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Envíos y plazos</a><button type="button" onClick="{{openWa}}" aria-haspopup="dialog" aria-expanded="{{waExpanded}}" style="border: 0; background: transparent; padding: 0; font: inherit; color: #4A4A46; text-align: left; min-height: 44px; display: flex; align-items: center; cursor: pointer">Consultas por WhatsApp</button><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cuotas y pagos</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Producto original</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cambios y devoluciones</a></nav>
     <div style="grid-column: 10 / span 3; display: flex; flex-direction: column">
-      <nav aria-label="Legales" style="display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Legales</span><a href="Main.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Términos y condiciones</a><a href="Main.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Política de privacidad</a></nav>
-      <a href="Main.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px">Botón de arrepentimiento</a>
+      <nav aria-label="Legales" style="display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Legales</span><a href="HomeDesktop.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Términos y condiciones</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Política de privacidad</a></nav>
+      <a href="HomeDesktop.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px">Botón de arrepentimiento</a>
     </div>
   </div>
   <div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid #CFCAC0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; align-items: center">
     <div style="grid-column: 1 / span 5; display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 20px; align-items: center">
-      <a href="Main.dc.html" aria-label="Data Fiscal, código QR" style="width: 72px; height: 72px; background: #FFFFFF; border: 1px solid #E0DBD1; box-sizing: border-box; color: #4A4A46; font-size: 12px; line-height: 1.3; display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border-radius: 4px">QR Data Fiscal</a>
-      <a href="Main.dc.html" style="color: #141414; font-size: 15px; line-height: 1.6; text-underline-offset: 3px">Defensa de las y los consumidores. Para reclamos, ingresá acá.</a>
+      <a href="HomeDesktop.dc.html" aria-label="Data Fiscal, código QR" style="width: 72px; height: 72px; background: #FFFFFF; border: 1px solid #E0DBD1; box-sizing: border-box; color: #4A4A46; font-size: 12px; line-height: 1.3; display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border-radius: 4px">QR Data Fiscal</a>
+      <a href="HomeDesktop.dc.html" style="color: #141414; font-size: 15px; line-height: 1.6; text-underline-offset: 3px">Defensa de las y los consumidores. Para reclamos, ingresá acá.</a>
     </div>
     <p style="grid-column: 7 / span 6; margin: 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Pagá con Mercado Pago, MODO, tarjetas o transferencia. Envío gratis desde $&nbsp;119.999, 10% off con transferencia, 6 cuotas sin interés desde $&nbsp;150.000 y 2 muestras de regalo en cada pedido.</p>
     <div style="grid-column: 1 / span 8; display: flex; flex-direction: column">
@@ -333,7 +369,8 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     // need: filtro de "¿Qué le pasa a tu piel?"; line: línea elegida en el índice; added: productos agregados desde esta pantalla.
-    this.state = { need: 'best', line: 'centella', added: {} };
+    // toast: producto del último aviso de agregado (se va solo a los 4 s); waOpen: hoja de consulta por WhatsApp.
+    this.state = { need: 'best', line: 'centella', added: {}, toast: null, waOpen: false };
   }
   renderVals() {
     const s = this.state;
@@ -392,7 +429,9 @@ class Component extends DCLogic {
           if (added[id]) return;
           const next = Object.assign({}, added);
           next[id] = true;
-          this.setState({ added: next, lastAdded: p.name });
+          clearTimeout(this._toastTimer);
+          this.setState({ added: next, toast: id, waOpen: false });
+          this._toastTimer = setTimeout(() => this.setState({ toast: null }), 4000);
         }
       }, extra || {});
     };
@@ -480,10 +519,27 @@ class Component extends DCLogic {
     }));
 
     const cartCount = 1 + addedCount;
+    // Aviso de agregado. El carrito de prueba arranca con 1 Centella Ampoule 55 ml ($ 42.999, como en CarritoDesktop).
+    // El total solo es real si todo lo agregado tiene precio real; si no, placeholder.
+    const FREE = 119999;
+    const money = (n) => '$\u00a0' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const known = Object.keys(added).every((k) => k === 'ampoule');
+    const total = 42999 * (1 + (added.ampoule ? 1 : 0));
+    const toastNote = !known ? 'Tu carrito: [total del carrito]'
+      : total < FREE ? 'Te faltan ' + money(FREE - total) + ' para el envío gratis'
+      : 'Tu carrito: ' + money(total) + ', con envío gratis';
+    const toastList = s.toast && CAT[s.toast] ? [buy(s.toast, { note: toastNote })] : [];
     return {
       cartCount: String(cartCount),
       cartLabel: 'Carrito, ' + cartCount + (cartCount === 1 ? ' producto' : ' productos'),
-      cartStatus: s.lastAdded ? s.lastAdded + ' agregado al carrito' : '',
+      toastList,
+      closeToast: () => { clearTimeout(this._toastTimer); this.setState({ toast: null }); },
+      waOpen: !!s.waOpen,
+      waExpanded: s.waOpen ? 'true' : 'false',
+      openWa: () => { clearTimeout(this._toastTimer); this.setState({ waOpen: true, toast: null }); },
+      closeWa: () => this.setState({ waOpen: false }),
+      // En la home, la consulta es por el producto de la oferta.
+      waMsg: 'Hola, quiero consultar por Centella Ampoule 55 ml ($\u00a042.999). Lo estoy viendo en la tienda oficial: [link al producto]. Mi carrito: [link al carrito]',
       heroTab: tabs(536)[LINE.centella.slot], // rótulo del hero, columnas 1 a 5 más 72 px sobre la foto (538 px con borde), slot 0
       hero: { price: '$\u00a042.999', net: '$\u00a035.536', transfer: '$\u00a038.699' },
       heroFields: [

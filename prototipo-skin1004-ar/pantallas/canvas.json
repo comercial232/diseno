@@ -3,7 +3,7 @@
   "attachments": {},
   "boards": {
     "Carrito.dc.html": {
-      "h": 3480,
+      "h": 3520,
       "is_interactive": true,
       "title": "Carrito",
       "w": 390,
@@ -19,7 +19,7 @@
       "y": 0
     },
     "Ficha.dc.html": {
-      "h": 6280,
+      "h": 6120,
       "is_interactive": true,
       "title": "Ficha: Centella Ampoule",
       "w": 390,
@@ -49,6 +49,38 @@
       "w": 390,
       "x": 1410,
       "y": 0
+    },
+    "ColeccionDesktop.dc.html": {
+      "h": 3640,
+      "is_interactive": true,
+      "title": "Colección por línea (escritorio)",
+      "w": 1440,
+      "x": 1520,
+      "y": 8400
+    },
+    "FichaDesktop.dc.html": {
+      "h": 6440,
+      "is_interactive": true,
+      "title": "Ficha: Centella Ampoule (escritorio)",
+      "w": 1440,
+      "x": 3040,
+      "y": 8400
+    },
+    "TestDesktop.dc.html": {
+      "h": 2480,
+      "is_interactive": true,
+      "title": "Test de piel (escritorio)",
+      "w": 1440,
+      "x": 4560,
+      "y": 8400
+    },
+    "CarritoDesktop.dc.html": {
+      "h": 3080,
+      "is_interactive": true,
+      "title": "Carrito (escritorio)",
+      "w": 1440,
+      "x": 6080,
+      "y": 8400
     }
   },
   "createdOnFiles": {
@@ -62,8 +94,8 @@
   "notes": {
     "escritorio": {
       "kind": "title1",
-      "maxW": 1440,
-      "text": "Home en escritorio",
+      "maxW": 7520,
+      "text": "Flujo de compra en escritorio",
       "w": 240,
       "x": 0,
       "y": 8100
@@ -75,6 +107,24 @@
       "w": 240,
       "x": 0,
       "y": -300
+    },
+    "revisar-celular": {
+      "x": -600,
+      "y": 0,
+      "w": 500,
+      "maxH": 900,
+      "size": "m",
+      "fill": "orange",
+      "text": "Cómo revisar (celular)\n\nTocá Play en cada pantalla para usarla. Los links llevan de una pantalla a otra.\n\nQué se corrigió:\n1. Agregar: aparece un aviso con el producto, el total o lo que falta para el envío gratis, y el botón Ver carrito. Se va solo a los 4 segundos.\n2. Menú: el botón de la izquierda del encabezado abre el menú con buscador, las seis líneas, Rutinas y kits, Lo más elegido y Test de piel.\n3. WhatsApp: antes de salir del sitio se abre una hoja con el mensaje ya armado (producto, tamaño y link de vuelta al carrito), que se puede editar.\n4. Carrito: barra fija al pie con total, precio con transferencia e Iniciar compra.\n5. Test de piel: el precio del set se ve desde la pantalla de inicio.\n\nEn el lienzo, que muestra cada pantalla entera, el aviso aparece arriba y la barra y la hoja abajo. En Play y en el sitio real quedan fijos en pantalla al hacer scroll.\n\nLo que figura entre corchetes, como [precio] o [número], es un dato a completar."
+    },
+    "revisar-escritorio": {
+      "x": -600,
+      "y": 8400,
+      "w": 500,
+      "maxH": 700,
+      "size": "m",
+      "fill": "orange",
+      "text": "Cómo revisar (escritorio)\n\nAhora el escritorio tiene sus cinco pantallas y se navega entre ellas sin pasar por las de celular.\n\nColección: selector de líneas y filtros en una columna fija a la izquierda, grilla de 3 columnas con Agregar.\nFicha: galería a la izquierda y bloque de compra fijo a la derecha, con precio, tamaño y Agregar al carrito a la vista.\nTest de piel: preguntas en dos columnas con opciones grandes; el resultado muestra el precio del set y Llevá la rutina arriba.\nCarrito: productos a la izquierda y resumen fijo a la derecha, con Iniciar compra siempre visible.\n\nEn todas: aviso al agregar y panel de WhatsApp con el mensaje armado."
     }
   },
   "order": [
@@ -83,7 +133,11 @@
     "Ficha.dc.html",
     "Test.dc.html",
     "Carrito.dc.html",
-    "HomeDesktop.dc.html"
+    "HomeDesktop.dc.html",
+    "ColeccionDesktop.dc.html",
+    "FichaDesktop.dc.html",
+    "TestDesktop.dc.html",
+    "CarritoDesktop.dc.html"
   ],
   "pages": [],
   "title": "SKIN1004 Argentina · Prototipo"

@@ -20,7 +20,7 @@ a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 390px; height: 2460px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden">
+<div style="width: 390px; height: 2460px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: clip">
 
 <header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
   <div style="display: flex">
@@ -32,6 +32,20 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   </div>
 </header>
 
+<div role="status" aria-live="polite" style="position: sticky; top: 0; height: 0; z-index: 40">
+  <sc-if value="{{toastOn}}" hint-placeholder-val="{{false}}">
+    <div style="position: absolute; top: 8px; left: 12px; right: 12px; background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 12px 4px 12px 14px; display: grid; grid-template-columns: 28px minmax(0, 1fr) 44px; column-gap: 12px; align-items: start">
+      <span aria-hidden="true" style="width: 28px; height: 44px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; box-sizing: border-box"><svg width="14" height="34" viewBox="0 0 60 150" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{toast.c}}" stroke="#141414" stroke-opacity="0.2"></rect></svg></span>
+      <span style="display: flex; flex-direction: column; min-width: 0; padding-top: 1px">
+        <span style="font-size: 14px; font-weight: 600; line-height: 1.4">{{toast.title}}</span>
+        <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{toast.sub}}</span>
+      </span>
+      <button type="button" aria-label="Cerrar aviso" onClick="{{closeToast}}" style="width: 44px; height: 44px; margin-top: -8px; border: 0; border-radius: 999px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"></path></svg></button>
+      <a href="Carrito.dc.html" style="grid-column: 2 / 3; justify-self: start; margin-top: 10px; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 14px; letter-spacing: 0.005em">Ver carrito</a>
+    </div>
+  </sc-if>
+</div>
+
 <sc-if value="{{intro}}" hint-placeholder-val="{{true}}">
   <section aria-labelledby="intro-t" style="background: #FFFFFF; display: flex; flex-direction: column">
     <div role="img" aria-label="Foto de detalle: mejilla con poros visibles y textura real, luz de ventana lateral, sin rostro completo" style="width: 390px; height: 200px; background: #F2EDE4; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 8px">
@@ -42,14 +56,19 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
       <h1 id="intro-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance">Tu rutina con precio de set, en tres preguntas</h1>
       <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.65; color: #4A4A46">Contanos cómo se siente tu piel y te armamos la rutina de SKIN1004 que la acompaña, lista para llevar.</p>
       <dl aria-label="Lo que te llevás del test" style="margin: 20px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
-        <sc-for list="{{promise}}" as="pr" hint-placeholder-count="3">
+        <sc-for list="{{promise}}" as="pr" hint-placeholder-count="2">
           <div style="padding: 10px 0; border-bottom: 1px solid #E8E4DC; display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; align-items: baseline">
             <dt style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">{{pr.k}}</dt>
             <dd style="margin: 0; font-size: 14px; line-height: 1.45; color: #141414">{{pr.v}}</dd>
           </div>
         </sc-for>
       </dl>
-      <button type="button" onClick="{{start}}" style="margin-top: 24px; min-height: 52px; padding: 0 24px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Armar mi rutina</button>
+      <div aria-labelledby="intro-precio" style="margin-top: 20px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+        <span id="intro-precio" style="font-size: 12px; font-weight: 500; line-height: 1.5; color: #6B6B66">Rutinas completas desde</span>
+        <span style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.15">[precio del set]</span>
+        <span style="margin-top: 6px; font-size: 14px; font-weight: 500; line-height: 1.5; color: #141414">4 productos. Ahorrás [ahorro del set] frente a comprar cada paso por separado.</span>
+      </div>
+      <button type="button" onClick="{{start}}" style="margin-top: 20px; min-height: 52px; padding: 0 24px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Armar mi rutina</button>
       <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46; text-align: center">Sin registrarte. Tu mail solo si querés guardar el resultado.</p>
       <p style="margin: 28px 0 0; padding-top: 16px; border-top: 1px solid #E8E4DC; font-size: 12px; line-height: 1.5; color: #6B6B66">Es una orientación cosmética y no reemplaza la consulta con tu dermatóloga o dermatólogo.</p>
     </div>
@@ -138,7 +157,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
           </li>
         </sc-for>
       </ol>
-      <p role="status" style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">{{addedNote}}</p>
+      <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">{{addedNote}}</p>
 
       <dl style="margin: 20px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; border-top: 1px solid #E8E4DC">
         <sc-for list="{{fields}}" as="f" hint-placeholder-count="3">
@@ -179,7 +198,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { step: -1, answers: [null, null, null], saved: false, added: [] };
+    this.state = { step: -1, answers: [null, null, null], saved: false, added: [], toast: null };
   }
   renderVals() {
     const s = this.state;
@@ -219,29 +238,29 @@ class Component extends DCLogic {
     // Rutinas: mismos pasos y nombres que el estante de Main. Orden de aplicación:
     // limpieza, máscara semanal, tónico, ampolla, crema y protector solo de día.
     // Único precio real: Centella Ampoule 55 ml. El resto va como [precio].
-    const SUN = { name: 'Water-Fit Sun Serum', when: 'Solo de día', ml: '50 ml', c: H, k: 'tube' };
-    const AMP = { name: 'Centella Ampoule', when: 'Mañana y noche', ml: '55 ml', c: C, k: 'ampoule', price: '$\u00a042.999', net: '$\u00a035.536' };
+    const SUN = { name: 'Water-Fit Sun Serum', full: 'Hyalu-Cica Water-Fit Sun Serum FPS 50+', when: 'Solo de día', ml: '50 ml', c: H, k: 'tube' };
+    const AMP = { name: 'Centella Ampoule', full: 'Centella Ampoule 55 ml', when: 'Mañana y noche', ml: '55 ml', c: C, k: 'ampoule', price: '$\u00a042.999', net: '$\u00a035.536' };
     const R = {
       rojeces: { l: 'centella', routineName: 'Rutina calmante', why: 'La línea dorada, con centella asiática de Madagascar, calma la piel sensible o con rojeces.', steps: [
-        { name: 'Toning Toner', when: 'Mañana y noche', ml: '[ml]', c: C, k: 'bottle' },
+        { name: 'Toning Toner', full: 'Centella Toning Toner', when: 'Mañana y noche', ml: '[ml]', c: C, k: 'bottle' },
         AMP,
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
+        { name: 'Soothing Cream', full: 'Centella Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
       poros: { l: 'pore', routineName: 'Rutina poros y brillo', why: 'La línea rosa, con sal rosa del Himalaya, ayuda a afinar la apariencia de los poros y a controlar el brillo.', steps: [
-        { name: 'Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
-        { name: 'Clay Stick Mask', when: '1 o 2 veces por semana', c: P, k: 'stick' },
-        { name: 'Fresh Ampoule', when: 'Mañana y noche', ml: '100 ml', c: P, k: 'ampoule' }, SUN] },
+        { name: 'Ampoule Foam', full: 'Centella Ampoule Foam', when: 'Para limpiar', c: C, k: 'tube' },
+        { name: 'Clay Stick Mask', full: 'Poremizing Clay Stick Mask', when: '1 o 2 veces por semana', c: P, k: 'stick' },
+        { name: 'Fresh Ampoule', full: 'Poremizing Fresh Ampoule', when: 'Mañana y noche', ml: '100 ml', c: P, k: 'ampoule' }, SUN] },
       granitos: { l: 'tea', routineName: 'Rutina granitos', why: 'La línea verde combina árbol de té y centella para acompañar a la piel con granitos.', steps: [
-        { name: 'Purifying Toner', when: 'Mañana y noche', c: T, k: 'bottle' },
-        { name: 'Relief Ampoule', when: 'Mañana y noche', ml: '100 ml', c: T, k: 'ampoule' },
-        { name: 'Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
+        { name: 'Purifying Toner', full: 'Tea-Trica Purifying Toner', when: 'Mañana y noche', c: T, k: 'bottle' },
+        { name: 'Relief Ampoule', full: 'Tea-Trica Relief Ampoule', when: 'Mañana y noche', ml: '100 ml', c: T, k: 'ampoule' },
+        { name: 'Soothing Cream', full: 'Centella Soothing Cream', when: 'Mañana y noche', c: C, k: 'jar' }, SUN] },
       manchas: { l: 'tone', routineName: 'Rutina tono parejo', why: 'La línea blanca ayuda a emparejar el tono y a darle luminosidad a la piel. El protector de día no se saltea.', steps: [
-        { name: 'Toning Toner', when: 'Mañana y noche', ml: '[ml]', c: C, k: 'bottle' },
-        { name: 'Capsule Ampoule', when: 'Mañana y noche', c: W, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', ml: '75 ml', c: H, k: 'jar' }, SUN] },
+        { name: 'Toning Toner', full: 'Centella Toning Toner', when: 'Mañana y noche', ml: '[ml]', c: C, k: 'bottle' },
+        { name: 'Capsule Ampoule', full: 'Tone Brightening Capsule Ampoule', when: 'Mañana y noche', c: W, k: 'ampoule' },
+        { name: 'Moisture Cream', full: 'Hyalu-Cica Moisture Cream', when: 'Mañana y noche', ml: '75 ml', c: H, k: 'jar' }, SUN] },
       hidratacion: { l: 'hyalu', routineName: 'Rutina hidratación', why: 'La línea azul suma ácido hialurónico a la centella para ayudar a hidratar la piel deshidratada.', steps: [
-        { name: 'Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
-        { name: 'First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
-        { name: 'Moisture Cream', when: 'Mañana y noche', ml: '75 ml', c: H, k: 'jar' }, SUN] }
+        { name: 'Essence Toner', full: 'Probio-Cica Essence Toner', when: 'Mañana y noche', c: B, k: 'bottle' },
+        { name: 'First Ampoule', full: 'Hyalu-Cica First Ampoule', when: 'Mañana y noche', c: H, k: 'ampoule' },
+        { name: 'Moisture Cream', full: 'Hyalu-Cica Moisture Cream', when: 'Mañana y noche', ml: '75 ml', c: H, k: 'jar' }, SUN] }
     };
 
     const step = s.step;
@@ -263,7 +282,7 @@ class Component extends DCLogic {
         pick: () => {
           const answers = s.answers.slice();
           answers[qi] = o.v;
-          this.setState({ answers, step: qi + 1, added: [], saved: false });
+          this.setState({ answers, step: qi + 1, added: [], saved: false, toast: null });
         }
       };
     });
@@ -275,9 +294,15 @@ class Component extends DCLogic {
     const res = R[s.answers[1] || 'rojeces'];
     const line = LINE[res.l];
     const added = s.added || [];
+    // Aviso de agregado: se va solo a los 4 s o con su botón de cerrar.
+    const closeToast = () => { clearTimeout(this.toastTimer); this.setState({ toast: null }); };
     const toggle = (i) => () => {
-      const next = added.indexOf(i) >= 0 ? added.filter((x) => x !== i) : added.concat([i]);
-      this.setState({ added: next });
+      const on = added.indexOf(i) >= 0;
+      const next = on ? added.filter((x) => x !== i) : added.concat([i]);
+      clearTimeout(this.toastTimer);
+      if (on) { this.setState({ added: next, toast: null }); return; }
+      this.setState({ added: next, toast: { i } });
+      this.toastTimer = setTimeout(() => this.setState({ toast: null }), 4000);
     };
     const steps = res.steps.map((x, i) => {
       const on = added.indexOf(i) >= 0;
@@ -321,12 +346,24 @@ class Component extends DCLogic {
     const cartCount = 1 + (done ? added.length : 0);
     const n = added.length;
 
+    // Total del carrito para el aviso: arranca con la Centella Ampoule 55 ml que ya está en el carrito.
+    // Solo suma precios reales; si hay productos con [precio], lo dice.
+    const FREE = 119999;
+    const money = (v) => '$\u00a0' + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const addedSteps = added.map((i) => res.steps[i]).filter(Boolean);
+    const known = 42999 + addedSteps.filter((x) => x.price).length * 42999;
+    const unknownCart = addedSteps.some((x) => !x.price);
+    const tStep = (done && s.toast && res.steps[s.toast.i] && added.indexOf(s.toast.i) >= 0) ? res.steps[s.toast.i] : null;
+    let toastSub = 'Tu carrito: ' + money(known) + ' + [precio].';
+    if (!unknownCart) toastSub = known < FREE ? 'Tu carrito: ' + money(known) + '. Te faltan ' + money(FREE - known) + ' para el envío gratis.' : 'Tu carrito: ' + money(known) + '. Tu envío es gratis.';
+    const toast = tStep ? { title: 'Agregaste ' + tStep.full, sub: toastSub, c: tStep.c } : { title: '', sub: '', c: '#FFFFFF' };
+
     return {
       intro, asking, done,
+      toastOn: !!tStep, toast, closeToast,
       promise: [
         { k: 'Tu línea', v: 'La que va con tu piel, entre las seis de SKIN1004' },
-        { k: 'Tu rutina', v: '4 pasos, en el orden en que se aplican' },
-        { k: 'Tu precio', v: 'Precio de set: ahorrás [ahorro del set] frente a comprar cada paso por separado' }
+        { k: 'Tu rutina', v: '4 pasos, en el orden en que se aplican' }
       ],
       start: () => this.setState({ step: 0 }),
       stepNumber: String(qi + 1),
@@ -347,7 +384,7 @@ class Component extends DCLogic {
       save: () => this.setState({ saved: true }),
       saveLabel: s.saved ? 'Enviada' : 'Enviarme',
       saveNote: s.saved ? 'Listo: te mandamos la ' + res.routineName.toLowerCase() + ' y su precio de set a tu mail.' : '',
-      restart: () => this.setState({ step: 0, answers: [null, null, null], saved: false, added: [] })
+      restart: () => { clearTimeout(this.toastTimer); this.setState({ step: 0, answers: [null, null, null], saved: false, added: [], toast: null }); }
     };
   }
 }

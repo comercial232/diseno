@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>SKIN1004 Argentina, carrito en escritorio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@500&display=swap">
+<style>
+body{margin:0;font-family:"Inter","Helvetica Neue",Arial,sans-serif;color:#141414;background:#141414}
+a{color:#141414}a:hover{color:#8A6A24}
+a,button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,opacity .2s ease}
+a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
+button:disabled{cursor:default}button:disabled:hover{opacity:inherit}
+@media (prefers-reduced-motion:reduce){a,button{transition:none}}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 3080px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: clip; position: relative">
+
+<p style="flex-shrink: 0; margin: 0; background: #141414; color: #F7F4EE; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; padding: 10px 144px; text-align: center">Tienda oficial de SKIN1004 en Argentina. <button type="button" onClick="{{openWa}}" aria-expanded="{{waExpanded}}" style="margin: 0; padding: 0; border: 0; background: transparent; font: inherit; color: #F7F4EE; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">Consultanos por WhatsApp antes de comprar</button></p>
+
+<header style="flex-shrink: 0; background: #FFFFFF; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; padding: 14px 144px; border-bottom: 1px solid #E8E4DC">
+  <nav aria-label="Principal" style="display: flex; gap: 32px; font-size: 15px; font-weight: 500">
+    <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Productos</a>
+    <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Rutinas y kits</a>
+    <a href="TestDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Test de piel</a>
+    <a href="HomeDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">La marca</a>
+  </nav>
+  <a href="HomeDesktop.dc.html" aria-label="SKIN1004, inicio" style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
+  <div style="display: flex; justify-content: flex-end; gap: 4px">
+    <button type="button" aria-label="Buscar" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg></button>
+    <a href="HomeDesktop.dc.html" aria-label="Mi cuenta" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4"></path></svg></a>
+    <a href="CarritoDesktop.dc.html" aria-label="{{cartLabel}}" aria-current="page" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums">{{cartCount}}</span></a>
+  </div>
+</header>
+
+<div style="flex-shrink: 0; position: sticky; top: 0; height: 0; z-index: 40">
+  <div role="status" aria-live="polite" aria-atomic="true">
+    <sc-if value="{{toastOn}}" hint-placeholder-val="{{false}}">
+      <div style="position: absolute; top: 8px; right: 144px; left: auto; width: 400px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 16px 12px 16px 20px; display: grid; grid-template-columns: 12px minmax(0, 1fr) 44px; column-gap: 14px; align-items: start">
+        <span aria-hidden="true" style="margin-top: 6px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 999px; background: {{toast.c}}; border: 1px solid rgba(20,20,20,0.14)"></span>
+        <div style="display: flex; flex-direction: column; min-width: 0; font-variant-numeric: tabular-nums">
+          <span style="font-size: 15px; font-weight: 600; line-height: 1.45">{{toast.title}}</span>
+          <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #4A4A46">{{toast.total}}</span>
+          <span style="font-size: 13px; line-height: 1.5; color: #4A4A46">{{toast.ship}}</span>
+          <button type="button" onClick="{{undoAdd}}" aria-label="{{toast.undoAria}}" style="align-self: flex-start; margin-top: 12px; min-height: 44px; padding: 0 20px; border: 1px solid #141414; border-radius: 999px; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; cursor: pointer">Deshacer</button>
+        </div>
+        <button type="button" onClick="{{closeToast}}" aria-label="Cerrar aviso" style="width: 44px; height: 44px; margin-top: -10px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{waOpen}}" hint-placeholder-val="{{false}}">
+    <section role="dialog" aria-labelledby="wa-t" style="position: absolute; top: 8px; right: 144px; width: 440px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 24px; display: flex; flex-direction: column">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+        <div style="display: flex; flex-direction: column">
+          <h2 id="wa-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25; letter-spacing: -0.005em">Consultanos por WhatsApp</h2>
+          <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">Tienda oficial, WhatsApp [número]</span>
+        </div>
+        <button type="button" onClick="{{closeWa}}" aria-label="Cerrar consulta por WhatsApp" style="flex: 0 0 44px; width: 44px; height: 44px; margin: -10px -10px 0 0; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+      <label for="wa-msg" style="margin-top: 20px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">Tu mensaje</label>
+      <textarea id="wa-msg" rows="6" style="margin-top: 6px; resize: none; box-sizing: border-box; width: 100%; padding: 14px 16px; background: #F7F4EE; border: 1px solid #CFCAC0; border-radius: 12px; font: inherit; font-size: 15px; line-height: 1.6; color: #141414">{{waMsg}}</textarea>
+      <p style="margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #4A4A46">Te respondemos de [horario de atención]. Después volvés a tu carrito con el link del mensaje.</p>
+      <div style="margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px">
+        <a href="https://wa.me/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Abrir WhatsApp</a>
+        <button type="button" onClick="{{closeWa}}" style="min-height: 48px; padding: 0 16px; border: 1px solid #141414; border-radius: 999px; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer">Seguir en la tienda</button>
+      </div>
+    </section>
+  </sc-if>
+</div>
+
+<main style="flex-shrink: 0; padding: 48px 144px 128px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start">
+
+  <div style="grid-column: 1 / span 7; display: flex; flex-direction: column; min-width: 0">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px">
+      <div style="display: flex; align-items: baseline; gap: 16px">
+        <h1 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 44px; line-height: 1.12; letter-spacing: -0.01em">Tu carrito</h1>
+        <span aria-live="polite" style="font-size: 15px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums; white-space: nowrap">{{countLabel}}</span>
+      </div>
+      <a href="ColeccionDesktop.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Seguir comprando</a>
+    </div>
+
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
+    <section aria-labelledby="vacio-t" style="display: flex; flex-direction: column">
+      <p id="vacio-t" style="margin: 16px 0 0; max-width: 560px; font-size: 18px; line-height: 1.65; color: #4A4A46">Está vacío. Empezá por la ampolla que calma la piel sensible, o hacé el test y te armamos la rutina con el precio del set.</p>
+      <article aria-labelledby="vacio-producto" style="position: relative; margin-top: 44px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 16px; display: grid; grid-template-columns: 184px minmax(0, 1fr); column-gap: 24px">
+        <span aria-hidden="true" style="position: absolute; top: -10px; left: 20px; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: #C9A24A; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+        <a href="FichaDesktop.dc.html" tabindex="-1" aria-hidden="true" style="background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center; min-height: 240px"><svg width="64" height="160" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="#141414"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="#141414"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="#C9A24A" stroke="#141414" stroke-opacity="0.16"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="0.8"></rect></svg></a>
+        <div style="display: flex; flex-direction: column; padding: 4px 0; min-width: 0; font-variant-numeric: tabular-nums">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px">
+            <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">Madagascar Centella</span>
+            <span lang="ko" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 500; font-size: 13px; line-height: 1.5; color: #6B6B66">마다가스카르 센텔라 앰플</span>
+          </div>
+          <a id="vacio-producto" href="FichaDesktop.dc.html" style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em; text-decoration: none">Centella Ampoule</a>
+          <span style="margin-top: 4px; font-size: 15px; line-height: 1.6; color: #4A4A46">Ayuda a calmar la piel sensible o con rojeces. 55 ml.</span>
+          <div style="margin-top: 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; padding-top: 14px; border-top: 1px solid #E8E4DC">
+            <span style="display: flex; flex-direction: column">
+              <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15">$ 42.999</span>
+              <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: <span style="white-space: nowrap">$ 35.536</span></span>
+            </span>
+            <span style="display: flex; flex-direction: column">
+              <span style="font-size: 16px; font-weight: 600; line-height: 1.5; color: #2F6B45">$ 38.699 con transferencia</span>
+              <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">6 cuotas sin interés en compras desde $&nbsp;150.000</span>
+            </span>
+          </div>
+          <div style="margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 8px">
+            <button type="button" onClick="{{addHero}}" style="min-height: 52px; padding: 0 20px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer">Agregar al carrito</button>
+            <a href="FichaDesktop.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 20px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Ver producto</a>
+          </div>
+        </div>
+      </article>
+      <div style="margin-top: 64px; padding-top: 40px; border-top: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; align-items: end">
+        <div style="display: flex; flex-direction: column">
+          <h2 style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em; text-wrap: balance">¿No sabés qué necesita tu piel?</h2>
+          <p style="margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">Tres preguntas y te decimos qué rutina llevar, con el precio del set.</p>
+        </div>
+        <a href="TestDesktop.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 28px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; white-space: nowrap">Hacé el test de piel</a>
+      </div>
+    </section>
+</sc-if>
+
+<sc-if value="{{hasItems}}" hint-placeholder-val="{{true}}">
+    <section aria-label="Productos en tu carrito" style="margin-top: 42px; display: flex; flex-direction: column; gap: 34px">
+      <sc-for list="{{items}}" as="it" hint-placeholder-count="1">
+        <article aria-labelledby="{{it.hid}}" style="position: relative; display: grid; grid-template-columns: 136px minmax(0, 1fr) 200px; column-gap: 24px; padding: 16px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px">
+          <span aria-hidden="true" style="position: absolute; top: -10px; left: {{it.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{it.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+          <a href="FichaDesktop.dc.html" tabindex="-1" aria-hidden="true" style="background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center; min-height: 168px">
+<sc-if value="{{it.s.isAmp}}" hint-placeholder-val="{{true}}"><svg width="48" height="120" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="{{it.s.cap}}" stroke="{{it.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="{{it.s.cap}}" stroke="{{it.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{it.s.fill}}" stroke="{{it.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="{{it.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{it.s.isBottle}}" hint-placeholder-val="{{false}}"><svg width="52" height="130" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="{{it.s.cap}}" stroke="{{it.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="22" y="31" width="16" height="7" fill="{{it.s.cap}}" stroke="{{it.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{it.s.fill}}" stroke="{{it.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="14" y="76" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="{{it.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{it.s.isJar}}" hint-placeholder-val="{{false}}"><svg width="72" height="130" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="{{it.s.cap}}" stroke="{{it.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{it.s.fill}}" stroke="{{it.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="{{it.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{it.s.isTube}}" hint-placeholder-val="{{false}}"><svg width="48" height="120" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{it.s.fill}}" stroke="{{it.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="{{it.s.cap}}" stroke="{{it.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="16" y="28" width="28" height="52" rx="2" fill="#FFFFFF" fill-opacity="{{it.s.label}}"></rect></svg></sc-if>
+          </a>
+          <div style="display: flex; flex-direction: column; padding: 4px 0 0; min-width: 0">
+            <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{it.line}}, paso {{it.n}}</span>
+            <a id="{{it.hid}}" href="FichaDesktop.dc.html" style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3; text-decoration: none">{{it.full}}</a>
+            <dl style="margin: 10px 0 0; display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 2px 12px; font-size: 13px; line-height: 1.5">
+              <dt style="color: #6B6B66">Paso</dt><dd style="margin: 0; color: #141414">{{it.step}}</dd>
+              <dt style="color: #6B6B66">Contenido</dt><dd style="margin: 0; color: #141414">{{it.ml}}</dd>
+            </dl>
+            <div style="margin-top: auto; padding-top: 14px; display: flex; align-items: center; gap: 20px">
+              <div role="group" aria-label="{{it.qtyAria}}" style="display: flex; align-items: center; border: 1px solid #CFCAC0; border-radius: 999px">
+                <button type="button" aria-label="Restar una unidad" disabled="{{it.minDisabled}}" onClick="{{it.minus}}" style="width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; opacity: {{it.minOpacity}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+                <span aria-live="polite" aria-atomic="true" style="min-width: 28px; text-align: center; font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums">{{it.qty}}</span>
+                <button type="button" aria-label="Sumar una unidad" disabled="{{it.maxDisabled}}" onClick="{{it.plus}}" style="width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; opacity: {{it.maxOpacity}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"></path></svg></button>
+              </div>
+              <button type="button" onClick="{{it.remove}}" aria-label="{{it.removeAria}}" style="min-height: 44px; padding: 0 2px; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer">Quitar</button>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding: 4px 0 0; font-variant-numeric: tabular-nums">
+            <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25">{{it.lineTotal}}</span>
+            <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: <span style="white-space: nowrap">{{it.lineNet}}</span></span>
+            <sc-if value="{{it.multi}}" hint-placeholder-val="{{false}}">
+              <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66">{{it.unitNote}}</span>
+            </sc-if>
+          </div>
+        </article>
+      </sc-for>
+    </section>
+
+    <section aria-labelledby="envio-t" style="margin-top: 56px; display: flex; flex-direction: column">
+      <h2 id="envio-t" aria-live="polite" style="margin: 0; max-width: 600px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.005em; font-variant-numeric: tabular-nums; text-wrap: balance">{{shipHead}}</h2>
+      <div style="margin-top: 14px; display: flex; align-items: center; gap: 16px">
+        <div role="progressbar" aria-label="Avance hacia el envío gratis desde $ 119.999" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{pctNum}}" aria-valuetext="{{pctText}}" style="flex: 1 1 auto; height: 4px; background: #E8E4DC"><div style="height: 4px; background: #A8812F; width: {{pct}}"></div></div>
+        <span style="flex: 0 0 auto; font-size: 13px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums">Envío gratis desde $&nbsp;119.999</span>
+      </div>
+      <sc-if value="{{hasSug}}" hint-placeholder-val="{{true}}">
+        <article aria-labelledby="sug-t" style="position: relative; margin-top: 30px; padding: 16px; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; column-gap: 24px; align-items: center">
+          <span aria-hidden="true" style="position: absolute; top: -10px; left: {{sug.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{sug.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+          <a href="FichaDesktop.dc.html" tabindex="-1" aria-hidden="true" style="align-self: stretch; background: #F5F2EC; border-radius: 4px; display: flex; align-items: center; justify-content: center; min-height: 120px">
+<sc-if value="{{sug.s.isAmp}}" hint-placeholder-val="{{false}}"><svg width="34" height="86" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="{{sug.s.cap}}" stroke="{{sug.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="{{sug.s.cap}}" stroke="{{sug.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{sug.s.fill}}" stroke="{{sug.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="{{sug.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{sug.s.isBottle}}" hint-placeholder-val="{{true}}"><svg width="38" height="94" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="{{sug.s.cap}}" stroke="{{sug.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="22" y="31" width="16" height="7" fill="{{sug.s.cap}}" stroke="{{sug.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{sug.s.fill}}" stroke="{{sug.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="14" y="76" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="{{sug.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{sug.s.isJar}}" hint-placeholder-val="{{false}}"><svg width="52" height="94" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="{{sug.s.cap}}" stroke="{{sug.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{sug.s.fill}}" stroke="{{sug.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="{{sug.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{sug.s.isTube}}" hint-placeholder-val="{{false}}"><svg width="34" height="86" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{sug.s.fill}}" stroke="{{sug.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="{{sug.s.cap}}" stroke="{{sug.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="16" y="28" width="28" height="52" rx="2" fill="#FFFFFF" fill-opacity="{{sug.s.label}}"></rect></svg></sc-if>
+          </a>
+          <div style="display: flex; flex-direction: column; min-width: 0">
+            <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">{{sug.pos}}</span>
+            <a id="sug-t" href="FichaDesktop.dc.html" style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3; text-decoration: none">{{sug.full}}</a>
+            <span style="margin-top: 4px; font-size: 14px; line-height: 1.55; color: #4A4A46">{{sug.why}}</span>
+            <span style="margin-top: 10px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; font-variant-numeric: tabular-nums">
+              <span style="font-weight: 600; font-size: 16px; line-height: 1.4">{{sug.price}}</span>
+              <span style="font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{sug.net}}</span>
+            </span>
+          </div>
+          <button type="button" onClick="{{sug.add}}" aria-label="{{sug.aria}}" style="min-height: 48px; padding: 0 28px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer">Agregar</button>
+        </article>
+      </sc-if>
+    </section>
+
+    <section aria-labelledby="muestras-t" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+        <h2 id="muestras-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em">Elegí 2 muestras de regalo</h2>
+        <span style="font-size: 13px; line-height: 1.5; color: #6B6B66; font-variant-numeric: tabular-nums; white-space: nowrap">{{pickedLabel}}</span>
+      </div>
+      <p aria-live="polite" style="margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">{{sampleMsg}}</p>
+      <div role="group" aria-labelledby="muestras-t" style="margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{samples}}" as="sm" hint-placeholder-count="4">
+          <button type="button" role="checkbox" aria-checked="{{sm.checked}}" disabled="{{sm.disabled}}" onClick="{{sm.toggle}}" style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; align-items: center; column-gap: 14px; min-height: 68px; padding: 10px 0; border: 0; border-bottom: 1px solid #E8E4DC; background: transparent; font: inherit; color: #141414; text-align: left; cursor: pointer; opacity: {{sm.opacity}}">
+            <span aria-hidden="true" style="width: 20px; height: 20px; box-sizing: border-box; border-radius: 4px; border: 1px solid {{sm.boxBorder}}; background: {{sm.boxBg}}; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="{{sm.tick}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+            <span style="display: flex; flex-direction: column; min-width: 0">
+              <span style="font-size: 15px; font-weight: 500; line-height: 1.4">{{sm.name}}</span>
+              <span style="margin-top: 2px; font-size: 13px; line-height: 1.5; color: #6B6B66">{{sm.line}}, muestra</span>
+            </span>
+            <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: {{sm.c}}; border: 1px solid rgba(20,20,20,0.14); box-sizing: border-box"></span>
+          </button>
+        </sc-for>
+      </div>
+      <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: #4A4A46">Desde [monto], sumás además un mini de Centella Ampoule.</p>
+    </section>
+
+    <section aria-labelledby="rutina-t" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid #E8E4DC; display: flex; flex-direction: column">
+      <h2 id="rutina-t" aria-live="polite" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25; letter-spacing: -0.005em; text-wrap: balance">{{routineTitle}}</h2>
+      <p style="margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: #4A4A46">{{routineIntro}}</p>
+      <ol aria-label="Rutina calmante, qué pasos tenés en el carrito" style="list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px">
+        <sc-for list="{{shelf}}" as="st" hint-placeholder-count="4">
+          <li style="position: relative; display: flex; flex-direction: column; padding-bottom: 4px">
+            <span style="height: 156px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #CFCAC0">
+<sc-if value="{{st.s.isAmp}}" hint-placeholder-val="{{true}}"><svg width="54" height="136" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="23" y="2" width="14" height="26" rx="7" fill="{{st.s.cap}}" stroke="{{st.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="18" y="26" width="24" height="14" rx="2" fill="{{st.s.cap}}" stroke="{{st.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="8" y="40" width="44" height="106" rx="8" fill="{{st.s.fill}}" stroke="{{st.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="15" y="78" width="30" height="40" rx="2" fill="#FFFFFF" fill-opacity="{{st.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{st.s.isBottle}}" hint-placeholder-val="{{false}}"><svg width="60" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="18" y="6" width="24" height="26" rx="3" fill="{{st.s.cap}}" stroke="{{st.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="22" y="31" width="16" height="7" fill="{{st.s.cap}}" stroke="{{st.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="{{st.s.fill}}" stroke="{{st.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="14" y="76" width="32" height="44" rx="2" fill="#FFFFFF" fill-opacity="{{st.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{st.s.isJar}}" hint-placeholder-val="{{false}}"><svg width="82" height="150" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><rect x="4" y="70" width="52" height="18" rx="4" fill="{{st.s.cap}}" stroke="{{st.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="{{st.s.fill}}" stroke="{{st.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="14" y="102" width="32" height="28" rx="2" fill="#FFFFFF" fill-opacity="{{st.s.label}}"></rect></svg></sc-if>
+<sc-if value="{{st.s.isTube}}" hint-placeholder-val="{{false}}"><svg width="54" height="136" viewBox="0 0 60 150" aria-hidden="true" style="display: block"><path d="M8 4H52L46 118H14Z" fill="{{st.s.fill}}" stroke="{{st.s.stroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></path><rect x="18" y="118" width="24" height="28" rx="3" fill="{{st.s.cap}}" stroke="{{st.s.capStroke}}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect><rect x="16" y="28" width="28" height="52" rx="2" fill="#FFFFFF" fill-opacity="{{st.s.label}}"></rect></svg></sc-if>
+            </span>
+            <span style="margin-top: 14px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.3; color: #8A6A24; font-variant-numeric: tabular-nums">{{st.n}}</span>
+            <span style="margin-top: 4px; font-size: 14px; font-weight: 600; line-height: 1.35">{{st.name}}</span>
+            <span style="margin-top: 2px; font-size: 13px; line-height: 1.45; color: #6B6B66">{{st.when}}</span>
+            <span style="margin-top: 6px; font-size: 13px; line-height: 1.45; color: {{st.statusColor}}; font-weight: {{st.statusWeight}}; text-decoration: {{st.mark}}; text-underline-offset: 3px">{{st.status}}</span>
+            <sc-if value="{{st.missing}}" hint-placeholder-val="{{true}}">
+              <button type="button" aria-pressed="{{st.pressed}}" aria-label="{{st.aria}}" onClick="{{st.pick}}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: pointer"></button>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ol>
+      <sc-if value="{{hasGap}}" hint-placeholder-val="{{true}}">
+        <div aria-live="polite" style="margin-top: 32px; padding: 20px 0; border-top: 1px solid #E8E4DC; border-bottom: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; align-items: center; font-variant-numeric: tabular-nums">
+          <div style="display: flex; flex-direction: column; min-width: 0">
+            <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #4A4A46">Paso {{gap.n}}, {{gap.line}}</span>
+            <a href="FichaDesktop.dc.html" style="margin-top: 2px; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3; text-decoration: none">{{gap.full}}</a>
+            <p style="margin: 4px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">{{gap.why}}</p>
+            <span style="margin-top: 8px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
+              <span style="font-weight: 600; font-size: 16px; line-height: 1.4">{{gap.price}}</span>
+              <span style="font-size: 13px; line-height: 1.5; color: #6B6B66">Precio sin impuestos nacionales: {{gap.net}}</span>
+            </span>
+          </div>
+          <button type="button" onClick="{{gap.add}}" aria-label="{{gap.aria}}" style="min-height: 48px; padding: 0 28px; border: 0; border-radius: 999px; background: #141414; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer">Agregar</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{hasBundle}}" hint-placeholder-val="{{true}}">
+        <div style="padding: 20px 0; border-bottom: 1px solid #E8E4DC; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; align-items: center">
+          <div style="display: flex; flex-direction: column; min-width: 0">
+            <span style="font-size: 16px; font-weight: 600; line-height: 1.4">Llevá la rutina completa</span>
+            <span style="margin-top: 2px; font-size: 15px; line-height: 1.6; color: #4A4A46">El set de los 4 pasos sale [precio del set] y ahorrás [ahorro del set]. Sumamos los que te faltan.</span>
+          </div>
+          <button type="button" onClick="{{addAll}}" style="min-height: 48px; padding: 0 28px; border: 1px solid #141414; border-radius: 999px; background: #FFFFFF; color: #141414; font: inherit; font-weight: 500; font-size: 16px; letter-spacing: 0.005em; cursor: pointer; white-space: nowrap">Llevá la rutina</button>
+        </div>
+      </sc-if>
+      <a href="TestDesktop.dc.html" style="align-self: flex-start; margin-top: 16px; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">¿Otra necesidad? Hacé el test de piel</a>
+    </section>
+</sc-if>
+  </div>
+
+  <aside aria-labelledby="resumen-t" style="grid-column: 9 / span 4; position: sticky; top: 24px; align-self: start; margin-top: 10px">
+<sc-if value="{{hasItems}}" hint-placeholder-val="{{true}}">
+    <article style="position: relative; background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 28px 24px 20px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+      <sc-for list="{{orderTabs}}" as="t" hint-placeholder-count="1">
+        <span aria-hidden="true" style="position: absolute; top: -10px; left: {{t.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{t.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+      </sc-for>
+      <h2 id="resumen-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 24px; line-height: 1.25; letter-spacing: -0.005em">Tu pedido</h2>
+      <dl style="margin: 16px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 13px; font-weight: 500; line-height: 1.6; color: #6B6B66">Productos</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5; text-align: right">{{total}}</dd>
+        </div>
+        <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 13px; font-weight: 500; line-height: 1.6; color: #6B6B66">Envío</dt>
+          <dd style="margin: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right"><span style="font-size: 15px; line-height: 1.5; color: {{shipColor}}; font-weight: {{shipWeight}}">{{shipLabel}}</span><span style="font-size: 13px; line-height: 1.5; color: #6B6B66">Llega en [plazo] a CABA y GBA</span></dd>
+        </div>
+        <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 13px; font-weight: 500; line-height: 1.6; color: #6B6B66">Muestras</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5; text-align: right">{{samplesRow}}</dd>
+        </div>
+      </dl>
+      <div style="margin-top: 18px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+        <span style="font-size: 15px; font-weight: 600; line-height: 1.5">Total</span>
+        <span aria-live="polite" style="margin-left: auto; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.15; text-align: right">{{total}}</span>
+      </div>
+      <span style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #6B6B66; text-align: right">Precio sin impuestos nacionales: {{net}}</span>
+      <dl style="margin: 16px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #6B6B66; white-space: nowrap">Transferencia, 10% off</dt>
+          <dd style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.4; color: #2F6B45; text-align: right">{{transfer}}</dd>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #E8E4DC">
+          <dt style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #6B6B66; white-space: nowrap">6 cuotas sin interés</dt>
+          <dd style="margin: 0; font-size: 15px; font-weight: {{cuotasWeight}}; line-height: 1.4; color: #141414; text-align: right">{{cuotasMain}}</dd>
+        </div>
+      </dl>
+      <a href="CarritoDesktop.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Iniciar compra</a>
+      <ul aria-label="Compra segura" style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: #4A4A46">
+        <li>Pago seguro con Mercado Pago, MODO, tarjeta o transferencia.</li>
+        <li>Producto original importado por el representante oficial.</li>
+        <li>Tenés 10 días para arrepentirte. <a href="HomeDesktop.dc.html" style="display: inline-block; padding: 12px 0; margin: -12px 0; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px">Botón de arrepentimiento</a></li>
+      </ul>
+      <div style="margin-top: 14px; padding-top: 6px; border-top: 1px solid #E8E4DC; display: flex">
+        <button type="button" onClick="{{openWa}}" aria-expanded="{{waExpanded}}" style="min-height: 44px; padding: 0 2px; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer">¿Dudas? Consultanos por WhatsApp</button>
+      </div>
+    </article>
+</sc-if>
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
+    <article style="background: #FFFFFF; border: 1px solid #E0DBD1; border-radius: 12px; padding: 28px 24px 24px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+      <h2 id="resumen-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 24px; line-height: 1.25; letter-spacing: -0.005em">Tu pedido</h2>
+      <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: #4A4A46">Todavía no sumaste productos. Estas son las condiciones de compra en la tienda oficial:</p>
+      <dl aria-label="Condiciones de compra" style="margin: 16px 0 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <sc-for list="{{rules}}" as="r" hint-placeholder-count="4">
+          <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; border-bottom: 1px solid #E8E4DC">
+            <dt style="font-size: 13px; font-weight: 500; line-height: 1.6; color: #6B6B66">{{r.k}}</dt>
+            <dd style="margin: 0; font-size: 14px; line-height: 1.5; color: #141414">{{r.v}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+      <a href="ColeccionDesktop.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 0.005em">Ver todos los productos</a>
+      <button type="button" onClick="{{openWa}}" aria-expanded="{{waExpanded}}" style="align-self: center; margin-top: 8px; min-height: 44px; padding: 0 2px; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: #141414; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer">Consultanos por WhatsApp</button>
+    </article>
+</sc-if>
+  </aside>
+</main>
+
+<footer style="flex: 1 0 auto; background: #F2EDE4; color: #4A4A46; padding: 96px 144px 80px; display: flex; flex-direction: column; font-size: 14px">
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start">
+    <div style="grid-column: 1 / span 3; display: flex; flex-direction: column">
+      <a href="HomeDesktop.dc.html" aria-label="SKIN1004, inicio" style="align-self: flex-start; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.34em; text-decoration: none; color: #141414; line-height: 1.4">SKIN1004</a>
+      <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: #6B6B66">The Untouched Nature</p>
+    </div>
+    <nav aria-label="Comprar" style="grid-column: 5 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Comprar</span><a href="ColeccionDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Productos</a><a href="ColeccionDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Rutinas y kits</a><a href="TestDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Test de piel</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">La marca</a></nav>
+    <nav aria-label="Ayuda" style="grid-column: 7 / span 2; display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Ayuda</span><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Envíos y plazos</a><button type="button" onClick="{{openWa}}" aria-expanded="{{waExpanded}}" style="margin: 0; padding: 0; border: 0; background: transparent; font: inherit; color: #4A4A46; text-align: left; min-height: 44px; display: flex; align-items: center; cursor: pointer">Consultas por WhatsApp</button><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cuotas y pagos</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Producto original</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cambios y devoluciones</a></nav>
+    <div style="grid-column: 10 / span 3; display: flex; flex-direction: column">
+      <nav aria-label="Legales" style="display: flex; flex-direction: column"><span style="color: #141414; font-weight: 600; font-size: 14px; line-height: 1.5; margin-bottom: 4px">Legales</span><a href="HomeDesktop.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Términos y condiciones</a><a href="HomeDesktop.dc.html" style="color: #4A4A46; min-height: 44px; display: flex; align-items: center; text-underline-offset: 3px">Política de privacidad</a></nav>
+      <a href="HomeDesktop.dc.html" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #141414; border-radius: 999px; color: #141414; text-decoration: none; font-weight: 500; font-size: 16px">Botón de arrepentimiento</a>
+    </div>
+  </div>
+  <div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid #CFCAC0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; align-items: center">
+    <div style="grid-column: 1 / span 5; display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 20px; align-items: center">
+      <a href="HomeDesktop.dc.html" aria-label="Data Fiscal, código QR" style="width: 72px; height: 72px; background: #FFFFFF; border: 1px solid #E0DBD1; box-sizing: border-box; color: #4A4A46; font-size: 12px; line-height: 1.3; display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border-radius: 4px">QR Data Fiscal</a>
+      <a href="HomeDesktop.dc.html" style="color: #141414; font-size: 15px; line-height: 1.6; text-underline-offset: 3px">Defensa de las y los consumidores. Para reclamos, ingresá acá.</a>
+    </div>
+    <p style="grid-column: 7 / span 6; margin: 0; font-size: 14px; line-height: 1.6; color: #4A4A46">Pagá con Mercado Pago, MODO, tarjetas o transferencia. Envío gratis desde $&nbsp;119.999, 10% off con transferencia, 6 cuotas sin interés desde $&nbsp;150.000 y 2 muestras de regalo en cada pedido.</p>
+    <div style="grid-column: 1 / span 8; display: flex; flex-direction: column">
+      <p style="margin: 0; font-size: 13px; line-height: 1.65; color: #6B6B66">Grupo Skinfree, representante oficial de SKIN1004 en Argentina. Gurruchaga 592, CABA. Importa Laboratorio BEK SRL, legajo ANMAT [número]. Los precios incluyen IVA; junto a cada precio se informa el precio sin impuestos nacionales.</p>
+      <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B6B66">SKIN1004 es una marca de Craver Corporation, Seúl.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3080}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    // toast: último agregado (aviso A, variante carrito); waOpen: hoja de consulta por WhatsApp (C).
+    this.state = { cart: { toner: 0, ampoule: 1, cream: 0, sun: 0 }, picked: [], gap: '', toast: null, waOpen: false };
+    this.toastTimer = null;
+  }
+  renderVals() {
+    const s = this.state;
+    const cart = s.cart;
+    const FREE = 119999, CUOTAS = 150000, MAX = 9;
+    // Pestaña de línea en su slot fijo: left = 20 + slot * (W - 88) / 5 (DESIGN_SYSTEM.md, 4.4).
+    const tabs = (w) => [0, 1, 2, 3, 4, 5].map((i) => Math.round(20 + i * (w - 88) / 5) + 'px');
+    const TAB_ROW = tabs(660);   // rótulos de la columna izquierda, columnas 1 a 7 (662 px con borde)
+    const TAB_ORDER = tabs(366); // resumen, columnas 9 a 12 (368 px con borde)
+    const LINE = {
+      centella: { name: 'Madagascar Centella', c: '#C9A24A', slot: 0 },
+      hyalu: { name: 'Hyalu-Cica', c: '#4A7FB5', slot: 1 },
+      pore: { name: 'Poremizing', c: '#D98E93', slot: 3 },
+      tea: { name: 'Tea-Trica', c: '#4F8A5E', slot: 4 }
+    };
+    const group = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const money = (n) => {
+      const r = Math.round(n * 100) / 100;
+      const int = Math.floor(r);
+      const dec = Math.round((r - int) * 100);
+      return '$\u00a0' + group(int) + (dec ? ',' + String(dec).padStart(2, '0') : '');
+    };
+
+    // Rutina calmante, en el orden en que se aplica. Solo la Centella Ampoule 55 ml tiene precio real.
+    const ORDER = ['toner', 'ampoule', 'cream', 'sun'];
+    const P = {
+      toner: { short: 'Toning Toner', full: 'Centella Toning Toner', art: 'el', k: 'bottle', l: 'centella', price: null, step: 'Después de limpiar', when: 'Mañana y noche', ml: '[ml]', why: 'Va primero, después de limpiar, y deja la piel lista para la ampolla.' },
+      ampoule: { short: 'Centella Ampoule', full: 'Centella Ampoule', art: 'la', k: 'ampoule', l: 'centella', price: 42999, step: 'Después del tónico', when: 'Mañana y noche', ml: '55 ml', why: 'Calma la piel sensible o con rojeces. Va después del tónico.' },
+      cream: { short: 'Soothing Cream', full: 'Centella Soothing Cream', art: 'la', k: 'jar', l: 'centella', price: null, step: 'Después de la ampolla', when: 'Mañana y noche', ml: '[ml]', why: 'Va después de la ampolla y ayuda a mantener la piel hidratada.' },
+      sun: { short: 'Sun Serum', full: 'Hyalu-Cica Water-Fit Sun Serum FPS 50+', art: 'el', k: 'tube', l: 'hyalu', price: null, step: 'Al final, solo de día', when: 'Solo de día', ml: '50 ml', why: 'Va al final, solo de día, para cuidar la piel del sol.' }
+    };
+    const shape = (k, on, c, ink) => ({
+      isAmp: k === 'ampoule', isBottle: k === 'bottle', isJar: k === 'jar', isTube: k === 'tube',
+      fill: on ? c : '#FFFFFF',
+      stroke: on ? 'rgba(20,20,20,0.16)' : ink,
+      cap: on ? '#141414' : 'none',
+      capStroke: on ? '#141414' : ink,
+      label: on ? '0.8' : '0'
+    });
+    const priceOf = (id, q) => P[id].price ? money(P[id].price * q) : '[precio]';
+    const netOf = (id, q) => P[id].price ? money(Math.round((P[id].price * q) / 1.21)) : '[precio]';
+    const listNames = (arr) => arr.length <= 1 ? arr.join('') : arr.slice(0, -1).join(', ') + ' y ' + arr[arr.length - 1];
+
+    // Cuentas del carrito: solo con precios reales; lo que no tiene precio se muestra como [precio].
+    const sums = (c) => {
+      const ids = ORDER.filter((id) => c[id] > 0);
+      const known = ids.reduce((a, id) => a + (P[id].price ? P[id].price * c[id] : 0), 0);
+      const unknownIds = ids.filter((id) => !P[id].price);
+      return { ids, known, unknownIds, unknown: unknownIds.length > 0, count: ids.reduce((a, id) => a + c[id], 0) };
+    };
+
+    const closeToast = () => {
+      if (this.toastTimer) clearTimeout(this.toastTimer);
+      this.toastTimer = null;
+      this.setState({ toast: null });
+    };
+    const setCart = (next) => {
+      const empty = ORDER.every((id) => !next[id]);
+      this.setState({ cart: next, picked: empty ? [] : s.picked });
+    };
+    // Agregar sin salir de la página: actualiza el carrito y muestra el aviso A durante 4 s.
+    const addIds = (ids) => {
+      const next = Object.assign({}, cart);
+      const added = ids.filter((id) => !cart[id]);
+      if (!added.length) return;
+      added.forEach((id) => { next[id] = 1; });
+      if (this.toastTimer) clearTimeout(this.toastTimer);
+      this.toastTimer = setTimeout(() => { this.toastTimer = null; this.setState({ toast: null }); }, 4000);
+      this.setState({ cart: next, toast: { ids: added, prev: cart }, waOpen: false });
+    };
+    const withQty = (id, q) => { const next = Object.assign({}, cart); next[id] = q; return next; };
+
+    const cur = sums(cart);
+    const { known, unknownIds, unknown, count } = cur;
+    const inCart = cur.ids;
+    const left = Math.max(0, FREE - known);
+    const pctNum = Math.min(100, Math.round((known / FREE) * 100));
+
+    const items = inCart.map((id) => {
+      const p = P[id], q = cart[id];
+      return {
+        hid: 'item-' + id, n: String(ORDER.indexOf(id) + 1), full: p.full, line: LINE[p.l].name, c: LINE[p.l].c, tab: TAB_ROW[LINE[p.l].slot],
+        step: p.step, ml: p.ml, qty: q,
+        s: shape(p.k, true, LINE[p.l].c, '#141414'),
+        lineTotal: priceOf(id, q), lineNet: netOf(id, q),
+        multi: q > 1,
+        unitNote: (p.price ? money(p.price) : '[precio]') + ' por unidad',
+        qtyAria: 'Cantidad de ' + p.full,
+        removeAria: 'Quitar ' + p.full + ' del carrito',
+        minDisabled: q <= 1, minOpacity: q <= 1 ? '0.35' : '1',
+        maxDisabled: q >= MAX, maxOpacity: q >= MAX ? '0.35' : '1',
+        minus: () => setCart(withQty(id, Math.max(1, q - 1))),
+        plus: () => setCart(withQty(id, Math.min(MAX, q + 1))),
+        remove: () => setCart(withQty(id, 0))
+      };
+    });
+
+    // Venta cruzada hacia el envío gratis: el primer paso de la rutina que falta, en orden de aplicación.
+    const missing = ORDER.filter((id) => !cart[id]);
+    const sugId = missing[0] || null;
+    const sugP = sugId ? P[sugId] : null;
+    const sug = sugP ? {
+      full: sugP.full, pos: LINE[sugP.l].name + ', paso ' + (ORDER.indexOf(sugId) + 1) + '. ' + sugP.step,
+      why: sugP.why,
+      c: LINE[sugP.l].c, tab: TAB_ROW[LINE[sugP.l].slot],
+      s: shape(sugP.k, true, LINE[sugP.l].c, '#141414'),
+      price: priceOf(sugId, 1), net: netOf(sugId, 1),
+      aria: 'Agregar ' + sugP.full + ' al carrito',
+      add: () => addIds([sugId])
+    } : { full: '', pos: '', why: '', c: '', tab: '', s: shape('', true, '', ''), price: '', net: '', aria: '', add: () => {} };
+    const sumaSug = sugP ? 'sumá ' + sugP.art + ' ' + sugP.short : '';
+    const sinContar = unknown ? ', sin contar ' + listNames(unknownIds.map((id) => P[id].art + ' ' + P[id].short)) : '';
+    let shipHead;
+    if (left > 0) shipHead = 'Te faltan ' + money(left) + ' para el envío gratis' + sinContar + (sugP ? ': ' + sumaSug : '');
+    else shipHead = 'Tu envío es gratis' + (sugP ? '. Completá la rutina: ' + sumaSug : '');
+
+    const plus = unknown ? ' + [precio]' : '';
+    const withKnown = (n) => known > 0 ? money(n) + plus : '[precio]';
+    const total = withKnown(known);
+    const net = withKnown(Math.round(known / 1.21));
+    const transfer = withKnown(Math.round(known * 0.9));
+    let cuotasMain, cuotasWeight;
+    if (!unknown && known >= CUOTAS) { cuotasMain = '6 de ' + money(known / 6); cuotasWeight = '600'; }
+    else if (unknown) { cuotasMain = 'Desde $\u00a0150.000'; cuotasWeight = '400'; }
+    else { cuotasMain = 'Te faltan ' + money(CUOTAS - known); cuotasWeight = '400'; }
+
+    // Pestañas del resumen: una por cada línea que hay en el pedido, en su slot.
+    const linesIn = Object.keys(LINE).filter((k) => inCart.some((id) => P[id].l === k));
+    const orderTabs = linesIn.map((k) => ({ c: LINE[k].c, tab: TAB_ORDER[LINE[k].slot] }));
+
+    // Estante de la rutina: qué pasos ya están y cuál elegís sumar (por defecto, el siguiente al que se ofrece arriba).
+    const gapId = (s.gap && !cart[s.gap]) ? s.gap : (missing[1] || missing[0] || null);
+    const shelf = ORDER.map((id, i) => {
+      const p = P[id], on = cart[id] > 0, sel = id === gapId;
+      const ink = sel ? '#141414' : '#CFCAC0';
+      return {
+        n: String(i + 1), name: p.short, when: p.when,
+        s: shape(p.k, on, LINE[p.l].c, ink),
+        missing: !on,
+        status: on ? 'En tu carrito' : 'Falta',
+        statusColor: on ? '#141414' : '#6B6B66',
+        statusWeight: on ? '500' : '400',
+        mark: (!on && sel) ? 'underline' : 'none',
+        pressed: sel ? 'true' : 'false',
+        aria: 'Paso ' + (i + 1) + ', ' + p.full + ', falta en tu carrito',
+        pick: () => this.setState({ gap: id })
+      };
+    });
+    const gp = gapId ? P[gapId] : null;
+    const gap = gp ? {
+      n: String(ORDER.indexOf(gapId) + 1), line: LINE[gp.l].name, full: gp.full, why: gp.why,
+      price: priceOf(gapId, 1), net: netOf(gapId, 1),
+      aria: 'Agregar ' + gp.full + ' al carrito',
+      add: () => addIds([gapId])
+    } : { n: '', line: '', full: '', why: '', price: '', net: '', aria: '', add: () => {} };
+
+    const SAMPLES = [
+      { id: 'foam', name: 'Centella Ampoule Foam', l: 'centella' },
+      { id: 'sun', name: 'Water-Fit Sun Serum', l: 'hyalu' },
+      { id: 'pore', name: 'Poremizing Fresh Ampoule', l: 'pore' },
+      { id: 'tea', name: 'Tea-Trica Relief Ampoule', l: 'tea' }
+    ];
+    const full = s.picked.length >= 2;
+    const samples = SAMPLES.map((x) => {
+      const on = s.picked.indexOf(x.id) !== -1;
+      const off = !on && full;
+      return {
+        name: x.name, line: LINE[x.l].name, c: LINE[x.l].c,
+        checked: on ? 'true' : 'false',
+        boxBorder: on ? '#141414' : '#CFCAC0',
+        boxBg: on ? '#141414' : '#FFFFFF',
+        tick: on ? '#FFFFFF' : 'transparent',
+        disabled: off,
+        opacity: off ? '0.45' : '1',
+        toggle: () => this.setState({ picked: on ? s.picked.filter((p) => p !== x.id) : s.picked.concat([x.id]).slice(0, 2) })
+      };
+    });
+    const rest = 2 - s.picked.length;
+
+    // Aviso A, variante carrito: confirma lo sumado y cómo queda el total (solo con precios reales).
+    const t = s.toast;
+    const toast = t ? {
+      title: 'Agregaste ' + listNames(t.ids.map((id) => P[id].full)),
+      c: LINE[P[t.ids[0]].l].c,
+      total: 'Tu carrito ahora: ' + total + '.',
+      ship: left > 0 ? 'Te faltan ' + money(left) + ' para el envío gratis' + (unknown ? ', sin contar los productos sin precio.' : '.') : 'Tu envío es gratis.',
+      undoAria: 'Deshacer: quitar ' + listNames(t.ids.map((id) => P[id].full)) + ' del carrito'
+    } : { title: '', c: '', total: '', ship: '', undoAria: '' };
+
+    // Hoja C: mensaje prearmado con lo que hay en el carrito.
+    const waItems = inCart.map((id) => P[id].full + ' ' + P[id].ml + ' (' + (P[id].price ? money(P[id].price) : '[precio]') + ')' + (cart[id] > 1 ? ' x ' + cart[id] : ''));
+    const waMsg = count > 0
+      ? 'Hola, quiero consultar por ' + listNames(waItems) + '. Lo estoy viendo en la tienda oficial: [link al producto]. Mi carrito: [link al carrito]'
+      : 'Hola, quiero consultar qué rutina me conviene. Lo estoy viendo en la tienda oficial: [link a la tienda].';
+
+    return {
+      cartCount: String(count),
+      cartLabel: 'Carrito, ' + count + (count === 1 ? ' producto' : ' productos'),
+      countLabel: count === 0 ? '0 productos' : count === 1 ? '1 producto' : count + ' productos',
+      hasItems: count > 0, isEmpty: count === 0,
+      addHero: () => addIds(['ampoule']),
+      rules: [
+        { k: 'Envío', v: 'Gratis en compras desde $\u00a0119.999' },
+        { k: 'Transferencia', v: '10% off pagando por transferencia' },
+        { k: 'Cuotas', v: '6 cuotas sin interés en compras desde $\u00a0150.000' },
+        { k: 'Muestras', v: '2 muestras de regalo en cada pedido' }
+      ],
+      items,
+      hasSug: !!sugP, sug, shipHead,
+      pct: pctNum + '%', pctNum,
+      pctText: left > 0 ? 'Faltan ' + money(left) : 'Envío gratis alcanzado',
+      total, net, transfer,
+      cuotasMain, cuotasWeight,
+      shipLabel: left > 0 ? 'Según tu código postal' : 'Gratis',
+      shipColor: left > 0 ? '#4A4A46' : '#2F6B45',
+      shipWeight: left > 0 ? '400' : '500',
+      orderTabs,
+      routineTitle: missing.length ? 'A tu rutina calmante le ' + (missing.length === 1 ? 'falta 1 paso' : 'faltan ' + missing.length + ' pasos') : 'Tu rutina calmante está completa',
+      routineIntro: missing.length ? 'En el orden en que se aplica. Elegí un paso que falta para verlo y sumarlo.' : 'Tenés los cuatro pasos, en el orden en que se aplican.',
+      shelf, hasGap: !!gp && !(gapId === sugId && s.gap !== gapId), gap,
+      hasBundle: missing.length >= 2,
+      addAll: () => addIds(ORDER),
+      samples,
+      pickedLabel: s.picked.length + ' de 2 elegidas',
+      samplesRow: s.picked.length === 0 ? 'Sin elegir' : s.picked.length + ' de regalo',
+      sampleMsg: rest === 2 ? 'Van en tu pedido sin costo.' : rest === 1 ? 'Te queda 1 por elegir.' : 'Ya elegiste tus 2 muestras. Para cambiar una, destildá otra.',
+      toastOn: !!t, toast,
+      closeToast,
+      undoAdd: () => {
+        if (!t) return;
+        if (this.toastTimer) clearTimeout(this.toastTimer);
+        this.toastTimer = null;
+        this.setState({ cart: t.prev, toast: null });
+      },
+      waOpen: !!s.waOpen,
+      waExpanded: s.waOpen ? 'true' : 'false',
+      waMsg,
+      openWa: () => {
+        if (this.toastTimer) clearTimeout(this.toastTimer);
+        this.toastTimer = null;
+        this.setState({ waOpen: true, toast: null });
+      },
+      closeWa: () => this.setState({ waOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

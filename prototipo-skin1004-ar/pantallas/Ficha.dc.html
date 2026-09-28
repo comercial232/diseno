@@ -19,13 +19,16 @@ a[style*="border-radius: 999px"]:hover,button:hover{opacity:.82}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A8812F;outline-offset:2px}
 </style>
 </helmet>
-<div style="width: 390px; height: 6280px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: hidden; position: relative">
+<div style="width: 390px; height: 6120px; box-sizing: border-box; background: #FFFFFF; display: flex; flex-direction: column; overflow: clip; position: relative">
 
 <p style="margin: 0; background: #141414; color: #F7F4EE; font-size: 12px; font-weight: 500; letter-spacing: 0.01em; padding: 10px 24px; text-align: center; line-height: 1.4">Envío gratis desde $ 119.999</p>
 
 <header style="background: #FFFFFF; display: grid; grid-template-columns: 88px minmax(0, 1fr) 88px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #E8E4DC">
   <div style="display: flex">
-    <button type="button" aria-label="Abrir menú" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+    <button type="button" aria-label="{{menuAria}}" aria-expanded="{{menuExpanded}}" aria-controls="menu-panel" onClick="{{toggleMenu}}" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0">
+      <sc-if value="{{menuClosed}}" hint-placeholder-val="{{true}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></sc-if>
+      <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></sc-if>
+    </button>
     <button type="button" aria-label="Buscar" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg></button>
   </div>
   <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="justify-self: center; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; margin-right: -0.34em; text-decoration: none; color: #141414; line-height: 44px">SKIN1004</a>
@@ -34,6 +37,66 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
     <a href="Carrito.dc.html" aria-label="{{cartAria}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; position: relative"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11l-1-12z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span aria-live="polite" style="position: absolute; top: 7px; right: 5px; min-width: 15px; height: 15px; border-radius: 999px; background: #141414; color: #FFFFFF; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center">{{cartCount}}</span></a>
   </div>
 </header>
+
+<div style="position: sticky; top: 0; height: 0; z-index: 45">
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+    <button type="button" aria-label="Cerrar menú" onClick="{{closeMenu}}" style="position: absolute; top: 0; left: 0; width: 390px; height: 844px; border: 0; padding: 0; margin: 0; background: rgba(20,20,20,0.4); cursor: pointer"></button>
+    <nav id="menu-panel" aria-label="Menú" style="position: absolute; top: 0; left: 0; width: 390px; max-height: 742px; overflow-y: auto; box-sizing: border-box; background: #FFFFFF; border-bottom: 1px solid #E8E4DC; padding: 16px 24px 8px; display: flex; flex-direction: column">
+      <form role="search" style="margin: 0; display: flex; flex-direction: column">
+        <label for="menu-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Buscar productos</label>
+        <div style="position: relative; display: flex">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A4A46" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="position: absolute; left: 18px; top: 15px"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg>
+          <input id="menu-q" name="q" type="search" placeholder="Buscar productos" autocomplete="off" style="flex: 1 1 auto; min-width: 0; height: 48px; box-sizing: border-box; border: 1px solid #CFCAC0; border-radius: 999px; padding: 0 20px 0 46px; font: inherit; font-size: 16px; color: #141414; background: #FFFFFF">
+        </div>
+      </form>
+
+      <h2 style="margin: 20px 0 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.3">Líneas</h2>
+      <ul style="list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column">
+        <sc-for list="{{menuLines}}" as="ml" hint-placeholder-count="6">
+          <li style="position: relative; border-top: 1px solid #E8E4DC">
+            <span aria-hidden="true" style="position: absolute; top: -10px; left: {{ml.tab}}; width: 48px; height: 10px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{ml.c}}; border: 1px solid rgba(20,20,20,0.14); border-bottom: 0"></span>
+            <a href="Coleccion.dc.html" style="min-height: 48px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 12px; text-decoration: none; color: #141414">
+              <span style="font-size: 15px; font-weight: 500; line-height: 1.3">{{ml.name}}</span>
+              <span style="font-size: 12px; line-height: 1.4; color: #4A4A46; text-align: right">{{ml.need}}</span>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid #E8E4DC">
+        <li style="border-bottom: 1px solid #E8E4DC"><a href="Coleccion.dc.html" style="min-height: 52px; display: flex; align-items: center; text-decoration: none; color: #141414; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3">Rutinas y kits</a></li>
+        <li style="border-bottom: 1px solid #E8E4DC"><a href="Coleccion.dc.html" style="min-height: 52px; display: flex; align-items: center; text-decoration: none; color: #141414; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3">Lo más elegido</a></li>
+        <li style="border-bottom: 1px solid #E8E4DC"><a href="Test.dc.html" style="min-height: 52px; display: flex; align-items: center; text-decoration: none; color: #141414; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3">Test de piel</a></li>
+      </ul>
+
+      <p style="margin: 14px 0 0; font-size: 12px; line-height: 1.55; color: #4A4A46; font-variant-numeric: tabular-nums"><span style="display: block">Envío gratis desde $ 119.999</span><span style="display: block">10% off con transferencia</span><span style="display: block">6 cuotas sin interés desde $ 150.000</span></p>
+
+      <div style="margin-top: 6px; display: flex; flex-wrap: wrap; column-gap: 24px">
+        <button type="button" aria-haspopup="dialog" onClick="{{openWaFromMenu}}" style="min-height: 44px; display: inline-flex; align-items: center; border: 0; background: transparent; padding: 0; font: inherit; font-size: 14px; font-weight: 500; color: #141414; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Consultanos por WhatsApp</button>
+        <a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Mi cuenta</a>
+      </div>
+    </nav>
+  </sc-if>
+</div>
+
+<div style="position: sticky; top: 0; height: 0; z-index: 40">
+  <div role="status" aria-live="polite" style="position: absolute; top: 8px; left: 12px; right: 12px">
+    <sc-if value="{{toastShown}}" hint-placeholder-val="{{false}}">
+      <div style="background: #FFFFFF; border: 1px solid #141414; border-radius: 12px; padding: 12px 8px 12px 12px; display: grid; grid-template-columns: 40px minmax(0, 1fr) 44px; column-gap: 12px; align-items: start">
+        <span aria-hidden="true" style="grid-row: span 2; width: 40px; height: 56px; background: #F5F2EC; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; box-sizing: border-box">
+          <sc-if value="{{toast.isBottle}}" hint-placeholder-val="{{true}}"><svg width="16" height="40" viewBox="0 0 60 150" aria-hidden="true"><rect x="18" y="6" width="24" height="26" rx="3" fill="#141414"></rect><rect x="22" y="30" width="16" height="10" fill="#141414"></rect><rect x="6" y="38" width="48" height="108" rx="10" fill="#C9A24A" stroke="#141414" stroke-opacity="0.16"></rect></svg></sc-if>
+          <sc-if value="{{toast.isJar}}" hint-placeholder-val="{{false}}"><svg width="24" height="40" viewBox="0 60 60 90" aria-hidden="true"><rect x="4" y="70" width="52" height="18" rx="4" fill="#141414"></rect><rect x="6" y="88" width="48" height="58" rx="8" fill="#C9A24A" stroke="#141414" stroke-opacity="0.16"></rect></svg></sc-if>
+        </span>
+        <span style="padding-top: 4px; display: flex; flex-direction: column">
+          <span style="font-size: 14px; font-weight: 600; line-height: 1.4; color: #141414">{{toast.title}}</span>
+          <span style="margin-top: 2px; font-size: 12px; line-height: 1.5; color: #4A4A46; font-variant-numeric: tabular-nums">{{toast.note}}</span>
+        </span>
+        <button type="button" aria-label="Cerrar aviso" onClick="{{closeToast}}" style="grid-row: span 2; width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        <a href="Carrito.dc.html" style="grid-column: 2; margin-top: 10px; justify-self: start; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Ver carrito</a>
+      </div>
+    </sc-if>
+  </div>
+</div>
 
 <section aria-label="Galería de imágenes" style="position: relative; flex: 0 0 220px; height: 220px; background: {{view.bg}}">
   <nav aria-label="Ruta de navegación" style="position: absolute; top: 0; left: 24px; right: 104px">
@@ -96,10 +159,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
 
     <a href="Carrito.dc.html" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 16px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em; font-variant-numeric: tabular-nums">{{addLabel}}</a>
     <p style="margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46; text-align: center">Original, importado por el representante oficial.<span style="display: block">Llega en [plazo] a CABA y GBA.</span></p>
+    <button type="button" aria-haspopup="dialog" onClick="{{openWa}}" style="align-self: center; margin-top: 2px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; border: 0; background: transparent; padding: 0 8px; font: inherit; font-size: 14px; font-weight: 500; color: #141414; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.4z"></path></svg>Consultanos por WhatsApp</button>
   </article>
 </section>
 
-<section aria-labelledby="envio-t" style="background: #FFFFFF; padding: 150px 24px 0; display: flex; flex-direction: column">
+<section aria-labelledby="envio-t" style="background: #FFFFFF; padding: 56px 24px 0; display: flex; flex-direction: column">
   <h2 id="envio-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25; letter-spacing: -0.005em; font-variant-numeric: tabular-nums; text-wrap: balance">{{ship.title}}</h2>
   <div aria-hidden="true" style="margin-top: 14px; height: 4px; background: #E8E4DC"><div style="height: 4px; background: #A8812F; width: {{ship.pct}}"></div></div>
   <p aria-live="polite" style="margin: 10px 0 0; font-size: 14px; line-height: 1.55; color: #4A4A46">{{ship.note}}</p>
@@ -132,7 +196,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   </form>
 
   <p style="margin: 28px 0 0; font-size: 14px; line-height: 1.6; color: #4A4A46">¿Dudás si es para tu piel? Consultanos por WhatsApp antes de comprar.</p>
-  <a href="Ficha.dc.html" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; color: #141414; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.4z"></path></svg>Consultar por WhatsApp</a>
+  <button type="button" aria-haspopup="dialog" onClick="{{openWa}}" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; cursor: pointer; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.4z"></path></svg>Consultar por WhatsApp</button>
 </section>
 
 <section aria-labelledby="set-t" style="background: #FFFFFF; padding: 64px 24px 0; display: flex; flex-direction: column">
@@ -287,6 +351,15 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   <a href="Main.dc.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Cómo reconocer un producto original</a>
 </section>
 
+<div role="region" aria-label="Barra de compra" style="position: sticky; bottom: 0; z-index: 30; background: #FFFFFF; border-top: 1px solid #E8E4DC; padding: 12px 20px; display: flex; align-items: center; gap: 8px">
+  <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
+    <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.2">{{price.list}}<span style="margin-left: 6px; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; font-size: 12px; color: #4A4A46">{{sizeLabel}}</span></span>
+    <span style="font-size: 12px; line-height: 1.3; color: #6B6B66">Precio sin impuestos nacionales: {{price.net}}</span>
+  </span>
+  <button type="button" aria-label="Consultar por WhatsApp" aria-haspopup="dialog" onClick="{{openWa}}" style="flex: 0 0 44px; width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #141414; border-radius: 999px; background: #FFFFFF; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #141414"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.4z"></path></svg></button>
+  <a href="Carrito.dc.html" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar</a>
+</div>
+
 <footer style="flex: 1 0 auto; background: #F2EDE4; color: #4A4A46; padding: 56px 24px 64px; display: flex; flex-direction: column; font-size: 14px">
   <a href="Main.dc.html" aria-label="SKIN1004, inicio" style="align-self: flex-start; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.34em; text-decoration: none; color: #141414; line-height: 1.4">SKIN1004</a>
   <p style="margin: 8px 0 0; font-size: 12px; line-height: 1.5; color: #6B6B66">The Untouched Nature</p>
@@ -305,23 +378,33 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A881
   <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.65; color: #6B6B66">SKIN1004 es una marca de Craver Corporation, Seúl.</p>
 </footer>
 
-<p aria-hidden="true" style="position: absolute; top: 752px; right: 24px; margin: 0; font-size: 12px; line-height: 1.5; color: #6B6B66">Referencia: al bajar, esta barra queda fija al pie</p>
-<div role="region" aria-label="Barra de compra fija" style="position: absolute; top: 772px; left: 0; width: 390px; height: 72px; box-sizing: border-box; background: #FFFFFF; border-top: 1px solid #141414; padding: 10px 16px 10px 24px; display: flex; align-items: center; gap: 8px">
-  <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; font-variant-numeric: tabular-nums">
-    <span style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.2">{{price.list}}<span style="margin-left: 6px; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; font-size: 12px; color: #4A4A46">{{sizeLabel}}</span></span>
-    <span style="font-size: 12px; line-height: 1.3; color: #6B6B66">Precio sin impuestos nacionales: {{price.net}}</span>
-  </span>
-  <a href="Ficha.dc.html" aria-label="Consultar por WhatsApp" style="flex: 0 0 44px; width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #141414; border-radius: 999px; display: flex; align-items: center; justify-content: center; color: #141414"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.4z"></path></svg></a>
-  <a href="Carrito.dc.html" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Agregar</a>
+<div style="position: sticky; bottom: 0; height: 0; z-index: 50">
+  <sc-if value="{{waOpen}}" hint-placeholder-val="{{false}}">
+    <button type="button" aria-label="Cerrar la consulta" onClick="{{closeWa}}" style="position: absolute; bottom: 0; left: 0; width: 390px; height: 844px; border: 0; padding: 0; margin: 0; background: rgba(20,20,20,0.4); cursor: pointer"></button>
+    <div role="dialog" aria-modal="true" aria-labelledby="wa-t" style="position: absolute; bottom: 0; left: 0; width: 390px; box-sizing: border-box; background: #FFFFFF; border-radius: 12px 12px 0 0; padding: 12px 24px 24px; display: flex; flex-direction: column">
+      <span aria-hidden="true" style="align-self: center; width: 40px; height: 4px; border-radius: 999px; background: #CFCAC0"></span>
+      <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+        <h2 id="wa-t" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.25; letter-spacing: -0.005em">Consultanos por WhatsApp</h2>
+        <button type="button" aria-label="Cerrar" onClick="{{closeWa}}" style="flex: 0 0 44px; width: 44px; height: 44px; margin-right: -10px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+      <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: #4A4A46">Revisá el mensaje y cambialo si querés antes de abrir WhatsApp.</p>
+      <label for="wa-msg" style="margin-top: 16px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #141414">Tu mensaje</label>
+      <textarea id="wa-msg" name="mensaje" rows="5" style="margin-top: 6px; width: 100%; box-sizing: border-box; resize: none; border: 1px solid #CFCAC0; border-radius: 12px 12px 4px 12px; background: #F7F4EE; padding: 14px 16px; font: inherit; font-size: 16px; line-height: 1.5; color: #141414">{{wa.msg}}</textarea>
+      <p style="margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: #4A4A46">Te respondemos de [horario de atención]. Después volvés a tu carrito con el link del mensaje.</p>
+      <a href="https://wa.me/" target="_blank" rel="noopener" style="margin-top: 16px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #141414; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Abrir WhatsApp</a>
+      <button type="button" onClick="{{closeWa}}" style="margin-top: 8px; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #141414; box-sizing: border-box; background: #FFFFFF; color: #141414; cursor: pointer; font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.005em">Seguir en la tienda</button>
+    </div>
+  </sc-if>
 </div>
+
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":6280}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":6120}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { view: 'frasco', size: '55', qty: 1, open: 'uso', skin: 'Todas', ship: false, added: {} };
+    this.state = { view: 'frasco', size: '55', qty: 1, open: 'uso', skin: 'Todas', ship: false, added: {}, menuOpen: false, waOpen: false, toast: '' };
   }
   renderVals() {
     const s = this.state;
@@ -389,7 +472,16 @@ class Component extends DCLogic {
         pressed: on ? 'true' : 'false',
         cta: on ? 'Agregado' : 'Agregar',
         fill: on ? '#FFFFFF' : '#141414', ink: on ? '#141414' : '#FFFFFF',
-        toggle: () => this.setState({ added: Object.assign({}, added, { [p.id]: !on }) })
+        toggle: () => {
+          clearTimeout(this.toastTimer);
+          if (on) {
+            // Quitar no muestra aviso; si el aviso era de este producto, se va.
+            this.setState({ added: Object.assign({}, added, { [p.id]: false }), toast: s.toast === p.id ? '' : s.toast });
+            return;
+          }
+          this.toastTimer = setTimeout(() => this.setState({ toast: '' }), 4000);
+          this.setState({ added: Object.assign({}, added, { [p.id]: true }), toast: p.id });
+        }
       };
     });
     const addedNames = PAIRS.filter((p) => added[p.id]).map((p) => p.name.replace('Centella ', ''));
@@ -528,7 +620,41 @@ class Component extends DCLogic {
       ? 'Las más recientes, de todos los tipos de piel.'
       : 'Reseñas de piel ' + s.skin.toLowerCase() + '.';
 
+    // A. Aviso de agregado. El total no es real si hay productos con [precio].
+    const tp = PAIRS.find((p) => p.id === s.toast);
+    const toast = tp
+      ? { title: 'Agregaste ' + tp.name, note: 'Tu carrito: ' + cartCount + ' productos, [total]', isBottle: tp.k === 'bottle', isJar: tp.k === 'jar' }
+      : { title: '', note: '', isBottle: false, isJar: false };
+
+    // B. Menú: las seis líneas con su pestaña en el slot de siempre.
+    const TAB = ['20px', '71px', '122px', '172px', '223px', '274px'];
+    const menuLines = [
+      { name: 'Madagascar Centella', need: 'Rojeces y piel sensible', c: '#C9A24A' },
+      { name: 'Hyalu-Cica', need: 'Hidratación', c: '#4A7FB5' },
+      { name: 'Tone Brightening', need: 'Manchas y tono apagado', c: '#EFEDE6' },
+      { name: 'Poremizing', need: 'Poros y brillo', c: '#D98E93' },
+      { name: 'Tea-Trica', need: 'Granitos', c: '#4F8A5E' },
+      { name: 'Probio-Cica', need: 'Barrera de la piel', c: '#6B4A36' }
+    ].map((l, i) => Object.assign({}, l, { tab: TAB[i] }));
+
+    // C. Hoja de WhatsApp con el producto y el tamaño elegidos.
+    const waProduct = 'Centella Ampoule ' + sizeLabel + ' (' + price.list.replace('\u00a0', ' ') + ')';
+    const wa = {
+      msg: 'Hola, quiero consultar por ' + waProduct + '. Lo estoy viendo en la tienda oficial: [link al producto]. Mi carrito: [link al carrito]'
+    };
+    const openWa = () => this.setState({ waOpen: true, menuOpen: false });
+
     return {
+      menuOpen: !!s.menuOpen, menuClosed: !s.menuOpen,
+      menuExpanded: s.menuOpen ? 'true' : 'false',
+      menuAria: s.menuOpen ? 'Cerrar menú' : 'Abrir menú',
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      menuLines,
+      toastShown: !!tp, toast,
+      closeToast: () => { clearTimeout(this.toastTimer); this.setState({ toast: '' }); },
+      waOpen: !!s.waOpen, wa, openWa, openWaFromMenu: openWa,
+      closeWa: () => this.setState({ waOpen: false }),
       view, thumbs, fields, price, installments, sizes, sizeLabel, addLabel,
       qty: s.qty,
       minusInk: s.qty > 1 ? '#141414' : '#CFCAC0',
